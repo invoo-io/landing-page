@@ -1,0 +1,92 @@
+{
+  "metadata": {
+    "title": "Invoo - Gestión de Facturas Conforme",
+    "description": "Crea y envía facturas conformes en 30 segundos. Perfecto para autónomos y gestorías."
+  },
+  "nav": {
+    "services": "Servicios",
+    "resources": "Recursos",
+    "pricing": "Precios",
+    "about": "Nosotros",
+    "login": "Iniciar sesión",
+    "getStarted": "Empezar"
+  },
+  "hero": {
+    "title": "Crea y envía",
+    "titleHighlight": "Facturas Conformes",
+    "titleEnd": "en 30 segundos.",
+    "subtitle": "Gestiona facturas fácilmente con verificación automática de cumplimiento, envío instantáneo y plantillas profesionales. Perfecto para autónomos y empresas.",
+    "cta": "Empieza Gratis"
+  },
+  "valueProps": {
+    "title": "Por qué autónomos y gestorías deberían elegir Invoo",
+    "saveTime": {
+      "title": "Ahorra tiempo",
+      "desc": "Creación y envío automático de facturas en segundos"
+    },
+    "compliant": {
+      "title": "Siempre conforme",
+      "desc": "Actualizado automáticamente con las últimas regulaciones fiscales"
+    },
+    "customer": {
+      "title": "Fácil para clientes",
+      "desc": "Opciones de pago sencillas para tus clientes"
+    },
+    "demo": "Demo",
+    "getStarted": "Empezar"
+  },
+  "process": {
+    "title": "Facturación simplificada",
+    "step1": {
+      "title": "Crear",
+      "desc": "Forma rápida, simple y fácil de crear facturas profesionales"
+    },
+    "step2": {
+      "title": "Revisar",
+      "desc": "Todos los detalles completados automáticamente y cumplimiento verificado"
+    },
+    "step3": {
+      "title": "Enviar",
+      "desc": "Todo listo en segundos, entregado instantáneamente a clientes"
+    },
+    "getStarted": "Empezar"
+  },
+  "features": {
+    "title": "Más que facturación",
+    "expense": "Controla tus gastos",
+    "tax": "Gestión fiscal lista",
+    "dashboard": "Panel detallado",
+    "exports": "Exportación en un clic",
+    "getStarted": "Empezar"
+  },
+  "gestorias": {
+    "title": "Diseñado para gestorías",
+    "desc": "Gestiona múltiples clientes sin esfuerzo desde un panel centralizado",
+    "getStarted": "Empezar"
+  },
+  "pricing": {
+    "title": "Precios justos y simples",
+    "plan": "Autónomo",
+    "price": "9,50€",
+    "period": "/ mes",
+    "subtitle": "Autónomos incluido",
+    "features": "Características:",
+    "trial": "7 días de prueba gratis"
+  },
+  "finalCta": {
+    "title": "Enfócate en tu trabajo. Nosotros nos encargamos del papeleo.",
+    "button": "Crea tu cuenta gratis"
+  },
+  "footer": {
+    "company": "Plataforma moderna de gestión de facturas para empresas",
+    "home": {
+      "title": "Inicio"
+    },
+    "services": {
+      "title": "Servicios"
+    },
+    "resources": {
+      "title": "Recursos"
+    }
+  }
+}

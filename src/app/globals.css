@@ -1,8 +1,16 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #000000;
+  --foreground: #ffffff;
+  --text-muted: rgba(255, 255, 255, 0.6);
+  --card-border: rgba(255, 255, 255, 0.05);
+  --gradient-primary: linear-gradient(135deg, #5D5FEF, #843FE8);
+  --gradient-blue: linear-gradient(135deg, #5D5FEF, #843FE8);
+  --gradient-pink: linear-gradient(135deg, #E849B6, #843FE8);
+  --gradient-purple: linear-gradient(135deg, #5D5FEF, #843FE8);
+  --glass-bg: rgba(20, 20, 25, 0.6);
+  --dashboard-bg: linear-gradient(145deg, #0F0F12, #1A1A1F);
 }
 
 @theme inline {
@@ -12,15 +20,109 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans), -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+.gradient-text {
+  background: var(--gradient-blue);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.gradient-button {
+  background: linear-gradient(135deg, #5D5FEF, #843FE8);
+  color: white;
+  padding: 12px 28px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(93, 95, 239, 0.3);
+}
+
+.gradient-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 30px rgba(93, 95, 239, 0.4);
+  background: linear-gradient(135deg, #6B6DEF, #9045E8);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.06);
+  border-radius: 20px;
+  backdrop-filter: blur(40px) saturate(120%);
+  -webkit-backdrop-filter: blur(40px) saturate(120%);
+}
+
+.orb-blue {
+  background: radial-gradient(circle at 30% 30%, #5D5FEF, #843FE8);
+  filter: blur(100px);
+  opacity: 0.5;
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float 20s ease-in-out infinite;
+  z-index: 0;
+}
+
+.orb-pink {
+  background: radial-gradient(circle at 70% 30%, #E849B6, #843FE8);
+  filter: blur(100px);
+  opacity: 0.5;
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+  animation: float 20s ease-in-out infinite reverse;
+  z-index: 0;
+}
+
+.text-muted {
+  color: var(--text-muted);
+}
+
+.dashboard-mockup {
+  background: var(--dashboard-bg);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 0;
+  box-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.9),
+              0 0 120px rgba(93, 95, 239, 0.1);
+  overflow: hidden;
+  position: relative;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+.stat-card {
+  background: rgba(93, 95, 239, 0.08);
+  border: 1px solid rgba(93, 95, 239, 0.2);
+  border-radius: 16px;
+  padding: 20px;
+  text-align: center;
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+  background: rgba(93, 95, 239, 0.12);
+  transform: translateY(-2px);
 }

@@ -1,0 +1,92 @@
+{
+  "metadata": {
+    "title": "Invoo - Compliant Invoice Management",
+    "description": "Create and send compliant invoices in 30 seconds. Perfect for freelancers and gestorías."
+  },
+  "nav": {
+    "services": "Services",
+    "resources": "Resources",
+    "pricing": "Pricing",
+    "about": "About Us",
+    "login": "Login",
+    "getStarted": "Get Started"
+  },
+  "hero": {
+    "title": "Create and send",
+    "titleHighlight": "Compliant Invoices",
+    "titleEnd": "in 30 seconds.",
+    "subtitle": "Easily handle invoices with automatic compliance checks, instant sending, and professional templates. Perfect for freelancers and businesses.",
+    "cta": "Get Started Free"
+  },
+  "valueProps": {
+    "title": "Why freelancers and gestorías should choose Invoo",
+    "saveTime": {
+      "title": "Save time",
+      "desc": "Automatic invoice creation and sending in seconds"
+    },
+    "compliant": {
+      "title": "Always compliant",
+      "desc": "Updated with latest tax regulations automatically"
+    },
+    "customer": {
+      "title": "Customer-friendly",
+      "desc": "Easy payment options for your clients"
+    },
+    "demo": "Demo",
+    "getStarted": "Get Started"
+  },
+  "process": {
+    "title": "Invoicing made simple",
+    "step1": {
+      "title": "Create",
+      "desc": "Fast, simple and easy way to create professional invoices"
+    },
+    "step2": {
+      "title": "Review",
+      "desc": "All details automatically filled and compliance checked"
+    },
+    "step3": {
+      "title": "Send",
+      "desc": "Everything done in seconds, delivered instantly to clients"
+    },
+    "getStarted": "Get Started"
+  },
+  "features": {
+    "title": "More than invoicing",
+    "expense": "Track your expenses",
+    "tax": "Manage tax ready",
+    "dashboard": "Detailed dashboard",
+    "exports": "One-click exports",
+    "getStarted": "Get Started"
+  },
+  "gestorias": {
+    "title": "Built for gestorías",
+    "desc": "Manage multiple clients effortlessly from one centralized dashboard",
+    "getStarted": "Get Started"
+  },
+  "pricing": {
+    "title": "Fair and simple pricing",
+    "plan": "Freelancer",
+    "price": "€9.50",
+    "period": "/ month",
+    "subtitle": "Autonomos included",
+    "features": "Features:",
+    "trial": "7 days free trial"
+  },
+  "finalCta": {
+    "title": "Focus on your work. We'll handle the paperwork.",
+    "button": "Create your free account"
+  },
+  "footer": {
+    "company": "Modern invoice management platform for businesses",
+    "home": {
+      "title": "Home"
+    },
+    "services": {
+      "title": "Services"
+    },
+    "resources": {
+      "title": "Resources"
+    }
+  }
+}
