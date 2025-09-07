@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, Globe, ArrowRight } from "lucide-react";
+import { ChevronDown, Globe } from "lucide-react";
+import Button from "./ui/Button";
 
 interface NavigationProps {
   locale: string;
@@ -37,7 +38,7 @@ export default function Navigation({ locale }: NavigationProps) {
   };
 
   return (
-    <nav className="fixed top-0 w-full z-50  bg-black/80 backdrop-blur-xl border-b border-white/5">
+    <nav className="w-full bg-black/80 backdrop-blur-xl border-b border-white/5">
       <div className="w-full ">
         <div
           className="flex items-center justify-between h-20"
@@ -138,13 +139,13 @@ export default function Navigation({ locale }: NavigationProps) {
             </button>
 
             {/* CTA Button */}
-            <Link
-              href="#waitlist"
-              className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-full text-sm font-medium transition-all duration-200 hover:shadow-lg hover:shadow-blue-600/25"
+            <Button 
+              href="#waitlist" 
+              variant="gradient"
+              showArrow={true}
             >
-              <span>Join the waiting list</span>
-              <ArrowRight className="w-4 h-4" />
-            </Link>
+              Join the waiting list
+            </Button>
           </div>
 
           {/* Mobile menu button */}
