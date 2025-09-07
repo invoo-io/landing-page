@@ -1,67 +1,143 @@
-import { getTranslations } from "next-intl/server";
-import { Twitter, Linkedin, Github } from "lucide-react";
+import Image from "next/image";
+import { Facebook, Linkedin, Twitter } from "lucide-react";
 
-export default async function Footer() {
-  const t = await getTranslations("footer");
-
+export default function Footer() {
   return (
-    <footer className="py-12 border-t border-white/10">
-      <div className="container mx-auto px-6">
-        <div className="grid md:grid-cols-4 gap-8 mb-8">
+    <footer style={{
+      backgroundColor: '#161616',
+      padding: '80px 24px 40px',
+      color: 'white'
+    }}>
+      <div style={{
+        maxWidth: '1200px',
+        margin: '0 auto'
+      }}>
+        {/* Main footer content */}
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: 'repeat(4, 1fr)',
+          gap: '64px',
+          marginBottom: '80px'
+        }}>
+          {/* Logo and description column */}
           <div>
-            <div className="flex items-center space-x-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-blue-500 to-purple-600 flex items-center justify-center">
-                <span className="text-white font-bold text-sm">I</span>
-              </div>
-              <span className="text-xl font-semibold">INVOO</span>
+            <div style={{
+              marginBottom: '24px'
+            }}>
+              <Image
+                src="/Logo.png"
+                alt="Invoo"
+                width={130}
+                height={60}
+              />
             </div>
-            <p className="text-sm text-white/60">
-              {t("company")}
+            <p style={{
+              fontSize: '14px',
+              color: '#9F9F9FB2',
+              lineHeight: '1.6'
+            }}>
+              The gestoría-friendly invoicing platform that connects freelancers, clients, and tax compliance in one seamless flow
             </p>
           </div>
 
+          {/* Invoo column */}
           <div>
-            <h3 className="font-semibold mb-4">Home</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-white/60 hover:text-white transition">Product</a></li>
-              <li><a href="#" className="text-sm text-white/60 hover:text-white transition">Pricing</a></li>
-              <li><a href="#" className="text-sm text-white/60 hover:text-white transition">Features</a></li>
+            <h3 style={{
+              fontSize: '18px',
+              fontWeight: 600,
+              marginBottom: '24px'
+            }}>
+              Invoo
+            </h3>
+            <ul style={{
+              listStyle: 'none',
+              padding: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '16px'
+            }}>
+              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>About Us</a></li>
+              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Terms of Use</a></li>
+              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Privacy Policy</a></li>
+              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>VeriFActu Compliance</a></li>
+              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Contact</a></li>
             </ul>
           </div>
 
+          {/* Services column */}
           <div>
-            <h3 className="font-semibold mb-4">Services</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-white/60 hover:text-white transition">For Freelancers</a></li>
-              <li><a href="#" className="text-sm text-white/60 hover:text-white transition">For Gestorías</a></li>
-              <li><a href="#" className="text-sm text-white/60 hover:text-white transition">API</a></li>
+            <h3 style={{
+              fontSize: '18px',
+              fontWeight: 600,
+              marginBottom: '24px'
+            }}>
+              Services
+            </h3>
+            <ul style={{
+              listStyle: 'none',
+              padding: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '16px'
+            }}>
+              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>For Freelancers</a></li>
+              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>For Gestoría</a></li>
+              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Pricing</a></li>
             </ul>
           </div>
 
+          {/* Resources column */}
           <div>
-            <h3 className="font-semibold mb-4">Resources</h3>
-            <ul className="space-y-2">
-              <li><a href="#" className="text-sm text-white/60 hover:text-white transition">Documentation</a></li>
-              <li><a href="#" className="text-sm text-white/60 hover:text-white transition">Help Center</a></li>
-              <li><a href="#" className="text-sm text-white/60 hover:text-white transition">Contact</a></li>
+            <h3 style={{
+              fontSize: '18px',
+              fontWeight: 600,
+              marginBottom: '24px'
+            }}>
+              Resources
+            </h3>
+            <ul style={{
+              listStyle: 'none',
+              padding: 0,
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '16px'
+            }}>
+              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>FAQs</a></li>
+              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Blog</a></li>
+              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Net Salary Calculator</a></li>
+              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Freelancer Quota Calculator</a></li>
             </ul>
           </div>
         </div>
 
-        <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-          <p className="text-sm text-white/60">
-            © 2024 Invoo. All rights reserved.
+        {/* Bottom section */}
+        <div style={{
+          display: 'flex',
+          justifyContent: 'space-between',
+          alignItems: 'center',
+          paddingTop: '32px',
+          borderTop: '1px solid rgba(159, 159, 159, 0.2)'
+        }}>
+          <p style={{
+            fontSize: '13px',
+            color: '#9F9F9FB2'
+          }}>
+            © 2025 Invoo.es. Todos los derechos reservados. Hecho con amor para autónomos españoles
           </p>
           
-          <div className="flex space-x-4">
-            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition">
-              <Twitter size={18} className="text-white/60" />
+          {/* Social icons */}
+          <div style={{
+            display: 'flex',
+            gap: '24px'
+          }}>
+            <a href="#" style={{ color: '#9F9F9FB2' }}>
+              <Twitter size={20} />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition">
-              <Linkedin size={18} className="text-white/60" />
+            <a href="#" style={{ color: '#9F9F9FB2' }}>
+              <Facebook size={20} />
             </a>
-            <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-white/10 transition">
-              <Github size={18} className="text-white/60" />
+            <a href="#" style={{ color: '#9F9F9FB2' }}>
+              <Linkedin size={20} />
             </a>
           </div>
         </div>
