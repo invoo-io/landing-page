@@ -168,7 +168,7 @@ export default function Navigation({ locale }: NavigationProps) {
 
             {/* Direct Links */}
             <Link
-              href="#pricing"
+              href={`/${locale}/pricing`}
               className="text-white/70 hover:text-white transition-colors text-sm font-medium"
             >
               Pricing

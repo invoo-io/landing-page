@@ -21,57 +21,57 @@ export default async function GestoriasPage({
       <HeroSection 
         title={
           <>
-            <span style={{color: '#EFEFF5'}}>Invoicing </span>
+            <span style={{color: '#EFEFF5'}}>Less paperwork, </span>
             
-            <GradientText>without the stress</GradientText>
+            <GradientText>more advising</GradientText>
           </>
         }
-        paragraph="Professional invoices, automatic VeriFactu compliance, and instant delivery to AEAT, your client, and your gestoría"
+        paragraph="Invoo gives gestoría real-time access to client invoices and expenses, always VeriFactu compliant, always free"
         buttonText="Get Started"
         buttonHref="#contact"
       />
       <HeroImageSection />
       <BuildForGestoriasSection 
-        title="Create professional invoices in seconds"
-        paragraph="Skip the templates and Excel hacks. Invoo generates polished PDFs that are always correctly numbered and ready to send."
+        title="Always up to date"
+        paragraph="No more chasing clients for invoices. See every invoice and expense the moment it's created."
         features={[
-          "Autofilled client data",
-          "Professional PDF templates",
-          "Automatic numbering"
+          "Instant invoice + expense sync",
+          "VeriFActu QR included automatically",
+          "Alerts when new activity appears"
         ]}
         buttonText="Join the waiting list"
       />
       <BuildForGestoriasSection 
-        title="Compliance, handled for you"
-        paragraph="Every invoice includes the official VeriFActu QR and is submitted to AEAT in the background, so you never worry about errors or fines."
+        title="Data you can actually use"
+        paragraph="Download clean CSVs or XMLs ready for your accounting software, no retyping required"
         features={[
-          "Automatic QR generation",
-          "Secure AEAT submission",
-          "Full audit trail with status checks"
+          "One-click CSV export",
+          "Quarterly or monthly batch downloads",
+          "XML exports aligned with AEAT standards"
         ]}
         buttonText="Join the waiting list"
         imagePosition="left"
         showImagePlaceholder={true}
       />
       <BuildForGestoriasSection 
-        title="Your finances in one simple view"
-        paragraph="From daily expenses to quarterly models, Invoo centralizes everything so you can see the big picture without switching tools."
+        title="Tax periods in seconds"
+        paragraph="Pre-calculated Modelo 130 and 303 summaries per client help you prepare declarations faster"
         features={[
-          "Snap and log expenses",
-          "Automatic monthly summaries",
-          "Pre-calculated Modelo 130/303"
+          "Auto-generated summaries.",
+          "Clear breakdowns of bases and IVA",
+          "Easy to review and validate"
         ]}
         buttonText="Join the waiting list"
         imagePosition="right"
         showImagePlaceholder={true}
       />
       <BuildForGestoriasSection 
-        title="Share effortlessly with your gestoría"
-        paragraph="No more chasing or forwarding PDFs. Your gestoría sees invoices and expenses in real time, at no cost to them."
+        title="Zero cost, zero risk"
+        paragraph="Invoo is free for gestorías. Clients pay their subscription, you get the tools, no barriers to adoption"
         features={[
-          "Direct access for your gestoría",
-          "No email chains or retyping",
-          "Free for gestorías"
+          "Free dashboard access",
+          "Unlimited clients",
+          "Built for collaboration, not replacement"
         ]}
         buttonText="Join the waiting list"
         imagePosition="left"
