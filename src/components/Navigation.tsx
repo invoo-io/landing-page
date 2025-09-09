@@ -14,11 +14,8 @@ export default function Navigation({ locale }: NavigationProps) {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
 
   const services = [
-    "Web Development",
-    "Mobile Apps",
-    "Cloud Solutions",
-    "AI Integration",
-    "Consulting",
+    { name: "Freelancers", href: `/${locale}/freelancers` },
+    { name: "Gestorías", href: `/${locale}/gestorias` }
   ];
 
   const resources = [
@@ -75,14 +72,41 @@ export default function Navigation({ locale }: NavigationProps) {
               </button>
 
               {activeDropdown === "services" && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-black/95 backdrop-blur-xl border border-white/10 rounded-lg shadow-xl py-2">
-                  {services.map((service) => (
+                <div 
+                  className="absolute top-full left-0 mt-2 min-w-[200px]"
+                  style={{
+                    backgroundColor: 'rgba(20, 20, 20, 0.98)',
+                    backdropFilter: 'blur(20px)',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    borderRadius: '12px',
+                    boxShadow: '0 10px 40px rgba(0, 0, 0, 0.8), 0 2px 10px rgba(0, 0, 0, 0.5)',
+                    padding: '8px 0',
+                    animation: 'slideDown 0.2s ease-out'
+                  }}
+                >
+                  {services.map((service, index) => (
                     <Link
-                      key={service}
-                      href="#"
-                      className="block px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                      key={service.name}
+                      href={service.href}
+                      className="relative block"
+                      style={{
+                        padding: '12px 24px',
+                        fontSize: '14px',
+                        fontWeight: '500',
+                        color: 'rgba(255, 255, 255, 0.9)',
+                        transition: 'all 0.2s ease',
+                        textDecoration: 'none'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
+                        e.currentTarget.style.color = '#ffffff';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = 'transparent';
+                        e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)';
+                      }}
                     >
-                      {service}
+                      {service.name}
                     </Link>
                   ))}
                 </div>
@@ -101,12 +125,39 @@ export default function Navigation({ locale }: NavigationProps) {
               </button>
 
               {activeDropdown === "resources" && (
-                <div className="absolute top-full left-0 mt-2 w-48 bg-black/95 backdrop-blur-xl border border-white/10 rounded-lg shadow-xl py-2">
+                <div 
+                  className="absolute top-full left-0 mt-2 min-w-[200px]"
+                  style={{
+                    backgroundColor: 'rgba(20, 20, 20, 0.98)',
+                    backdropFilter: 'blur(20px)',
+                    border: '1px solid rgba(255, 255, 255, 0.08)',
+                    borderRadius: '12px',
+                    boxShadow: '0 10px 40px rgba(0, 0, 0, 0.8), 0 2px 10px rgba(0, 0, 0, 0.5)',
+                    padding: '8px 0',
+                    animation: 'slideDown 0.2s ease-out'
+                  }}
+                >
                   {resources.map((resource) => (
                     <Link
                       key={resource}
                       href="#"
-                      className="block px-4 py-2 text-sm text-white/70 hover:text-white hover:bg-white/5 transition-colors"
+                      className="relative block"
+                      style={{
+                        padding: '12px 24px',
+                        fontSize: '14px',
+                        fontWeight: '500',
+                        color: 'rgba(255, 255, 255, 0.9)',
+                        transition: 'all 0.2s ease',
+                        textDecoration: 'none'
+                      }}
+                      onMouseEnter={(e) => {
+                        e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
+                        e.currentTarget.style.color = '#ffffff';
+                      }}
+                      onMouseLeave={(e) => {
+                        e.currentTarget.style.backgroundColor = 'transparent';
+                        e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)';
+                      }}
                     >
                       {resource}
                     </Link>

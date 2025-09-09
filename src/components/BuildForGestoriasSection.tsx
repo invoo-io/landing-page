@@ -2,12 +2,115 @@ import Image from "next/image";
 import BuildForGestoriasButton from "./BuildForGestoriasButton";
 import { Check } from "lucide-react";
 
-export default function BuildForGestoriasSection() {
-  const features = [
-    "Real-time multi-client data",
-    "Bulk CSV export",
-    "Quarterly tax summaries"
-  ];
+interface BuildForGestoriasSectionProps {
+  title: string;
+  paragraph: string;
+  features: string[];
+  buttonText: string;
+  buttonOnClick?: () => void;
+  imageSrc?: string;
+  imageAlt?: string;
+  imagePosition?: 'left' | 'right';
+  showImagePlaceholder?: boolean;
+}
+
+export default function BuildForGestoriasSection({
+  title,
+  paragraph,
+  features,
+  buttonText,
+  buttonOnClick,
+  imageSrc,
+  imageAlt,
+  imagePosition = 'right',
+  showImagePlaceholder = false
+}: BuildForGestoriasSectionProps) {
+  const textContent = (
+    <div style={{
+      flex: (imageSrc || showImagePlaceholder) ? '0 0 600px' : '0 0 800px',
+      paddingLeft: imagePosition === 'right' ? '40px' : '0',
+      paddingRight: imagePosition === 'left' ? '40px' : '0'
+    }}>
+      <h2 style={{
+        fontSize: '48px',
+        fontWeight: 600,
+        color: 'white',
+        marginBottom: '24px',
+        lineHeight: '1.2'
+      }}>
+        {title}
+      </h2>
+      
+      <p style={{
+        fontSize: '16px',
+        color: '#9F9F9FB2',
+        lineHeight: '1.6',
+        marginBottom: '32px'
+      }}>
+        {paragraph}
+      </p>
+
+      {/* Features List */}
+      <div style={{
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '16px'
+      }}>
+        {features.map((feature, index) => (
+          <div key={index} style={{
+            display: 'flex',
+            alignItems: 'center',
+            gap: '12px'
+          }}>
+            <Check size={20} style={{ color: '#22C55E' }} />
+            <span style={{
+              fontSize: '16px',
+              color: 'white'
+            }}>
+              {feature}
+            </span>
+          </div>
+        ))}
+      </div>
+
+      <BuildForGestoriasButton text={buttonText} onClick={buttonOnClick} />
+    </div>
+  );
+
+  const imageContent = imageSrc ? (
+    <div style={{
+      position: 'absolute',
+      [imagePosition === 'right' ? 'right' : 'left']: '-10%',
+      top: '50%',
+      transform: 'translateY(-50%)',
+      width: '600px',
+      height: '400px'
+    }}>
+      <Image
+        src={imageSrc}
+        alt={imageAlt || ''}
+        width={800}
+        height={500}
+        style={{ 
+          objectFit: 'contain',
+          width: '100%',
+          height: '100%'
+        }}
+        priority
+      />
+    </div>
+  ) : showImagePlaceholder ? (
+    <div style={{
+      position: 'absolute',
+      [imagePosition === 'right' ? 'right' : 'left']: '10%',
+      top: '50%',
+      transform: 'translateY(-50%)',
+      width: '400px',
+      height: '350px',
+      borderRadius: '24px',
+      backgroundColor: 'transparent'
+    }} />
+  ) : null;
 
   return (
     <section style={{ 
@@ -28,80 +131,11 @@ export default function BuildForGestoriasSection() {
         gap: '80px',
         maxWidth: '1200px',
         width: '100%',
-        padding: '0 24px'
+        padding: '0 24px',
+        flexDirection: imagePosition === 'left' ? 'row-reverse' : 'row'
       }}>
-        {/* Left Column - Text Content */}
-        <div style={{
-          flex: '0 0 450px',
-          paddingLeft: '40px'
-        }}>
-          <h2 style={{
-            fontSize: '48px',
-            fontWeight: 600,
-            color: 'white',
-            marginBottom: '24px',
-            lineHeight: '1.2'
-          }}>
-            Built for gestorías
-          </h2>
-          
-          <p style={{
-            fontSize: '16px',
-            color: '#9F9F9FB2',
-            lineHeight: '1.6',
-            marginBottom: '32px'
-          }}>
-            Invoo is not just for freelancers. Gestorías get real-time access to client invoices and expenses, without chasing or retrying. Free, secure, and always VeriFActu compliant.
-          </p>
-
-          {/* Features List */}
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '16px'
-          }}>
-            {features.map((feature, index) => (
-              <div key={index} style={{
-                display: 'flex',
-                alignItems: 'center',
-                gap: '12px'
-              }}>
-                <Check size={20} style={{ color: '#22C55E' }} />
-                <span style={{
-                  fontSize: '16px',
-                  color: 'white'
-                }}>
-                  {feature}
-                </span>
-              </div>
-            ))}
-          </div>
-
-          <BuildForGestoriasButton />
-        </div>
-
-        {/* Right Column - Dashboard Image */}
-        <div style={{
-          position: 'absolute',
-          right: '-20%',
-          top: '50%',
-          transform: 'translateY(-50%)',
-          width: '800px',
-          height: '500px'
-        }}>
-          <Image
-            src="/productdashboard.png"
-            alt="Gestorías Dashboard"
-            width={800}
-            height={500}
-            style={{ 
-              objectFit: 'contain',
-              width: '100%',
-              height: '100%'
-            }}
-            priority
-          />
-        </div>
+        {textContent}
+        {imageContent}
       </div>
     </section>
   );

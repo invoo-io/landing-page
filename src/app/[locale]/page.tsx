@@ -9,6 +9,7 @@ import BuildForGestoriasSection from "@/components/BuildForGestoriasSection";
 import PricingSection from "@/components/PricingSection";
 import FocusSection from "@/components/FocusSection";
 import Footer from "@/components/Footer";
+import GradientText from "@/components/ui/GradientText";
 
 export default async function Home({
   params,
@@ -21,12 +22,37 @@ export default async function Home({
   return (
     <div className="min-h-screen bg-black">
       <Navigation locale={locale} />
-      <HeroSection />
+      <HeroSection 
+        title={
+          <>
+            <span style={{color: '#EFEFF5'}}>Create and send</span>{" "}
+            <GradientText>Compliant</GradientText>
+            <br />
+            <GradientText>Invoices</GradientText>{" "}
+            <span style={{color: '#EFEFF5'}}>in 30 seconds.</span>
+          </>
+        }
+        paragraph="Invoo helps freelancers and gestorías work faster together: VeriFActu-ready, professional PDFs, instant sharing, and automatic tax summaries."
+        buttonText="Join the waiting list"
+        buttonHref="#waitlist"
+      />
       <HeroImageSection />
       <WhyChooseSection />
       <InvoicingSection />
       <MoreThanInvoiceSection />
-      <BuildForGestoriasSection />
+      <BuildForGestoriasSection 
+        title="Built for gestorías"
+        paragraph="Invoo is not just for freelancers. Gestorías get real-time access to client invoices and expenses, without chasing or retrying. Free, secure, and always VeriFActu compliant."
+        features={[
+          "Real-time multi-client data",
+          "Bulk CSV export",
+          "Quarterly tax summaries"
+        ]}
+        buttonText="Learn More"
+        imageSrc="/productdashboard.png"
+        imageAlt="Gestorías Dashboard"
+        imagePosition="right"
+      />
       <PricingSection />
       <FocusSection />
       <Footer />

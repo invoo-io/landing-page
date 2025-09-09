@@ -2,9 +2,15 @@
 
 import { ArrowRight } from "lucide-react";
 
-export default function BuildForGestoriasButton() {
+interface BuildForGestoriasButtonProps {
+  text: string;
+  onClick?: () => void;
+}
+
+export default function BuildForGestoriasButton({ text, onClick }: BuildForGestoriasButtonProps) {
   return (
     <button
+      onClick={onClick}
       style={{ 
         padding: '0 24px',
         height: '47px',
@@ -29,7 +35,7 @@ export default function BuildForGestoriasButton() {
         e.currentTarget.style.transform = 'scale(1)';
       }}
     >
-      Learn More
+      {text}
       <ArrowRight size={18} />
     </button>
   );
