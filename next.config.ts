@@ -9,6 +9,7 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
+  basePath: '/landing-page',
 };
 
 export default withNextIntl(nextConfig);
