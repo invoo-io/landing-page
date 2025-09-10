@@ -6,7 +6,7 @@ import Link from "next/link";
 import { ChevronDown, Globe, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "./ui/Button";
-import { getImagePath } from "@/lib/utils";
+import { getImagePath, getBasePath } from "@/lib/utils";
 
 interface NavigationProps {
   locale: string;
@@ -18,8 +18,8 @@ export default function Navigation({ locale }: NavigationProps) {
   const [mobileActiveDropdown, setMobileActiveDropdown] = useState<string | null>(null);
 
   const services = [
-    { name: "Freelancers", href: `/${locale}/freelancers` },
-    { name: "Gestorías", href: `/${locale}/gestorias` }
+    { name: "Freelancers", href: getBasePath(`/${locale}/freelancers`) },
+    { name: "Gestorías", href: getBasePath(`/${locale}/gestorias`) }
   ];
 
   const resources = [
@@ -63,7 +63,7 @@ export default function Navigation({ locale }: NavigationProps) {
           >
             {/* Logo */}
             <div className="flex items-center z-50">
-              <Link href="/" className="flex items-center">
+              <Link href={getBasePath("/")} className="flex items-center">
                 <Image
                   src={getImagePath("/Logo.png")}
                   alt="invoo"
@@ -185,7 +185,7 @@ export default function Navigation({ locale }: NavigationProps) {
 
               {/* Direct Links */}
               <Link
-                href={`/${locale}/pricing`}
+                href={getBasePath(`/${locale}/pricing`)}
                 className="text-white/70 hover:text-white transition-colors text-sm font-medium"
               >
                 Pricing
@@ -474,7 +474,7 @@ export default function Navigation({ locale }: NavigationProps) {
                     transition={{ duration: 0.3 }}
                   >
                     <Link
-                      href={`/${locale}/pricing`}
+                      href={getBasePath(`/${locale}/pricing`)}
                       onClick={() => setMobileMenuOpen(false)}
                       className="w-full text-white hover:bg-white/5 rounded-lg transition-colors block"
                       style={{

@@ -5,3 +5,11 @@ export function getImagePath(src: string): string {
   }
   return src;
 }
+
+export function getBasePath(path: string): string {
+  // In production on GitHub Pages, prepend the repository name
+  if (process.env.NODE_ENV === 'production') {
+    return `/landing-page${path}`;
+  }
+  return path;
+}
