@@ -9,7 +9,8 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: '/landing-page',
+  // Only use assetPrefix for GitHub Pages subdirectory
+  assetPrefix: process.env.NODE_ENV === 'production' ? '/landing-page' : '',
 };
 
 export default withNextIntl(nextConfig);
