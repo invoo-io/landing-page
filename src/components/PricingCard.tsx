@@ -98,13 +98,13 @@ export default function PricingCard({
           </div>
           
           {subtitle && (
-            <p style={{
+            <div style={{
               fontSize: '14px',
               color: 'rgba(255, 255, 255, 0.5)',
               marginTop: '8px'
             }}>
               {subtitle}
-            </p>
+            </div>
           )}
         </div>
 
