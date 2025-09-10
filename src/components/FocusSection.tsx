@@ -1,5 +1,6 @@
 import Image from "next/image";
 import FocusButton from "./FocusButton";
+import { getImagePath } from "@/lib/utils";
 
 export default function FocusSection() {
   return (
@@ -20,7 +21,7 @@ export default function FocusSection() {
         zIndex: 0
       }}>
         <Image
-          src="/focussectionbgimg.jpg"
+          src={getImagePath("/focussectionbgimg.jpg")}
           alt="Background"
           fill
           style={{ 

@@ -5,6 +5,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, Globe, Menu, X } from "lucide-react";
 import Button from "./ui/Button";
+import { getImagePath } from "@/lib/utils";
 
 interface NavigationProps {
   locale: string;
@@ -49,7 +50,7 @@ export default function Navigation({ locale }: NavigationProps) {
           <div className="flex items-center">
             <Link href="/" className="flex items-center">
               <Image
-                src="/Logo.png"
+                src={getImagePath("/Logo.png")}
                 alt="invoo"
                 width={120}
                 height={32}

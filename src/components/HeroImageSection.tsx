@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { getImagePath } from "@/lib/utils";
 
 export default function HeroImageSection() {
   return (
@@ -6,7 +7,7 @@ export default function HeroImageSection() {
       {/* Background Image as absolute element */}
       <div className="absolute inset-0 w-full h-full">
         <Image
-          src="/heroimagesection.png"
+          src={getImagePath("/heroimagesection.png")}
           alt="Background"
           fill
           className="object-cover"
@@ -26,7 +27,7 @@ export default function HeroImageSection() {
         {/* Dashboard Image */}
         <div className="relative w-full">
           <Image
-            src="/productdashboard.png"
+            src={getImagePath("/productdashboard.png")}
             alt="Invoo Dashboard"
             width={1200}
             height={700}

@@ -10,6 +10,7 @@ import PricingSection from "@/components/PricingSection";
 import FocusSection from "@/components/FocusSection";
 import Footer from "@/components/Footer";
 import GradientText from "@/components/ui/GradientText";
+import { getImagePath } from "@/lib/utils";
 
 export default async function Home({
   params,
@@ -49,7 +50,7 @@ export default async function Home({
           "Quarterly tax summaries"
         ]}
         buttonText="Learn More"
-        imageSrc="/productdashboard.png"
+        imageSrc={getImagePath("/productdashboard.png")}
         imageAlt="Gestorías Dashboard"
         imagePosition="right"
       />

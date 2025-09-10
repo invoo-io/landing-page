@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { Facebook, Linkedin, Twitter } from "lucide-react";
+import { getImagePath } from "@/lib/utils";
 
 export default function Footer() {
   return (
@@ -25,7 +26,7 @@ export default function Footer() {
               marginBottom: '24px'
             }}>
               <Image
-                src="/Logo.png"
+                src={getImagePath("/Logo.png")}
                 alt="Invoo"
                 width={130}
                 height={60}

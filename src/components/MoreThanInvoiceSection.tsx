@@ -1,5 +1,6 @@
 import Image from "next/image";
 import MoreThanInvoiceButton from "./MoreThanInvoiceButton";
+import { getImagePath } from "@/lib/utils";
 
 export default function MoreThanInvoiceSection() {
   const features = [
@@ -41,7 +42,7 @@ export default function MoreThanInvoiceSection() {
         height: '867px'
       }}>
         <Image
-          src="/morethaninvoicebgimg.png"
+          src={getImagePath("/morethaninvoicebgimg.png")}
           alt="Background"
           width={634}
           height={867}
