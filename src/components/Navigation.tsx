@@ -3,7 +3,7 @@
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronDown, Globe } from "lucide-react";
+import { ChevronDown, Globe, Menu, X } from "lucide-react";
 import Button from "./ui/Button";
 
 interface NavigationProps {
@@ -12,6 +12,7 @@ interface NavigationProps {
 
 export default function Navigation({ locale }: NavigationProps) {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   const services = [
     { name: "Freelancers", href: `/${locale}/freelancers` },
@@ -201,23 +202,110 @@ export default function Navigation({ locale }: NavigationProps) {
 
           {/* Mobile menu button */}
           <div className="lg:hidden">
-            <button className="text-white/70 hover:text-white p-2">
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                stroke="currentColor"
-                viewBox="0 0 24 24"
-              >
-                <path
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  strokeWidth={2}
-                  d="M4 6h16M4 12h16M4 18h16"
-                />
-              </svg>
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="text-white/70 hover:text-white p-2"
+            >
+              {mobileMenuOpen ? (
+                <X className="w-6 h-6" />
+              ) : (
+                <Menu className="w-6 h-6" />
+              )}
             </button>
           </div>
         </div>
+        
+        {/* Mobile menu panel */}
+        {mobileMenuOpen && (
+          <div className="lg:hidden border-t border-white/5">
+            <div className="px-4 py-6 space-y-4">
+              {/* Services dropdown for mobile */}
+              <div>
+                <button 
+                  onClick={() => setActiveDropdown(activeDropdown === "services" ? null : "services")}
+                  className="flex items-center justify-between w-full text-white/70 hover:text-white transition-colors text-sm font-medium py-2"
+                >
+                  <span>Services</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === "services" ? "rotate-180" : ""}`} />
+                </button>
+                {activeDropdown === "services" && (
+                  <div className="pl-4 mt-2 space-y-2">
+                    {services.map((service) => (
+                      <Link
+                        key={service.name}
+                        href={service.href}
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block py-2 text-white/70 hover:text-white transition-colors text-sm"
+                      >
+                        {service.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Resources dropdown for mobile */}
+              <div>
+                <button 
+                  onClick={() => setActiveDropdown(activeDropdown === "resources" ? null : "resources")}
+                  className="flex items-center justify-between w-full text-white/70 hover:text-white transition-colors text-sm font-medium py-2"
+                >
+                  <span>Resources</span>
+                  <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === "resources" ? "rotate-180" : ""}`} />
+                </button>
+                {activeDropdown === "resources" && (
+                  <div className="pl-4 mt-2 space-y-2">
+                    {resources.map((resource) => (
+                      <Link
+                        key={resource}
+                        href="#"
+                        onClick={() => setMobileMenuOpen(false)}
+                        className="block py-2 text-white/70 hover:text-white transition-colors text-sm"
+                      >
+                        {resource}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
+
+              {/* Direct links for mobile */}
+              <Link
+                href={`/${locale}/pricing`}
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-2 text-white/70 hover:text-white transition-colors text-sm font-medium"
+              >
+                Pricing
+              </Link>
+
+              <Link
+                href="#about"
+                onClick={() => setMobileMenuOpen(false)}
+                className="block py-2 text-white/70 hover:text-white transition-colors text-sm font-medium"
+              >
+                About Us
+              </Link>
+
+              {/* Language selector for mobile */}
+              <button className="flex items-center gap-2 py-2 text-white/70 hover:text-white transition-colors">
+                <Globe className="w-5 h-5" />
+                <span className="text-sm">Language</span>
+              </button>
+
+              {/* CTA Button for mobile */}
+              <div className="pt-4">
+                <Button 
+                  href="#waitlist" 
+                  variant="gradient"
+                  showArrow={true}
+                  className="w-full"
+                >
+                  Join the waiting list
+                </Button>
+              </div>
+            </div>
+          </div>
+        )}
       </div>
     </nav>
   );
