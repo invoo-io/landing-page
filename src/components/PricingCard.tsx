@@ -16,7 +16,7 @@ interface PricingCardProps {
   buttonOnClick?: () => void;
   features: string[];
   isHighlighted?: boolean;
-  subtitle?: string;
+  subtitle?: string | React.ReactNode;
 }
 
 export default function PricingCard({
@@ -113,11 +113,7 @@ export default function PricingCard({
             href={buttonHref}
             onClick={buttonOnClick}
             variant={buttonVariant}
-            style={{
-              width: '100%',
-              justifyContent: 'center',
-              padding: '14px 24px'
-            }}
+            className="w-full justify-center"
           >
             {buttonText}
           </Button>

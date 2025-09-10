@@ -50,7 +50,7 @@ export default function FocusSection() {
           color: 'white',
           marginBottom: '24px'
         }}>
-          Focus on your work. We'll handle the paperwork.
+          Focus on your work. We&apos;ll handle the paperwork.
         </h2>
         
         <p style={{
@@ -59,7 +59,7 @@ export default function FocusSection() {
           lineHeight: '1.6',
           marginBottom: '48px'
         }}>
-          Join other freelancers who are getting ready for VeriFActu with a tool designed for Spain's autónomos
+          Join other freelancers who are getting ready for VeriFActu with a tool designed for Spain&apos;s autónomos
         </p>
 
         <div style={{ display: 'flex', justifyContent: 'center' }}>

@@ -84,7 +84,7 @@ export default function Navigation({ locale }: NavigationProps) {
                     animation: 'slideDown 0.2s ease-out'
                   }}
                 >
-                  {services.map((service, index) => (
+                  {services.map((service) => (
                     <Link
                       key={service.name}
                       href={service.href}
