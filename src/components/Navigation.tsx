@@ -556,12 +556,7 @@ export default function Navigation({ locale }: NavigationProps) {
                       href="#waitlist" 
                       variant="gradient"
                       showArrow={true}
-                      className="w-full"
-                      style={{
-                        display: 'flex',
-                        justifyContent: 'center',
-                        alignItems: 'center'
-                      }}
+                      className="w-full flex justify-center items-center"
                     >
                       Join the waiting list
                     </Button>

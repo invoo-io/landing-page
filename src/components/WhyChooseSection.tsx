@@ -1,20 +1,21 @@
 import Image from "next/image";
 import WhyChooseButtons from "./WhyChooseButtons";
+import { getImagePath } from "@/lib/utils";
 
 export default function WhyChooseSection() {
   const features = [
     {
-      image: "/clock.png",
+      image: getImagePath("/clock.png"),
       title: "Save time",
       description: "Create and send invoices in 30 seconds: no Excel, no Word."
     },
     {
-      image: "/paper.png",
+      image: getImagePath("/paper.png"),
       title: "Always compliant",
       description: "Automatic VeriFActu compliance, QR included, no stress with AEAT."
     },
     {
-      image: "/personbook.png",
+      image: getImagePath("/personbook.png"),
       title: "Gestoría-friendly",
       description: "Share invoices and expenses directly with your gestoría. No more retyping."
     }
