@@ -1,9 +1,10 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { ChevronDown, Globe, Menu, X } from "lucide-react";
+import { motion, AnimatePresence } from "framer-motion";
 import Button from "./ui/Button";
 import { getImagePath } from "@/lib/utils";
 
@@ -14,6 +15,7 @@ interface NavigationProps {
 export default function Navigation({ locale }: NavigationProps) {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const [mobileActiveDropdown, setMobileActiveDropdown] = useState<string | null>(null);
 
   const services = [
     { name: "Freelancers", href: `/${locale}/freelancers` },
@@ -36,207 +38,90 @@ export default function Navigation({ locale }: NavigationProps) {
     setActiveDropdown(null);
   };
 
+  // Prevent body scroll when mobile menu is open
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   return (
-    <nav className="w-full bg-black/80 backdrop-blur-xl border-b border-white/5">
-      <div className="w-full ">
-        <div
-          className="flex items-center justify-between h-20"
-          style={{
-            paddingRight: "20px",
-            paddingLeft: "20px",
-          }}
-        >
-          {/* Logo */}
-          <div className="flex items-center">
-            <Link href="/" className="flex items-center">
-              <Image
-                src={getImagePath("/Logo.png")}
-                alt="invoo"
-                width={120}
-                height={32}
-                className="h-8 w-auto"
-                priority
-              />
-            </Link>
-          </div>
-
-          {/* Center Navigation - with better spacing */}
-          <div className="hidden lg:flex items-center gap-12">
-            {/* Services Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => handleMouseEnter("services")}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button className="flex items-center gap-1.5 text-white/70 hover:text-white transition-colors text-sm font-medium">
-                <span>Services</span>
-                <ChevronDown className="w-4 h-4" />
-              </button>
-
-              {activeDropdown === "services" && (
-                <div 
-                  className="absolute top-full left-0 mt-2 min-w-[200px]"
-                  style={{
-                    backgroundColor: 'rgba(20, 20, 20, 0.98)',
-                    backdropFilter: 'blur(20px)',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
-                    borderRadius: '12px',
-                    boxShadow: '0 10px 40px rgba(0, 0, 0, 0.8), 0 2px 10px rgba(0, 0, 0, 0.5)',
-                    padding: '8px 0',
-                    animation: 'slideDown 0.2s ease-out'
-                  }}
-                >
-                  {services.map((service) => (
-                    <Link
-                      key={service.name}
-                      href={service.href}
-                      className="relative block"
-                      style={{
-                        padding: '12px 24px',
-                        fontSize: '14px',
-                        fontWeight: '500',
-                        color: 'rgba(255, 255, 255, 0.9)',
-                        transition: 'all 0.2s ease',
-                        textDecoration: 'none'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
-                        e.currentTarget.style.color = '#ffffff';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = 'transparent';
-                        e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)';
-                      }}
-                    >
-                      {service.name}
-                    </Link>
-                  ))}
-                </div>
-              )}
+    <>
+      <nav className="w-full bg-black/80 backdrop-blur-xl border-b border-white/5 relative z-50">
+        <div className="w-full">
+          <div
+            className="flex items-center justify-between h-20"
+            style={{
+              paddingRight: "20px",
+              paddingLeft: "20px",
+            }}
+          >
+            {/* Logo */}
+            <div className="flex items-center z-50">
+              <Link href="/" className="flex items-center">
+                <Image
+                  src={getImagePath("/Logo.png")}
+                  alt="invoo"
+                  width={120}
+                  height={32}
+                  className="h-8 w-auto"
+                  priority
+                />
+              </Link>
             </div>
 
-            {/* Resources Dropdown */}
-            <div
-              className="relative"
-              onMouseEnter={() => handleMouseEnter("resources")}
-              onMouseLeave={handleMouseLeave}
-            >
-              <button className="flex items-center gap-1.5 text-white/70 hover:text-white transition-colors text-sm font-medium">
-                <span>Resources</span>
-                <ChevronDown className="w-4 h-4" />
-              </button>
-
-              {activeDropdown === "resources" && (
-                <div 
-                  className="absolute top-full left-0 mt-2 min-w-[200px]"
-                  style={{
-                    backgroundColor: 'rgba(20, 20, 20, 0.98)',
-                    backdropFilter: 'blur(20px)',
-                    border: '1px solid rgba(255, 255, 255, 0.08)',
-                    borderRadius: '12px',
-                    boxShadow: '0 10px 40px rgba(0, 0, 0, 0.8), 0 2px 10px rgba(0, 0, 0, 0.5)',
-                    padding: '8px 0',
-                    animation: 'slideDown 0.2s ease-out'
-                  }}
-                >
-                  {resources.map((resource) => (
-                    <Link
-                      key={resource}
-                      href="#"
-                      className="relative block"
-                      style={{
-                        padding: '12px 24px',
-                        fontSize: '14px',
-                        fontWeight: '500',
-                        color: 'rgba(255, 255, 255, 0.9)',
-                        transition: 'all 0.2s ease',
-                        textDecoration: 'none'
-                      }}
-                      onMouseEnter={(e) => {
-                        e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
-                        e.currentTarget.style.color = '#ffffff';
-                      }}
-                      onMouseLeave={(e) => {
-                        e.currentTarget.style.backgroundColor = 'transparent';
-                        e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)';
-                      }}
-                    >
-                      {resource}
-                    </Link>
-                  ))}
-                </div>
-              )}
-            </div>
-
-            {/* Direct Links */}
-            <Link
-              href={`/${locale}/pricing`}
-              className="text-white/70 hover:text-white transition-colors text-sm font-medium"
-            >
-              Pricing
-            </Link>
-
-            <Link
-              href="#about"
-              className="text-white/70 hover:text-white transition-colors text-sm font-medium"
-            >
-              About Us
-            </Link>
-          </div>
-
-          {/* Right Side Actions - with better spacing */}
-          <div className="flex items-center gap-8">
-            {/* Language Selector */}
-            <button className="flex items-center text-white/70 hover:text-white transition-colors p-2">
-              <Globe className="w-5 h-5" />
-            </button>
-
-            {/* CTA Button */}
-            <Button 
-              href="#waitlist" 
-              variant="gradient"
-              showArrow={true}
-            >
-              Join the waiting list
-            </Button>
-          </div>
-
-          {/* Mobile menu button */}
-          <div className="lg:hidden">
-            <button 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="text-white/70 hover:text-white p-2"
-            >
-              {mobileMenuOpen ? (
-                <X className="w-6 h-6" />
-              ) : (
-                <Menu className="w-6 h-6" />
-              )}
-            </button>
-          </div>
-        </div>
-        
-        {/* Mobile menu panel */}
-        {mobileMenuOpen && (
-          <div className="lg:hidden border-t border-white/5">
-            <div className="px-4 py-6 space-y-4">
-              {/* Services dropdown for mobile */}
-              <div>
-                <button 
-                  onClick={() => setActiveDropdown(activeDropdown === "services" ? null : "services")}
-                  className="flex items-center justify-between w-full text-white/70 hover:text-white transition-colors text-sm font-medium py-2"
-                >
+            {/* Center Navigation - Desktop */}
+            <div className="hidden lg:flex items-center gap-12">
+              {/* Services Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => handleMouseEnter("services")}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button className="flex items-center gap-1.5 text-white/70 hover:text-white transition-colors text-sm font-medium">
                   <span>Services</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === "services" ? "rotate-180" : ""}`} />
+                  <ChevronDown className="w-4 h-4" />
                 </button>
+
                 {activeDropdown === "services" && (
-                  <div className="pl-4 mt-2 space-y-2">
+                  <div 
+                    className="absolute top-full left-0 mt-2 min-w-[200px]"
+                    style={{
+                      backgroundColor: 'rgba(20, 20, 20, 0.98)',
+                      backdropFilter: 'blur(20px)',
+                      border: '1px solid rgba(255, 255, 255, 0.08)',
+                      borderRadius: '12px',
+                      boxShadow: '0 10px 40px rgba(0, 0, 0, 0.8), 0 2px 10px rgba(0, 0, 0, 0.5)',
+                      padding: '8px 0',
+                      animation: 'slideDown 0.2s ease-out'
+                    }}
+                  >
                     {services.map((service) => (
                       <Link
                         key={service.name}
                         href={service.href}
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="block py-2 text-white/70 hover:text-white transition-colors text-sm"
+                        className="relative block"
+                        style={{
+                          padding: '12px 24px',
+                          fontSize: '14px',
+                          fontWeight: '500',
+                          color: 'rgba(255, 255, 255, 0.9)',
+                          transition: 'all 0.2s ease',
+                          textDecoration: 'none'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
+                          e.currentTarget.style.color = '#ffffff';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = 'transparent';
+                          e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)';
+                        }}
                       >
                         {service.name}
                       </Link>
@@ -245,23 +130,51 @@ export default function Navigation({ locale }: NavigationProps) {
                 )}
               </div>
 
-              {/* Resources dropdown for mobile */}
-              <div>
-                <button 
-                  onClick={() => setActiveDropdown(activeDropdown === "resources" ? null : "resources")}
-                  className="flex items-center justify-between w-full text-white/70 hover:text-white transition-colors text-sm font-medium py-2"
-                >
+              {/* Resources Dropdown */}
+              <div
+                className="relative"
+                onMouseEnter={() => handleMouseEnter("resources")}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button className="flex items-center gap-1.5 text-white/70 hover:text-white transition-colors text-sm font-medium">
                   <span>Resources</span>
-                  <ChevronDown className={`w-4 h-4 transition-transform ${activeDropdown === "resources" ? "rotate-180" : ""}`} />
+                  <ChevronDown className="w-4 h-4" />
                 </button>
+
                 {activeDropdown === "resources" && (
-                  <div className="pl-4 mt-2 space-y-2">
+                  <div 
+                    className="absolute top-full left-0 mt-2 min-w-[200px]"
+                    style={{
+                      backgroundColor: 'rgba(20, 20, 20, 0.98)',
+                      backdropFilter: 'blur(20px)',
+                      border: '1px solid rgba(255, 255, 255, 0.08)',
+                      borderRadius: '12px',
+                      boxShadow: '0 10px 40px rgba(0, 0, 0, 0.8), 0 2px 10px rgba(0, 0, 0, 0.5)',
+                      padding: '8px 0',
+                      animation: 'slideDown 0.2s ease-out'
+                    }}
+                  >
                     {resources.map((resource) => (
                       <Link
                         key={resource}
                         href="#"
-                        onClick={() => setMobileMenuOpen(false)}
-                        className="block py-2 text-white/70 hover:text-white transition-colors text-sm"
+                        className="relative block"
+                        style={{
+                          padding: '12px 24px',
+                          fontSize: '14px',
+                          fontWeight: '500',
+                          color: 'rgba(255, 255, 255, 0.9)',
+                          transition: 'all 0.2s ease',
+                          textDecoration: 'none'
+                        }}
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
+                          e.currentTarget.style.color = '#ffffff';
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = 'transparent';
+                          e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)';
+                        }}
                       >
                         {resource}
                       </Link>
@@ -270,44 +183,395 @@ export default function Navigation({ locale }: NavigationProps) {
                 )}
               </div>
 
-              {/* Direct links for mobile */}
+              {/* Direct Links */}
               <Link
                 href={`/${locale}/pricing`}
-                onClick={() => setMobileMenuOpen(false)}
-                className="block py-2 text-white/70 hover:text-white transition-colors text-sm font-medium"
+                className="text-white/70 hover:text-white transition-colors text-sm font-medium"
               >
                 Pricing
               </Link>
 
               <Link
                 href="#about"
-                onClick={() => setMobileMenuOpen(false)}
-                className="block py-2 text-white/70 hover:text-white transition-colors text-sm font-medium"
+                className="text-white/70 hover:text-white transition-colors text-sm font-medium"
               >
                 About Us
               </Link>
+            </div>
 
-              {/* Language selector for mobile */}
-              <button className="flex items-center gap-2 py-2 text-white/70 hover:text-white transition-colors">
+            {/* Right Side Actions - Desktop */}
+            <div className="hidden lg:flex items-center gap-8">
+              {/* Language Selector */}
+              <button className="flex items-center text-white/70 hover:text-white transition-colors p-2">
                 <Globe className="w-5 h-5" />
-                <span className="text-sm">Language</span>
               </button>
 
-              {/* CTA Button for mobile */}
-              <div className="pt-4">
-                <Button 
-                  href="#waitlist" 
-                  variant="gradient"
-                  showArrow={true}
-                  className="w-full"
-                >
-                  Join the waiting list
-                </Button>
-              </div>
+              {/* CTA Button */}
+              <Button 
+                href="#waitlist" 
+                variant="gradient"
+                showArrow={true}
+              >
+                Join the waiting list
+              </Button>
+            </div>
+
+            {/* Mobile menu button */}
+            <div className="lg:hidden z-50">
+              <motion.button 
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="text-white/70 hover:text-white p-2 relative"
+                whileTap={{ scale: 0.95 }}
+              >
+                <AnimatePresence mode="wait">
+                  {mobileMenuOpen ? (
+                    <motion.div
+                      key="close"
+                      initial={{ rotate: -90, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: 90, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <X className="w-6 h-6" />
+                    </motion.div>
+                  ) : (
+                    <motion.div
+                      key="menu"
+                      initial={{ rotate: 90, opacity: 0 }}
+                      animate={{ rotate: 0, opacity: 1 }}
+                      exit={{ rotate: -90, opacity: 0 }}
+                      transition={{ duration: 0.2 }}
+                    >
+                      <Menu className="w-6 h-6" />
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </motion.button>
             </div>
           </div>
+        </div>
+      </nav>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {mobileMenuOpen && (
+          <>
+            {/* Backdrop */}
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="fixed inset-0 bg-black/60 backdrop-blur-sm z-40 lg:hidden"
+              onClick={() => setMobileMenuOpen(false)}
+            />
+
+            {/* Drawer */}
+            <motion.div
+              initial={{ x: '100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '100%' }}
+              transition={{ 
+                type: "spring",
+                damping: 30,
+                stiffness: 300
+              }}
+              className="fixed right-0 top-0 h-full w-[85%] max-w-[400px] bg-[#0a0a0a] border-l border-white/10 z-50 lg:hidden overflow-y-auto"
+            >
+              {/* Drawer Header */}
+              <div className="relative border-b border-white/5" style={{ padding: '24px' }}>
+                <div className="flex justify-center">
+                  <Image
+                    src={getImagePath("/Logo.png")}
+                    alt="invoo"
+                    width={100}
+                    height={28}
+                    className="h-7 w-auto"
+                  />
+                </div>
+                <motion.button
+                  onClick={() => setMobileMenuOpen(false)}
+                  className="absolute top-6 right-6 text-white/70 hover:text-white p-2"
+                  whileTap={{ scale: 0.9 }}
+                >
+                  <X className="w-5 h-5" />
+                </motion.button>
+              </div>
+
+              {/* Drawer Content */}
+              <div className="p-6">
+                <motion.div 
+                  style={{
+                    display: 'flex',
+                    flexDirection: 'column',
+                    gap: '12px'
+                  }}
+                  initial="closed"
+                  animate="open"
+                  variants={{
+                    open: {
+                      transition: { staggerChildren: 0.05 }
+                    },
+                    closed: {
+                      transition: { staggerChildren: 0.05, staggerDirection: -1 }
+                    }
+                  }}
+                >
+                  {/* Services Section */}
+                  <motion.div
+                    variants={{
+                      open: { opacity: 1, x: 0 },
+                      closed: { opacity: 0, x: 50 }
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <button
+                      onClick={() => setMobileActiveDropdown(mobileActiveDropdown === "services" ? null : "services")}
+                      className="relative w-full text-white hover:bg-white/5 rounded-lg transition-colors"
+                      style={{
+                        padding: '16px 24px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}
+                    >
+                      <span style={{
+                        fontSize: '16px',
+                        fontWeight: '500'
+                      }}>Services</span>
+                      <motion.div
+                        style={{
+                          position: 'absolute',
+                          right: '24px'
+                        }}
+                        animate={{ rotate: mobileActiveDropdown === "services" ? 180 : 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <ChevronDown className="w-4 h-4 text-white/50" />
+                      </motion.div>
+                    </button>
+                    
+                    <AnimatePresence>
+                      {mobileActiveDropdown === "services" && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="overflow-hidden"
+                        >
+                          <div style={{ padding: '12px 0' }}>
+                            {services.map((service, index) => (
+                              <motion.div
+                                key={service.name}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: index * 0.05 }}
+                                style={{ marginBottom: index < services.length - 1 ? '8px' : '0' }}
+                              >
+                                <Link
+                                  href={service.href}
+                                  onClick={() => setMobileMenuOpen(false)}
+                                  className="block text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-all"
+                                  style={{
+                                    padding: '12px 20px',
+                                    fontSize: '15px',
+                                    textAlign: 'center',
+                                    marginLeft: '16px',
+                                    marginRight: '16px'
+                                  }}
+                                >
+                                  {service.name}
+                                </Link>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+
+                  {/* Resources Section */}
+                  <motion.div
+                    variants={{
+                      open: { opacity: 1, x: 0 },
+                      closed: { opacity: 0, x: 50 }
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <button
+                      onClick={() => setMobileActiveDropdown(mobileActiveDropdown === "resources" ? null : "resources")}
+                      className="relative w-full text-white hover:bg-white/5 rounded-lg transition-colors"
+                      style={{
+                        padding: '16px 24px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center'
+                      }}
+                    >
+                      <span style={{
+                        fontSize: '16px',
+                        fontWeight: '500'
+                      }}>Resources</span>
+                      <motion.div
+                        style={{
+                          position: 'absolute',
+                          right: '24px'
+                        }}
+                        animate={{ rotate: mobileActiveDropdown === "resources" ? 180 : 0 }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <ChevronDown className="w-4 h-4 text-white/50" />
+                      </motion.div>
+                    </button>
+                    
+                    <AnimatePresence>
+                      {mobileActiveDropdown === "resources" && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="overflow-hidden"
+                        >
+                          <div style={{ padding: '12px 0' }}>
+                            {resources.map((resource, index) => (
+                              <motion.div
+                                key={resource}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: index * 0.05 }}
+                                style={{ marginBottom: index < resources.length - 1 ? '8px' : '0' }}
+                              >
+                                <Link
+                                  href="#"
+                                  onClick={() => setMobileMenuOpen(false)}
+                                  className="block text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-all"
+                                  style={{
+                                    padding: '12px 20px',
+                                    fontSize: '15px',
+                                    textAlign: 'center',
+                                    marginLeft: '16px',
+                                    marginRight: '16px'
+                                  }}
+                                >
+                                  {resource}
+                                </Link>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
+                  </motion.div>
+
+                  {/* Direct Links */}
+                  <motion.div
+                    variants={{
+                      open: { opacity: 1, x: 0 },
+                      closed: { opacity: 0, x: 50 }
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Link
+                      href={`/${locale}/pricing`}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="w-full text-white hover:bg-white/5 rounded-lg transition-colors block"
+                      style={{
+                        padding: '16px 24px',
+                        textAlign: 'center',
+                        fontSize: '16px',
+                        fontWeight: '500'
+                      }}
+                    >
+                      Pricing
+                    </Link>
+                  </motion.div>
+
+                  <motion.div
+                    variants={{
+                      open: { opacity: 1, x: 0 },
+                      closed: { opacity: 0, x: 50 }
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Link
+                      href="#about"
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="w-full text-white hover:bg-white/5 rounded-lg transition-colors block"
+                      style={{
+                        padding: '16px 24px',
+                        textAlign: 'center',
+                        fontSize: '16px',
+                        fontWeight: '500'
+                      }}
+                    >
+                      About Us
+                    </Link>
+                  </motion.div>
+
+                  {/* Divider */}
+                  <div className="my-6 border-t border-white/5" />
+
+                  {/* Language Button */}
+                  <motion.div
+                    variants={{
+                      open: { opacity: 1, x: 0 },
+                      closed: { opacity: 0, x: 50 }
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <button 
+                      className="w-full text-white hover:bg-white/5 rounded-lg transition-colors"
+                      style={{
+                        padding: '16px 24px',
+                        display: 'flex',
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        gap: '12px'
+                      }}
+                    >
+                      <Globe className="w-5 h-5 text-white/50" />
+                      <span style={{
+                        fontSize: '16px',
+                        fontWeight: '500'
+                      }}>Language</span>
+                    </button>
+                  </motion.div>
+
+                  {/* CTA Button */}
+                  <motion.div
+                    variants={{
+                      open: { opacity: 1, x: 0 },
+                      closed: { opacity: 0, x: 50 }
+                    }}
+                    transition={{ duration: 0.3 }}
+                    style={{
+                      paddingTop: '24px',
+                      display: 'flex',
+                      justifyContent: 'center'
+                    }}
+                  >
+                    <Button 
+                      href="#waitlist" 
+                      variant="gradient"
+                      showArrow={true}
+                      className="w-full"
+                      style={{
+                        display: 'flex',
+                        justifyContent: 'center',
+                        alignItems: 'center'
+                      }}
+                    >
+                      Join the waiting list
+                    </Button>
+                  </motion.div>
+                </motion.div>
+              </div>
+            </motion.div>
+          </>
         )}
-      </div>
-    </nav>
+      </AnimatePresence>
+    </>
   );
 }
