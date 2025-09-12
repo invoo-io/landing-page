@@ -40,7 +40,7 @@ export default function AboutContent() {
           </h3>
           <p style={paragraphStyles}>
             Invoo Invoicing should be simple, compliant, and collaborative. Our mission is to build a platform that eliminates the pain points for 
-            freelancers. Now, autonomos and professional invoices. We'll add expense management, AI agents, whether you work from Barcelona or Berlin.
+            freelancers. Now, autonomos and professional invoices. We&apos;ll add expense management, AI agents, whether you work from Barcelona or Berlin.
           </p>
         </div>
 
@@ -74,7 +74,7 @@ export default function AboutContent() {
         {/* We're just getting started section */}
         <div className="pt-8">
           <h3 style={headingStyles} className="mb-6">
-            We're just getting started
+            We&apos;re just getting started
           </h3>
           <p style={paragraphStyles}>
             Join us early and shape the platform that will transform how Spanish freelancers and gestorias work together. 

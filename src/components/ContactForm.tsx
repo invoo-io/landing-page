@@ -50,7 +50,7 @@ export default function ContactForm() {
           message: data.error || 'Something went wrong. Please try again.'
         });
       }
-    } catch (error) {
+    } catch {
       setSubmitStatus({
         type: 'error',
         message: 'Failed to send message. Please try again later.'
@@ -117,7 +117,7 @@ export default function ContactForm() {
           fontSize: '15px',
           lineHeight: '22px'
         }}>
-          We're here to help freelancers and gestorías. Choose the topic below or use the form
+          We&apos;re here to help freelancers and gestorías. Choose the topic below or use the form
         </p>
 
         <form onSubmit={handleSubmit}>
