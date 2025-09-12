@@ -192,7 +192,7 @@ export default function Navigation({ locale }: NavigationProps) {
               </Link>
 
               <Link
-                href="#about"
+                href={getBasePath(`/${locale}/about`)}
                 className="text-white/70 hover:text-white transition-colors text-sm font-medium"
               >
                 About Us
@@ -496,7 +496,7 @@ export default function Navigation({ locale }: NavigationProps) {
                     transition={{ duration: 0.3 }}
                   >
                     <Link
-                      href="#about"
+                      href={getBasePath(`/${locale}/about`)}
                       onClick={() => setMobileMenuOpen(false)}
                       className="w-full text-white hover:bg-white/5 rounded-lg transition-colors block"
                       style={{

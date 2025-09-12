@@ -4,7 +4,7 @@ import Button from "./ui/Button";
 interface HeroSectionProps {
   title: React.ReactNode;
   paragraph: string;
-  buttonText: string;
+  buttonText?: string;
   buttonHref?: string;
   buttonOnClick?: () => void;
 }
@@ -35,16 +35,18 @@ export default function HeroSection({
           {paragraph}
         </p>
         
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
-          <Button 
-            href={buttonHref}
-            onClick={buttonOnClick}
-            variant="gradient"
-            showArrow={true}
-          >
-            {buttonText}
-          </Button>
-        </div>
+        {buttonText && (buttonHref || buttonOnClick) && (
+          <div style={{ display: 'flex', justifyContent: 'center' }}>
+            <Button 
+              href={buttonHref}
+              onClick={buttonOnClick}
+              variant="gradient"
+              showArrow={true}
+            >
+              {buttonText}
+            </Button>
+          </div>
+        )}
       </div>
     </section>
   );
