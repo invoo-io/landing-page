@@ -61,7 +61,7 @@ export default function Footer() {
               <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Terms of Use</a></li>
               <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Privacy Policy</a></li>
               <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>VeriFActu Compliance</a></li>
-              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Contact</a></li>
+              <li><a href="/en/contact" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Contact</a></li>
             </ul>
           </div>
 

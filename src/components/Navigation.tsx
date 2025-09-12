@@ -197,6 +197,13 @@ export default function Navigation({ locale }: NavigationProps) {
               >
                 About Us
               </Link>
+
+              <Link
+                href={getBasePath(`/${locale}/contact`)}
+                className="text-white/70 hover:text-white transition-colors text-sm font-medium"
+              >
+                Contact
+              </Link>
             </div>
 
             {/* Right Side Actions - Desktop */}
@@ -507,6 +514,28 @@ export default function Navigation({ locale }: NavigationProps) {
                       }}
                     >
                       About Us
+                    </Link>
+                  </motion.div>
+
+                  <motion.div
+                    variants={{
+                      open: { opacity: 1, x: 0 },
+                      closed: { opacity: 0, x: 50 }
+                    }}
+                    transition={{ duration: 0.3 }}
+                  >
+                    <Link
+                      href={getBasePath(`/${locale}/contact`)}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="w-full text-white hover:bg-white/5 rounded-lg transition-colors block"
+                      style={{
+                        padding: '16px 24px',
+                        textAlign: 'center',
+                        fontSize: '16px',
+                        fontWeight: '500'
+                      }}
+                    >
+                      Contact
                     </Link>
                   </motion.div>
 
