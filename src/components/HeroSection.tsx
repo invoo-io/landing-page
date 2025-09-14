@@ -40,9 +40,9 @@ export default function HeroSection({
         
         {buttonText && (buttonHref || buttonOnClick) && (
           <div style={{ display: 'flex', justifyContent: 'center' }}>
-            {buttonText === "Join the waiting list" ? (
+            {(buttonText === "Join the waiting list" || buttonText === "Get Started") ? (
               <DrawerComponent
-                triggerText="Join the waiting list"
+                triggerText={buttonText}
                 title=""
                 description=""
               />

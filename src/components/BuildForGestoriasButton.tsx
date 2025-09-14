@@ -9,12 +9,12 @@ interface BuildForGestoriasButtonProps {
 }
 
 export default function BuildForGestoriasButton({ text, onClick }: BuildForGestoriasButtonProps) {
-  // If it's a "Learn More" button, use the drawer
-  if (text === "Learn More") {
+  // If it's a "Learn More" or "Join the waiting list" button, use the drawer
+  if (text === "Learn More" || text === "Join the waiting list") {
     return (
       <div style={{ marginTop: '32px' }}>
         <DrawerComponent
-          triggerText="Learn More"
+          triggerText={text}
           title=""
           description=""
         />
