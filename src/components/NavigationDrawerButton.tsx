@@ -2,7 +2,7 @@
 
 import { DrawerComponent } from "./DrawerComponent";
 
-export default function FocusButton() {
+export default function NavigationDrawerButton() {
   return (
     <DrawerComponent
       triggerText="Join the waiting list"

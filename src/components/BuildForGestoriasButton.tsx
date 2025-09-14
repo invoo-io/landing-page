@@ -1,6 +1,7 @@
 "use client";
 
 import { ArrowRight } from "lucide-react";
+import { DrawerComponent } from "./DrawerComponent";
 
 interface BuildForGestoriasButtonProps {
   text: string;
@@ -8,10 +9,24 @@ interface BuildForGestoriasButtonProps {
 }
 
 export default function BuildForGestoriasButton({ text, onClick }: BuildForGestoriasButtonProps) {
+  // If it's a "Learn More" button, use the drawer
+  if (text === "Learn More") {
+    return (
+      <div style={{ marginTop: '32px' }}>
+        <DrawerComponent
+          triggerText="Learn More"
+          title=""
+          description=""
+        />
+      </div>
+    );
+  }
+
+  // Otherwise, use regular button
   return (
     <button
       onClick={onClick}
-      style={{ 
+      style={{
         padding: '0 24px',
         height: '47px',
         maxHeight: '47px',

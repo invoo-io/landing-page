@@ -6,6 +6,7 @@ import Link from "next/link";
 import { ChevronDown, Globe, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import Button from "./ui/Button";
+import NavigationDrawerButton from "./NavigationDrawerButton";
 import { getImagePath, getBasePath } from "@/lib/utils";
 
 interface NavigationProps {
@@ -214,13 +215,7 @@ export default function Navigation({ locale }: NavigationProps) {
               </button>
 
               {/* CTA Button */}
-              <Button 
-                href="#waitlist" 
-                variant="gradient"
-                showArrow={true}
-              >
-                Join the waiting list
-              </Button>
+              <NavigationDrawerButton />
             </div>
 
             {/* Mobile menu button */}
@@ -581,14 +576,7 @@ export default function Navigation({ locale }: NavigationProps) {
                       justifyContent: 'center'
                     }}
                   >
-                    <Button 
-                      href="#waitlist" 
-                      variant="gradient"
-                      showArrow={true}
-                      className="w-full flex justify-center items-center"
-                    >
-                      Join the waiting list
-                    </Button>
+                    <NavigationDrawerButton />
                   </motion.div>
                 </motion.div>
               </div>

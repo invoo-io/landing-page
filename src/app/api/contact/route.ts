@@ -67,7 +67,7 @@ export async function POST(request: Request) {
 
     // For now, we'll log the email and return success
     // In production, replace this with actual email sending logic
-    console.log('Email would be sent to: info@invoo.com');
+    console.log('Email would be sent to: hello@invoo.es');
     console.log('From:', email);
     console.log('Subject:', `Contact Form: ${topic || 'General Inquiry'}`);
     console.log('Body:', emailHtml);
@@ -78,8 +78,8 @@ export async function POST(request: Request) {
     const resend = new Resend(process.env.RESEND_API_KEY);
     
     await resend.emails.send({
-      from: 'contact@invoo.com',
-      to: 'info@invoo.com',
+      from: 'contact@invoo.es',
+      to: 'hello@invoo.es',
       subject: `Contact Form: ${topic || 'General Inquiry'}`,
       html: emailHtml,
       reply_to: email,
@@ -101,8 +101,8 @@ export async function POST(request: Request) {
     });
 
     await transporter.sendMail({
-      from: process.env.SMTP_FROM || 'contact@invoo.com',
-      to: 'info@invoo.com',
+      from: process.env.SMTP_FROM || 'contact@invoo.es',
+      to: 'hello@invoo.es',
       subject: `Contact Form: ${topic || 'General Inquiry'}`,
       html: emailHtml,
       replyTo: email,

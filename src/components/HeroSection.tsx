@@ -1,5 +1,8 @@
+"use client";
+
 import React from "react";
 import Button from "./ui/Button";
+import { DrawerComponent } from "./DrawerComponent";
 
 interface HeroSectionProps {
   title: React.ReactNode;
@@ -37,14 +40,22 @@ export default function HeroSection({
         
         {buttonText && (buttonHref || buttonOnClick) && (
           <div style={{ display: 'flex', justifyContent: 'center' }}>
-            <Button 
-              href={buttonHref}
-              onClick={buttonOnClick}
-              variant="gradient"
-              showArrow={true}
-            >
-              {buttonText}
-            </Button>
+            {buttonText === "Join the waiting list" ? (
+              <DrawerComponent
+                triggerText="Join the waiting list"
+                title=""
+                description=""
+              />
+            ) : (
+              <Button
+                href={buttonHref}
+                onClick={buttonOnClick}
+                variant="gradient"
+                showArrow={true}
+              >
+                {buttonText}
+              </Button>
+            )}
           </div>
         )}
       </div>
