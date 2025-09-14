@@ -53,7 +53,7 @@ export default function Navigation({ locale }: NavigationProps) {
 
   return (
     <>
-      <nav className="w-full bg-black/80 backdrop-blur-xl border-b border-white/5 relative z-50">
+      <nav className="w-full bg-black/80 backdrop-blur-xl border-b border-white/5 relative" style={{ zIndex: 100 }}>
         <div className="w-full">
           <div
             className="flex items-center justify-between h-20"

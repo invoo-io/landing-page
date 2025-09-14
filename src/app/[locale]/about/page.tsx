@@ -18,7 +18,10 @@ export default async function AboutPage({
 
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
-      <Image
+      
+      <div className="relative z-10">
+        <Navigation locale={locale} />
+        <Image
         src={getImagePath("/aboutusimage.png")}
         alt="Decorative gradient shape"
         width={964}
@@ -32,8 +35,6 @@ export default async function AboutPage({
           zIndex: 20
         }}
       />
-      <div className="relative z-10">
-        <Navigation locale={locale} />
         <HeroSection 
           title={
             <>
