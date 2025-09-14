@@ -20,7 +20,7 @@ export default function HeroSection({
   buttonOnClick 
 }: HeroSectionProps) {
   return (
-    <section className="min-h-screen flex items-center justify-center" style={{ paddingLeft: '24px', paddingRight: '24px' }}>
+    <section className="flex items-center justify-center" style={{ paddingLeft: '24px', paddingRight: '24px', paddingTop: '80px', paddingBottom: '0' }}>
       <div className="max-w-6xl mx-auto text-center">
         <h1 className="hero-heading" style={{ marginBottom: '3rem' }}>
           {title}
