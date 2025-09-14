@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Facebook, Linkedin, Twitter } from "lucide-react";
+import { Facebook, Linkedin, X } from "lucide-react";
 import { getImagePath } from "@/lib/utils";
 
 export default function Footer() {
@@ -105,9 +105,9 @@ export default function Footer() {
               gap: '16px'
             }}>
               <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>FAQs</a></li>
-              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Blog</a></li>
-              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Net Salary Calculator</a></li>
-              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Freelancer Quota Calculator</a></li>
+              <li><a href="https://invoo.substack.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Blog</a></li>
+              {/* <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Net Salary Calculator</a></li>
+              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Freelancer Quota Calculator</a></li> */}
             </ul>
           </div>
         </div>
@@ -132,14 +132,14 @@ export default function Footer() {
             display: 'flex',
             gap: '24px'
           }}>
-            <a href="#" style={{ color: '#9F9F9FB2' }}>
-              <Twitter size={20} />
-            </a>
-            <a href="#" style={{ color: '#9F9F9FB2' }}>
-              <Facebook size={20} />
-            </a>
-            <a href="#" style={{ color: '#9F9F9FB2' }}>
+            <a href="https://www.linkedin.com/company/invooes" target="_blank" rel="noopener noreferrer" style={{ color: '#9F9F9FB2' }}>
               <Linkedin size={20} />
+            </a>
+            <a href="https://x.com/InvooES" target="_blank" rel="noopener noreferrer" style={{ color: '#9F9F9FB2' }}>
+              <X size={20} />
+            </a>
+            <a href="https://www.facebook.com/profile.php?id=61578360993110" target="_blank" rel="noopener noreferrer" style={{ color: '#9F9F9FB2' }}>
+              <Facebook size={20} />
             </a>
           </div>
         </div>
