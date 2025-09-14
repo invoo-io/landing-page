@@ -30,7 +30,7 @@ export default async function FreelancersPage({
         buttonText="Get Started"
         buttonHref="#contact"
       />
-      <HeroImageSection />
+      <HeroImageSection dashboardImage="/FreelanceHeroImageSection.png" />
       <BuildForGestoriasSection 
         title="Create professional invoices in seconds"
         paragraph="Skip the templates and Excel hacks. Invoo generates polished PDFs that are always correctly numbered and ready to send."
