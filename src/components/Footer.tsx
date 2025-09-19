@@ -59,9 +59,9 @@ export default function Footer() {
               gap: '16px'
             }}>
               <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>About Us</a></li>
-              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Terms of Use</a></li>
-              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Privacy Policy</a></li>
-              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>VeriFActu Compliance</a></li>
+              <li><Link href="/en/terms" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Terms of Use</Link></li>
+              <li><Link href="/en/privacy" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Privacy Policy</Link></li>
+              <li><Link href="/en/verifactu" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>VeriFActu Compliance</Link></li>
               <li><Link href="/en/contact" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Contact</Link></li>
             </ul>
           </div>

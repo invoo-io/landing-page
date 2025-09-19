@@ -5,21 +5,25 @@ import { getImagePath } from "@/lib/utils";
 export default function MoreThanInvoiceSection() {
   const features = [
     {
+      image: getImagePath("/Note.png"),
       title: "Track your expenses",
       description:
         "Snap a photo of your receipts and let Invoo organize them automatically",
     },
     {
+      image: getImagePath("/Calendar.png"),
       title: "Quarterly tax ready",
       description:
         "We prepare pre-calculated summaries for Modelo 130 and 303, so you file faster",
     },
     {
+      image: getImagePath("/Screen.png"),
       title: "Gestoría dashboard",
       description:
         "Give your gestoría real-time access to your invoices and expenses, no more email chains",
     },
     {
+      image: getImagePath("/Down.png"),
       title: "One-click exports",
       description:
         "Download invoices and expenses in clean CSV format, ready for any accounting software",
@@ -30,9 +34,9 @@ export default function MoreThanInvoiceSection() {
     <section
       style={{
         position: "relative",
-        height: "634px",
+        minHeight: "634px",
         backgroundColor: "black",
-        overflow: "hidden",
+        // overflow: "hidden",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -73,10 +77,8 @@ export default function MoreThanInvoiceSection() {
       >
         {/* 2x2 Grid of Cards */}
         <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: "24px",
             marginBottom: "0",
           }}
         >
@@ -91,6 +93,13 @@ export default function MoreThanInvoiceSection() {
                 textAlign: "center",
               }}
             >
+              <Image
+                src={feature.image}
+                alt={feature.title}
+                width={100}
+                height={100}
+                style={{ objectFit: "contain", margin: "0 auto" }}
+              />
               <h3
                 style={{
                   fontSize: "20px",
