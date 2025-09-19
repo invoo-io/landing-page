@@ -12,6 +12,9 @@ interface BuildForGestoriasSectionProps {
   imageAlt?: string;
   imagePosition?: 'left' | 'right';
   showImagePlaceholder?: boolean;
+  imageWidth?: number;
+  imageHeight?: number;
+  offsetImage?: boolean;
 }
 
 export default function BuildForGestoriasSection({
@@ -23,7 +26,10 @@ export default function BuildForGestoriasSection({
   imageSrc,
   imageAlt,
   imagePosition = 'right',
-  showImagePlaceholder = false
+  showImagePlaceholder = false,
+  imageWidth = 800,
+  imageHeight = 700,
+  offsetImage = true
 }: BuildForGestoriasSectionProps) {
   const textContent = (
     <div style={{
@@ -82,16 +88,16 @@ export default function BuildForGestoriasSection({
       width: 'auto',
       // maxWidth: '100%',
       height: 'auto',
-      marginRight: imagePosition === 'right' ? '-300px' : '300px',
+      marginRight: offsetImage ? (imagePosition === 'right' ? '-300px' : '300px') : '0',
     }}>
       <Image
         src={imageSrc}
         alt={imageAlt || ''}
-        width={800}
-        height={700}
+        width={imageWidth}
+        height={imageHeight}
         style={{
           objectFit: 'contain',
-          
+
         }}
         priority
       />
@@ -115,7 +121,7 @@ export default function BuildForGestoriasSection({
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      padding: '24px 0'
+      padding: '40px 0'
     }}>
       {/* Content Container */}
       <div style={{
