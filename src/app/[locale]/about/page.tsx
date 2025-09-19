@@ -18,27 +18,29 @@ export default async function AboutPage({
 
   return (
     <div className="min-h-screen bg-black relative overflow-hidden">
-      
       <div className="relative z-10">
         <Navigation locale={locale} />
         <Image
-        src={getImagePath("/aboutusimage.png")}
-        alt="Decorative gradient shape"
-        width={964}
-        height={1349}
-        style={{
-          position: 'absolute',
-          top: '-110px',
-          left: '-200px',
-          transform: 'scaleX(-1)',
-          opacity: 0.2,
-          zIndex: 20
-        }}
-      />
-        <HeroSection 
+          src={getImagePath("/aboutusimage2.png")}
+          alt="Decorative gradient shape"
+          width={964}
+          height={1349}
+          style={{
+            position: "absolute",
+            top: 100,
+            left: 0,
+            maxHeight: "1000px",
+            width: "auto",
+            opacity: 1,
+            zIndex: 20,
+          }}
+        />
+        <HeroSection
           title={
             <>
-              <span style={{color: '#EFEFF5'}}>Helping freelancers and Gestoría </span>
+              <span style={{ color: "#EFEFF5" }}>
+                Helping freelancers and Gestoría{" "}
+              </span>
               <GradientText>work better together</GradientText>
             </>
           }
