@@ -50,7 +50,8 @@ export default async function Home({
           "Quarterly tax summaries"
         ]}
         buttonText="Learn More"
-        imageSrc={getImagePath("/productdashboard.png")}
+        // imageSrc={getImagePath("/productdashboard.png")}
+        imageSrc={getImagePath("/Gestoria.png")}
         imageAlt="Gestorías Dashboard"
         imagePosition="right"
       />
