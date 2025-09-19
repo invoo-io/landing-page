@@ -102,11 +102,7 @@ body {
   overflow-x: hidden;
 }
 
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Removed global reset - Tailwind v4 provides its own preflight styles */
 
 .gradient-text {
   background: var(--gradient-blue);

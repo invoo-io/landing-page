@@ -24,11 +24,7 @@ export default function Navigation({ locale }: NavigationProps) {
   ];
 
   const resources = [
-    "Documentation",
-    "API Reference",
-    "Blog",
-    "Case Studies",
-    "Support",
+    { name: "FAQ", href: getBasePath(`/${locale}/faq`) }
   ];
 
   const handleMouseEnter = (dropdown: string) => {
@@ -90,8 +86,8 @@ export default function Navigation({ locale }: NavigationProps) {
                 </button>
 
                 {activeDropdown === "services" && (
-                  <div 
-                    className="absolute top-full left-0 mt-2 min-w-[200px]"
+                  <div
+                    className="absolute top-full left-0 mt-2 min-w-[200px] before:absolute before:inset-x-0 before:-top-2 before:h-2"
                     style={{
                       backgroundColor: 'rgba(20, 20, 20, 0.98)',
                       backdropFilter: 'blur(20px)',
@@ -143,8 +139,8 @@ export default function Navigation({ locale }: NavigationProps) {
                 </button>
 
                 {activeDropdown === "resources" && (
-                  <div 
-                    className="absolute top-full left-0 mt-2 min-w-[200px]"
+                  <div
+                    className="absolute top-full left-0 mt-2 min-w-[200px] before:absolute before:inset-x-0 before:-top-2 before:h-2"
                     style={{
                       backgroundColor: 'rgba(20, 20, 20, 0.98)',
                       backdropFilter: 'blur(20px)',
@@ -157,8 +153,8 @@ export default function Navigation({ locale }: NavigationProps) {
                   >
                     {resources.map((resource) => (
                       <Link
-                        key={resource}
-                        href="#"
+                        key={resource.name}
+                        href={resource.href}
                         className="relative block"
                         style={{
                           padding: '12px 24px',
@@ -177,7 +173,7 @@ export default function Navigation({ locale }: NavigationProps) {
                           e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)';
                         }}
                       >
-                        {resource}
+                        {resource.name}
                       </Link>
                     ))}
                   </div>
@@ -439,14 +435,14 @@ export default function Navigation({ locale }: NavigationProps) {
                           <div style={{ padding: '12px 0' }}>
                             {resources.map((resource, index) => (
                               <motion.div
-                                key={resource}
+                                key={resource.name}
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: index * 0.05 }}
                                 style={{ marginBottom: index < resources.length - 1 ? '8px' : '0' }}
                               >
                                 <Link
-                                  href="#"
+                                  href={resource.href}
                                   onClick={() => setMobileMenuOpen(false)}
                                   className="block text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-all"
                                   style={{
@@ -457,7 +453,7 @@ export default function Navigation({ locale }: NavigationProps) {
                                     marginRight: '16px'
                                   }}
                                 >
-                                  {resource}
+                                  {resource.name}
                                 </Link>
                               </motion.div>
                             ))}
