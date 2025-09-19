@@ -27,9 +27,9 @@ export default function BuildForGestoriasSection({
 }: BuildForGestoriasSectionProps) {
   const textContent = (
     <div style={{
-      flex: (imageSrc || showImagePlaceholder) ? '0 0 600px' : '0 0 800px',
-      paddingLeft: imagePosition === 'right' ? '40px' : '0',
-      paddingRight: imagePosition === 'left' ? '40px' : '0'
+      width: '500px',
+      maxWidth: '100%',
+     
     }}>
       <h2 style={{
         fontSize: '48px',
@@ -79,33 +79,27 @@ export default function BuildForGestoriasSection({
 
   const imageContent = imageSrc ? (
     <div style={{
-      position: 'absolute',
-      [imagePosition === 'right' ? 'right' : 'left']: '-10%',
-      top: '50%',
-      transform: 'translateY(-50%)',
-      width: '600px',
-      height: '400px'
+      width: 'auto',
+      // maxWidth: '100%',
+      height: 'auto',
+      marginRight: imagePosition === 'right' ? '-300px' : '300px',
     }}>
       <Image
         src={imageSrc}
         alt={imageAlt || ''}
         width={800}
-        height={500}
-        style={{ 
+        height={700}
+        style={{
           objectFit: 'contain',
-          width: '100%',
-          height: '100%'
+          
         }}
         priority
       />
     </div>
   ) : showImagePlaceholder ? (
     <div style={{
-      position: 'absolute',
-      [imagePosition === 'right' ? 'right' : 'left']: '10%',
-      top: '50%',
-      transform: 'translateY(-50%)',
       width: '400px',
+      maxWidth: '100%',
       height: '350px',
       borderRadius: '24px',
       backgroundColor: 'transparent'
@@ -115,24 +109,28 @@ export default function BuildForGestoriasSection({
   return (
     <section style={{ 
       position: 'relative',
-      height: '634px',
+      // height: '634px',
       backgroundColor: 'black',
       overflow: 'hidden',
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center'
+      justifyContent: 'center',
+      padding: '24px 0'
     }}>
       {/* Content Container */}
       <div style={{
         position: 'relative',
         zIndex: 10,
         display: 'flex',
+        
         alignItems: 'center',
-        gap: '80px',
-        maxWidth: '1200px',
+        justifyContent: 'center',
+        gap: '40px',
+        // maxWidth: '1200px',
         width: '100%',
         padding: '0 24px',
-        flexDirection: imagePosition === 'left' ? 'row-reverse' : 'row'
+        flexDirection: imagePosition === 'left' ? 'row-reverse' : 'row',
+        flexWrap: 'wrap'
       }}>
         {textContent}
         {imageContent}
