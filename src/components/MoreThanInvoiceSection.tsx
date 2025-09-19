@@ -34,9 +34,9 @@ export default function MoreThanInvoiceSection() {
     <section
       style={{
         position: "relative",
-        height: "634px",
+        minHeight: "634px",
         backgroundColor: "black",
-        overflow: "hidden",
+        // overflow: "hidden",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
@@ -77,10 +77,8 @@ export default function MoreThanInvoiceSection() {
       >
         {/* 2x2 Grid of Cards */}
         <div
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
           style={{
-            display: "grid",
-            gridTemplateColumns: "repeat(2, 1fr)",
-            gap: "24px",
             marginBottom: "0",
           }}
         >
