@@ -30,7 +30,7 @@ export default async function GestoriasPage({
         buttonText="Get Started"
         buttonHref="#contact"
       />
-      <HeroImageSection />
+      <HeroImageSection dashboardImage="/Gestoria.png" />
       <BuildForGestoriasSection 
         title="Always up to date"
         paragraph="No more chasing clients for invoices. See every invoice and expense the moment it's created."

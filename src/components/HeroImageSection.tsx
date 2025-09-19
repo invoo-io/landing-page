@@ -8,12 +8,12 @@ interface HeroImageSectionProps {
 }
 
 export default function HeroImageSection({
-  backgroundImage = "/heroimagesection.png",
+  backgroundImage = "/Bck-Main.png",
   dashboardImage = "/productdashboard.png",
-  dashboardAlt = "Invoo Dashboard"
+  dashboardAlt = "Invoo Dashboard",
 }: HeroImageSectionProps) {
   return (
-    <section className="relative w-full min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-[125vh] flex items-center justify-center overflow-hidden py-20">
       {/* Background Image as absolute element */}
       <div className="absolute inset-0 w-full h-full">
         <Image
@@ -27,11 +27,11 @@ export default function HeroImageSection({
 
       {/* Container with semi-transparent background */}
       <div
-        className="relative max-w-4xl mx-auto z-10"
+        className="relative max-w-6xl mx-auto z-10"
         style={{
-          backgroundColor: 'rgba(18, 18, 18, 0.0)', // TODO: remove backgorund colour 
-          borderRadius: '24px',
-          boxShadow: '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
+          backgroundColor: "rgba(18, 18, 18, 0.0)", // TODO: remove backgorund colour
+          borderRadius: "24px",
+          boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
         }}
       >
         {/* Dashboard Image */}
@@ -39,7 +39,7 @@ export default function HeroImageSection({
           <Image
             src={getImagePath(dashboardImage)}
             alt={dashboardAlt}
-            width={1200}
+            width={1350}
             height={700}
             className="w-full h-auto rounded-lg"
             priority
