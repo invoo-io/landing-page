@@ -51,7 +51,7 @@ export default function WhyChooseSection() {
             </h3>
 
             {/* Description */}
-            <p className="text-body text-label-secondary max-w-xs">
+            <p className="text-body max-w-xs" style={{ color: 'var(--label-secondary-dark)' }}>
               {feature.description}
             </p>
           </div>
