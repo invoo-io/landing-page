@@ -65,7 +65,7 @@ export default function Navigation({ locale }: NavigationProps) {
           >
             {/* Logo */}
             <div className="flex items-center z-50">
-              <Link href={getBasePath("/")} className="flex items-center" prefetch={true}>
+              <Link href={getBasePath(`/${locale}`)} className="flex items-center" prefetch={true}>
                 <Image
                   src={getImagePath("/Logo.svg")}
                   alt="invoo"
