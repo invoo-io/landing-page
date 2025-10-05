@@ -15,7 +15,7 @@ export default async function PrivacyPage({
     <div className="min-h-screen bg-black">
       <Navigation locale={locale} />
       <PrivacyContent />
-      <Footer />
+      <Footer locale={locale} />
     </div>
   );
 }

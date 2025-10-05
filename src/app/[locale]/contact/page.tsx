@@ -17,7 +17,7 @@ export default async function ContactPage({
       <Navigation locale={locale} />
       <ContactForm />
       <FocusSection />
-      <Footer />
+      <Footer locale={locale} />
     </div>
   );
 }

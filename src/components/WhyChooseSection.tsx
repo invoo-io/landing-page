@@ -51,7 +51,7 @@ export default function WhyChooseSection() {
             </h3>
 
             {/* Description */}
-            <p className="text-body text-label-tertiary max-w-xs">
+            <p className="text-body text-label-secondary max-w-xs">
               {feature.description}
             </p>
           </div>

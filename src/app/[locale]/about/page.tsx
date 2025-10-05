@@ -48,7 +48,7 @@ export default async function AboutPage({
         />
         <AboutContent />
         <FocusSection />
-        <Footer />
+        <Footer locale={locale} />
       </div>
     </div>
   );

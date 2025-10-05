@@ -1,9 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Facebook, Linkedin, X } from "lucide-react";
-import { getImagePath } from "@/lib/utils";
+import { getImagePath, getBasePath } from "@/lib/utils";
 
-export default function Footer() {
+interface FooterProps {
+  locale: string;
+}
+
+export default function Footer({ locale }: FooterProps) {
   return (
     <footer className="bg-system-grey800 text-label-inverted px-6 pt-20 pb-10">
       <div className="max-w-6xl mx-auto">
@@ -19,45 +23,44 @@ export default function Footer() {
                 height={60}
               />
             </div>
-            <p className="text-footnote text-label-inverted-secondary">
+            <p className="text-callout text-label-inverted-secondary">
               The gestoría-friendly invoicing platform that connects freelancers, clients, and tax compliance in one seamless flow
             </p>
           </div>
 
           {/* Invoo column */}
           <div>
-            <h3 className="text-headline mb-6">
+            <h3 className="text-headline text-label-inverted mb-6">
               Invoo
             </h3>
             <ul className="list-none p-0 flex flex-col gap-4">
-              <li><a href="#" className="text-footnote no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">About Us</a></li>
-              <li><Link href="/en/terms" className="text-footnote no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">Terms of Use</Link></li>
-              <li><Link href="/en/privacy" className="text-footnote no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">Privacy Policy</Link></li>
-              <li><Link href="/en/verifactu" className="text-footnote no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">VeriFActu Compliance</Link></li>
-              <li><Link href="/en/contact" className="text-footnote no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">Contact</Link></li>
+              <li><Link href={getBasePath(`/${locale}/about`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">About Us</Link></li>
+              <li><Link href={getBasePath(`/${locale}/terms`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">Terms of Use</Link></li>
+              <li><Link href={getBasePath(`/${locale}/privacy`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">Privacy Policy</Link></li>
+              <li><Link href={getBasePath(`/${locale}/contact`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">Contact</Link></li>
             </ul>
           </div>
 
           {/* Services column */}
           <div>
-            <h3 className="text-headline mb-6">
+            <h3 className="text-headline text-label-inverted mb-6">
               Services
             </h3>
             <ul className="list-none p-0 flex flex-col gap-4">
-              <li><a href="#" className="text-footnote no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">For Freelancers</a></li>
-              <li><a href="#" className="text-footnote no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">For Gestoría</a></li>
-              <li><a href="#" className="text-footnote no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">Pricing</a></li>
+              <li><Link href={getBasePath(`/${locale}/freelancers`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">For Freelancers</Link></li>
+              <li><Link href={getBasePath(`/${locale}/gestorias`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">For Gestoría</Link></li>
+              <li><Link href={getBasePath(`/${locale}/pricing`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">Pricing</Link></li>
             </ul>
           </div>
 
           {/* Resources column */}
           <div>
-            <h3 className="text-headline mb-6">
+            <h3 className="text-headline text-label-inverted mb-6">
               Resources
             </h3>
             <ul className="list-none p-0 flex flex-col gap-4">
-              <li><a href="#" className="text-footnote no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">FAQs</a></li>
-              <li><a href="https://invoo.substack.com/" target="_blank" rel="noopener noreferrer" className="text-footnote no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">Blog</a></li>
+              <li><Link href={getBasePath(`/${locale}/faq`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">FAQs</Link></li>
+              <li><a href="https://invoo.substack.com/" target="_blank" rel="noopener noreferrer" className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">Blog</a></li>
             </ul>
           </div>
         </div>

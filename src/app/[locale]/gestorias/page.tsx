@@ -94,7 +94,7 @@ export default async function GestoriasPage({
         showImagePlaceholder={true}
       />
       <FocusSection />
-      <Footer />
+      <Footer locale={locale} />
     </div>
   );
 }

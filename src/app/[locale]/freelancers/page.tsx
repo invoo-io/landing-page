@@ -94,7 +94,7 @@ export default async function FreelancersPage({
         showImagePlaceholder={true}
       />
       <FocusSection />
-      <Footer />
+      <Footer locale={locale} />
     </div>
   );
 }

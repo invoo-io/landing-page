@@ -15,7 +15,7 @@ export default async function TermsPage({
     <div className="min-h-screen bg-black">
       <Navigation locale={locale} />
       <TermsContent />
-      <Footer />
+      <Footer locale={locale} />
     </div>
   );
 }

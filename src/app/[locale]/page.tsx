@@ -57,7 +57,7 @@ export default async function Home({
       />
       <PricingSection />
       <FocusSection />
-      <Footer />
+      <Footer locale={locale} />
     </div>
   );
 }

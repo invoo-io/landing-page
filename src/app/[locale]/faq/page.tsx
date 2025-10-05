@@ -17,7 +17,7 @@ export default async function FAQPage({
       <Navigation locale={locale} />
       <FAQContent />
       <FocusSection />
-      <Footer />
+      <Footer locale={locale} />
     </div>
   );
 }

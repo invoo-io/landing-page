@@ -15,7 +15,7 @@ export default async function PricingPage({
     <div className="min-h-screen bg-black">
       <Navigation locale={locale} />
       <PricingSection />
-      <Footer />
+      <Footer locale={locale} />
     </div>
   );
 }

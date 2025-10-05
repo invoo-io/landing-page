@@ -15,7 +15,7 @@ export default async function VerifactuPage({
     <div className="min-h-screen bg-black">
       <Navigation locale={locale} />
       <VerifactuContent />
-      <Footer />
+      <Footer locale={locale} />
     </div>
   );
 }
