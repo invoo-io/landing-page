@@ -193,40 +193,15 @@ export function DrawerComponent({
             </div>
           </div>
 
-          <button
+          <Button
             type="submit"
+            variant="gradient"
             disabled={isLoading}
-            style={{
-              fontFamily: 'var(--font-inter)',
-              width: '100%',
-              height: '47px',
-              padding: '12px 16px',
-              borderRadius: '12px',
-              background: 'linear-gradient(to right, var(--accent-blue-main), var(--accent-purple-main))',
-              color: 'var(--label-inverted)',
-              fontWeight: '600',
-              border: 'none',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              gap: '8px',
-              cursor: isLoading ? 'not-allowed' : 'pointer',
-              opacity: isLoading ? 0.5 : 1,
-              transition: 'opacity 0.2s'
-            }}
-            onMouseEnter={(e) => {
-              if (!isLoading) {
-                (e.target as HTMLButtonElement).style.opacity = '0.9';
-              }
-            }}
-            onMouseLeave={(e) => {
-              if (!isLoading) {
-                (e.target as HTMLButtonElement).style.opacity = '1';
-              }
-            }}
+            className="w-full"
+            showArrow
           >
-            {isLoading ? 'Sending...' : 'Join'} →
-          </button>
+            {isLoading ? 'Sending...' : 'Join'}
+          </Button>
 
           {error && (
             <p className="text-accent-red-main text-footnote text-center">{error}</p>
