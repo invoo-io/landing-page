@@ -31,11 +31,12 @@ export default async function FreelancersPage({
         buttonHref="#contact"
       />
       <HeroImageSection dashboardImage="/FreelanceHeroImageSection.png" />
-      <BuildForGestoriasSection 
+      <BuildForGestoriasSection
         imageSrc="/clock.png"
         imageWidth={350}
         imageHeight={350}
         offsetImage={false}
+        maxImageWidth={160}
         title="Create professional invoices in seconds"
         paragraph="Skip the templates and Excel hacks. Invoo generates polished PDFs that are always correctly numbered and ready to send."
         features={[
@@ -45,11 +46,12 @@ export default async function FreelancersPage({
         ]}
         buttonText="Join the waiting list"
       />
-      <BuildForGestoriasSection 
+      <BuildForGestoriasSection
         imageSrc="/Doc.png"
         imageWidth={350}
         imageHeight={350}
         offsetImage={false}
+        maxImageWidth={160}
         title="Compliance, handled for you"
         paragraph="Every invoice includes the official VeriFActu QR and is submitted to AEAT in the background, so you never worry about errors or fines."
         features={[
@@ -61,11 +63,12 @@ export default async function FreelancersPage({
         imagePosition="left"
         showImagePlaceholder={true}
       />
-      <BuildForGestoriasSection 
+      <BuildForGestoriasSection
         imageSrc="/Screen.png"
         imageWidth={350}
         imageHeight={350}
         offsetImage={false}
+        maxImageWidth={160}
         title="Your finances in one simple view"
         paragraph="From daily expenses to quarterly models, Invoo centralizes everything so you can see the big picture without switching tools."
         features={[
@@ -77,11 +80,12 @@ export default async function FreelancersPage({
         imagePosition="right"
         showImagePlaceholder={true}
       />
-      <BuildForGestoriasSection 
+      <BuildForGestoriasSection
         imageSrc="/Book.png"
         imageWidth={350}
         imageHeight={350}
         offsetImage={false}
+        maxImageWidth={160}
         title="Share effortlessly with your gestoría"
         paragraph="No more chasing or forwarding PDFs. Your gestoría sees invoices and expenses in real time, at no cost to them."
         features={[
