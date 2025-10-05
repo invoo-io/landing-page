@@ -17,89 +17,44 @@ export default function PricingSection() {
       alignItems: 'center'
     }}>
       {/* Header */}
-      <div style={{
-        textAlign: 'center',
-        marginBottom: '64px',
-        maxWidth: '800px'
-      }}>
-        <h1 style={{
-          fontSize: '64px',
-          fontWeight: 600,
-          marginBottom: '24px',
-          lineHeight: '1.1'
-        }}>
+      <div className="text-center mb-16 max-w-3xl">
+        <h1 className="text-large-title-emphasized mb-6" style={{ fontSize: '64px' }}>
           <GradientText>Simple pricing</GradientText>
-          <span style={{ color: 'white' }}>. No surprises</span>
+          <span className="text-white">. No surprises</span>
         </h1>
-        <p style={{
-          fontSize: '18px',
-          color: 'rgba(255, 255, 255, 0.6)',
-          lineHeight: '1.5'
-        }}>
+        <p className="text-headline text-white/60">
           Choose the plan that fits your needs. Switch anytime. Cancel anytime
         </p>
       </div>
 
       {/* Tab Switcher */}
-      <div style={{
-        display: 'flex',
-        gap: '40px',
-        marginBottom: '64px',
-        borderBottom: '1px solid rgba(255, 255, 255, 0.1)',
-        position: 'relative'
-      }}>
+      <div className="flex gap-10 mb-16 border-b border-white/10 relative">
         <button
           onClick={() => setActiveTab("freelancer")}
+          className="text-callout-emphasized px-1 py-3 cursor-pointer relative transition-colors"
           style={{
             background: 'none',
             border: 'none',
-            color: activeTab === "freelancer" ? 'white' : 'rgba(255, 255, 255, 0.5)',
-            fontSize: '16px',
-            fontWeight: 500,
-            padding: '12px 4px',
-            cursor: 'pointer',
-            position: 'relative',
-            transition: 'color 0.3s ease'
+            color: activeTab === "freelancer" ? 'white' : 'rgba(255, 255, 255, 0.5)'
           }}
         >
           Freelancer
           {activeTab === "freelancer" && (
-            <div style={{
-              position: 'absolute',
-              bottom: '-1px',
-              left: 0,
-              right: 0,
-              height: '2px',
-              background: '#257DFF',
-              borderRadius: '2px'
-            }} />
+            <div className="absolute -bottom-px left-0 right-0 h-0.5 rounded-sm" style={{ background: '#257DFF' }} />
           )}
         </button>
         <button
           onClick={() => setActiveTab("gestoria")}
+          className="text-callout-emphasized px-1 py-3 cursor-pointer relative transition-colors"
           style={{
             background: 'none',
             border: 'none',
-            color: activeTab === "gestoria" ? 'white' : 'rgba(255, 255, 255, 0.5)',
-            fontSize: '16px',
-            fontWeight: 500,
-            padding: '12px 4px',
-            cursor: 'pointer',
-            position: 'relative',
-            transition: 'color 0.3s ease'
+            color: activeTab === "gestoria" ? 'white' : 'rgba(255, 255, 255, 0.5)'
           }}
         >
           Gestoria
           {activeTab === "gestoria" && (
-            <div style={{
-              position: 'absolute',
-              bottom: '-1px',
-              left: 0,
-              right: 0,
-              height: '2px',
-              background: '#257DFF',
-              borderRadius: '2px'
-            }} />
+            <div className="absolute -bottom-px left-0 right-0 h-0.5 rounded-sm" style={{ background: '#257DFF' }} />
           )}
         </button>
       </div>
@@ -176,8 +131,8 @@ export default function PricingSection() {
                       }} />
                     </span>
                   </label>
-                  <span style={{ color: 'rgba(255, 255, 255, 0.6)', fontSize: '14px' }}>
-                    Annual {isAnnual && <span style={{ color: '#22C55E' }}>Save 2 months!</span>}
+                  <span className="text-footnote text-white/60">
+                    Annual {isAnnual && <span className="text-green-500">Save 2 months!</span>}
                   </span>
                 </div>
               }

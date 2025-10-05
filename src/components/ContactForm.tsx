@@ -74,65 +74,31 @@ export default function ContactForm() {
     borderRadius: '4px',
     padding: '11px 14px',
     color: '#EFEFF5',
-    fontSize: '14px',
     width: '100%',
     outline: 'none',
     transition: 'all 0.2s ease'
   };
 
-  const labelStyles: React.CSSProperties = {
-    color: 'rgba(239, 239, 245, 0.9)',
-    fontSize: '13px',
-    fontWeight: 400,
-    marginBottom: '8px',
-    display: 'block'
-  };
-
   return (
-    <section style={{ 
-      minHeight: '100vh',
-      backgroundColor: '#000',
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'center',
-      padding: '80px 24px'
-    }}>
-      <div style={{ 
-        maxWidth: '720px',
-        width: '100%'
-      }}>
-        <h1 style={{ 
-          fontSize: '52px',
-          fontWeight: 600,
-          textAlign: 'center',
-          marginBottom: '20px',
-          color: '#EFEFF5'
-        }}>
+    <section className="min-h-screen bg-black flex items-center justify-center px-6 py-20">
+      <div className="max-w-3xl w-full">
+        <h1 className="text-large-title-emphasized text-center mb-5" style={{ fontSize: '52px', color: '#EFEFF5' }}>
           Contact Invoo
         </h1>
-        <p style={{ 
-          textAlign: 'center',
-          marginBottom: '48px',
-          color: '#EFEFF5',
-          fontSize: '15px',
-          lineHeight: '22px'
-        }}>
+        <p className="text-subheadline text-center mb-12" style={{ color: '#EFEFF5' }}>
           We&apos;re here to help freelancers and gestorías. Choose the topic below or use the form
         </p>
 
         <form onSubmit={handleSubmit}>
           {/* Desktop: all 3 in one row, Tablet: Topic on top, Name/Email below, Mobile: all stacked */}
-          <div className="form-grid" style={{ 
-            display: 'grid',
-            gap: '16px',
-            marginBottom: '20px'
-          }}>
+          <div className="form-grid grid gap-4 mb-5">
             <div style={{ gridArea: 'topic' }}>
-              <label style={labelStyles}>Topic</label>
+              <label className="text-footnote mb-2 block" style={{ color: 'rgba(239, 239, 245, 0.9)' }}>Topic</label>
               <select
                 name="topic"
                 value={formData.topic}
                 onChange={handleChange}
+                className="text-footnote"
                 style={{
                   ...inputStyles,
                   appearance: 'none',
@@ -153,24 +119,26 @@ export default function ContactForm() {
             </div>
 
             <div style={{ gridArea: 'name' }}>
-              <label style={labelStyles}>Name</label>
+              <label className="text-footnote mb-2 block" style={{ color: 'rgba(239, 239, 245, 0.9)' }}>Name</label>
               <input
                 type="text"
                 name="name"
                 value={formData.name}
                 onChange={handleChange}
+                className="text-footnote"
                 style={inputStyles}
                 required
               />
             </div>
 
             <div style={{ gridArea: 'email' }}>
-              <label style={labelStyles}>Email</label>
+              <label className="text-footnote mb-2 block" style={{ color: 'rgba(239, 239, 245, 0.9)' }}>Email</label>
               <input
                 type="email"
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
+                className="text-footnote"
                 style={inputStyles}
                 required
               />
@@ -203,14 +171,15 @@ export default function ContactForm() {
             }
           `}</style>
 
-          <div style={{ marginBottom: '24px' }}>
-            <label style={labelStyles}>Message</label>
+          <div className="mb-6">
+            <label className="text-footnote mb-2 block" style={{ color: 'rgba(239, 239, 245, 0.9)' }}>Message</label>
             <textarea
               name="message"
               value={formData.message}
               onChange={handleChange}
               placeholder="Write here"
               rows={6}
+              className="text-footnote"
               style={{
                 ...inputStyles,
                 resize: 'none',
@@ -222,27 +191,23 @@ export default function ContactForm() {
           </div>
 
           {submitStatus.type && (
-            <div style={{
-              padding: '12px 16px',
-              borderRadius: '6px',
-              marginBottom: '24px',
-              backgroundColor: submitStatus.type === 'success' 
-                ? 'rgba(34, 197, 94, 0.1)' 
+            <div className="text-footnote px-4 py-3 rounded-md mb-6" style={{
+              backgroundColor: submitStatus.type === 'success'
+                ? 'rgba(34, 197, 94, 0.1)'
                 : 'rgba(239, 68, 68, 0.1)',
-              border: `1px solid ${submitStatus.type === 'success' 
-                ? 'rgba(34, 197, 94, 0.3)' 
+              border: `1px solid ${submitStatus.type === 'success'
+                ? 'rgba(34, 197, 94, 0.3)'
                 : 'rgba(239, 68, 68, 0.3)'}`,
-              color: submitStatus.type === 'success' 
-                ? '#86efac' 
-                : '#fca5a5',
-              fontSize: '14px'
+              color: submitStatus.type === 'success'
+                ? '#86efac'
+                : '#fca5a5'
             }}>
               {submitStatus.message}
             </div>
           )}
 
-          <div style={{ display: 'flex', justifyContent: 'flex-start' }}>
-            <Button 
+          <div className="flex justify-start">
+            <Button
               variant="gradient"
               showArrow={true}
               disabled={isLoading}

@@ -32,47 +32,21 @@ export default function BuildForGestoriasSection({
   offsetImage = true
 }: BuildForGestoriasSectionProps) {
   const textContent = (
-    <div style={{
-      width: '500px',
-      maxWidth: '100%',
-     
-    }}>
-      <h2 style={{
-        fontSize: '48px',
-        fontWeight: 600,
-        color: 'white',
-        marginBottom: '24px',
-        lineHeight: '1.2'
-      }}>
+    <div className="max-w-full" style={{ width: '500px' }}>
+      <h2 className="text-large-title-emphasized text-white mb-6" style={{ fontSize: '48px' }}>
         {title}
       </h2>
-      
-      <p style={{
-        fontSize: '16px',
-        color: '#9F9F9FB2',
-        lineHeight: '1.6',
-        marginBottom: '32px'
-      }}>
+
+      <p className="text-callout mb-8" style={{ color: '#9F9F9FB2' }}>
         {paragraph}
       </p>
 
       {/* Features List */}
-      <div style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: '16px'
-      }}>
+      <div className="flex flex-col gap-4">
         {features.map((feature, index) => (
-          <div key={index} style={{
-            display: 'flex',
-            alignItems: 'center',
-            gap: '12px'
-          }}>
-            <Check size={20} style={{ color: '#22C55E' }} />
-            <span style={{
-              fontSize: '16px',
-              color: 'white'
-            }}>
+          <div key={index} className="flex items-center gap-3">
+            <Check size={20} className="text-green-500" />
+            <span className="text-callout text-white">
               {feature}
             </span>
           </div>

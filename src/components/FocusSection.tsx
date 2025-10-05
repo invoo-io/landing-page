@@ -38,32 +38,16 @@ export default function FocusSection() {
       </div>
 
       {/* Content */}
-      <div style={{
-        position: 'relative',
-        zIndex: 10,
-        textAlign: 'center',
-        maxWidth: '800px'
-      }}>
-        <h2 style={{
-          fontWeight: 600,
-          fontSize: '48px',
-          lineHeight: '56px',
-          color: 'white',
-          marginBottom: '24px'
-        }}>
+      <div className="relative z-10 text-center max-w-3xl">
+        <h2 className="text-large-title-emphasized text-white mb-6" style={{ fontSize: '48px' }}>
           Focus on your work. We&apos;ll handle the paperwork.
         </h2>
-        
-        <p style={{
-          fontSize: '16px',
-          color: '#9F9F9FB2',
-          lineHeight: '1.6',
-          marginBottom: '48px'
-        }}>
+
+        <p className="text-callout mb-12" style={{ color: '#9F9F9FB2' }}>
           Join other freelancers who are getting ready for VeriFActu with a tool designed for Spain&apos;s autónomos
         </p>
 
-        <div style={{ display: 'flex', justifyContent: 'center' }}>
+        <div className="flex justify-center">
           <FocusButton />
         </div>
       </div>

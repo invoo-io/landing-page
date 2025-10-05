@@ -5,27 +5,13 @@ import { getImagePath } from "@/lib/utils";
 
 export default function Footer() {
   return (
-    <footer style={{
-      backgroundColor: '#161616',
-      padding: '80px 24px 40px',
-      color: 'white'
-    }}>
-      <div style={{
-        maxWidth: '1200px',
-        margin: '0 auto'
-      }}>
+    <footer className="bg-[#161616] text-white px-6 pt-20 pb-10">
+      <div className="max-w-6xl mx-auto">
         {/* Main footer content */}
-        <div style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(4, 1fr)',
-          gap: '64px',
-          marginBottom: '80px'
-        }}>
+        <div className="grid grid-cols-4 gap-16 mb-20">
           {/* Logo and description column */}
           <div>
-            <div style={{
-              marginBottom: '24px'
-            }}>
+            <div className="mb-6">
               <Image
                 src={getImagePath("/Logo.png")}
                 alt="Invoo"
@@ -33,105 +19,57 @@ export default function Footer() {
                 height={60}
               />
             </div>
-            <p style={{
-              fontSize: '14px',
-              color: '#9F9F9FB2',
-              lineHeight: '1.6'
-            }}>
+            <p className="text-footnote" style={{ color: '#9F9F9FB2' }}>
               The gestoría-friendly invoicing platform that connects freelancers, clients, and tax compliance in one seamless flow
             </p>
           </div>
 
           {/* Invoo column */}
           <div>
-            <h3 style={{
-              fontSize: '18px',
-              fontWeight: 600,
-              marginBottom: '24px'
-            }}>
+            <h3 className="text-headline mb-6">
               Invoo
             </h3>
-            <ul style={{
-              listStyle: 'none',
-              padding: 0,
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '16px'
-            }}>
-              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>About Us</a></li>
-              <li><Link href="/en/terms" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Terms of Use</Link></li>
-              <li><Link href="/en/privacy" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Privacy Policy</Link></li>
-              <li><Link href="/en/verifactu" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>VeriFActu Compliance</Link></li>
-              <li><Link href="/en/contact" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Contact</Link></li>
+            <ul className="list-none p-0 flex flex-col gap-4">
+              <li><a href="#" className="text-footnote no-underline" style={{ color: '#9F9F9FB2' }}>About Us</a></li>
+              <li><Link href="/en/terms" className="text-footnote no-underline" style={{ color: '#9F9F9FB2' }}>Terms of Use</Link></li>
+              <li><Link href="/en/privacy" className="text-footnote no-underline" style={{ color: '#9F9F9FB2' }}>Privacy Policy</Link></li>
+              <li><Link href="/en/verifactu" className="text-footnote no-underline" style={{ color: '#9F9F9FB2' }}>VeriFActu Compliance</Link></li>
+              <li><Link href="/en/contact" className="text-footnote no-underline" style={{ color: '#9F9F9FB2' }}>Contact</Link></li>
             </ul>
           </div>
 
           {/* Services column */}
           <div>
-            <h3 style={{
-              fontSize: '18px',
-              fontWeight: 600,
-              marginBottom: '24px'
-            }}>
+            <h3 className="text-headline mb-6">
               Services
             </h3>
-            <ul style={{
-              listStyle: 'none',
-              padding: 0,
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '16px'
-            }}>
-              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>For Freelancers</a></li>
-              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>For Gestoría</a></li>
-              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Pricing</a></li>
+            <ul className="list-none p-0 flex flex-col gap-4">
+              <li><a href="#" className="text-footnote no-underline" style={{ color: '#9F9F9FB2' }}>For Freelancers</a></li>
+              <li><a href="#" className="text-footnote no-underline" style={{ color: '#9F9F9FB2' }}>For Gestoría</a></li>
+              <li><a href="#" className="text-footnote no-underline" style={{ color: '#9F9F9FB2' }}>Pricing</a></li>
             </ul>
           </div>
 
           {/* Resources column */}
           <div>
-            <h3 style={{
-              fontSize: '18px',
-              fontWeight: 600,
-              marginBottom: '24px'
-            }}>
+            <h3 className="text-headline mb-6">
               Resources
             </h3>
-            <ul style={{
-              listStyle: 'none',
-              padding: 0,
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '16px'
-            }}>
-              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>FAQs</a></li>
-              <li><a href="https://invoo.substack.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Blog</a></li>
-              {/* <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Net Salary Calculator</a></li>
-              <li><a href="#" style={{ color: '#9F9F9FB2', textDecoration: 'none', fontSize: '14px' }}>Freelancer Quota Calculator</a></li> */}
+            <ul className="list-none p-0 flex flex-col gap-4">
+              <li><a href="#" className="text-footnote no-underline" style={{ color: '#9F9F9FB2' }}>FAQs</a></li>
+              <li><a href="https://invoo.substack.com/" target="_blank" rel="noopener noreferrer" className="text-footnote no-underline" style={{ color: '#9F9F9FB2' }}>Blog</a></li>
             </ul>
           </div>
         </div>
 
         {/* Bottom section */}
-        <div style={{
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          paddingTop: '32px',
-          borderTop: '1px solid rgba(159, 159, 159, 0.2)'
-        }}>
-          <p style={{
-            fontSize: '13px',
-            color: '#9F9F9FB2'
-          }}>
+        <div className="flex justify-between items-center pt-8 border-t border-white/20">
+          <p className="text-footnote" style={{ color: '#9F9F9FB2' }}>
             © 2025 Invoo.es. Todos los derechos reservados. Hecho con amor para autónomos españoles
           </p>
-          
+
           {/* Social icons */}
-          <div style={{
-            display: 'flex',
-            gap: '24px'
-          }}>
+          <div className="flex gap-6">
             <a href="https://www.linkedin.com/company/invooes" target="_blank" rel="noopener noreferrer" style={{ color: '#9F9F9FB2' }}>
               <Linkedin size={20} />
             </a>

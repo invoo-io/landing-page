@@ -82,38 +82,27 @@ export default function Navigation({ locale }: NavigationProps) {
                 onMouseEnter={() => handleMouseEnter("services")}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="flex items-center gap-1.5 text-white/70 hover:text-white transition-colors text-sm font-medium">
+                <button className="flex items-center gap-1.5 text-white/70 hover:text-white transition-colors text-subheadline-emphasized">
                   <span>Services</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
 
                 {activeDropdown === "services" && (
                   <div
-                    className="absolute top-full left-0 mt-2 min-w-[200px] before:absolute before:inset-x-0 before:-top-2 before:h-2"
+                    className="absolute top-full left-0 mt-2 min-w-[200px] before:absolute before:inset-x-0 before:-top-2 before:h-2 py-2 rounded-xl"
                     style={{
-                      backgroundColor: "rgba(20, 20, 20, 0.98)",
-                      backdropFilter: "blur(20px)",
-                      border: "1px solid rgba(255, 255, 255, 0.08)",
-                      borderRadius: "12px",
-                      boxShadow:
-                        "0 10px 40px rgba(0, 0, 0, 0.8), 0 2px 10px rgba(0, 0, 0, 0.5)",
-                      padding: "8px 0",
-                      animation: "slideDown 0.2s ease-out",
+                      backgroundColor: 'rgba(20, 20, 20, 0.98)',
+                      backdropFilter: 'blur(20px)',
+                      border: '1px solid rgba(255, 255, 255, 0.08)',
+                      boxShadow: '0 10px 40px rgba(0, 0, 0, 0.8), 0 2px 10px rgba(0, 0, 0, 0.5)',
+                      animation: 'slideDown 0.2s ease-out'
                     }}
                   >
                     {services.map((service) => (
                       <Link
                         key={service.name}
                         href={service.href}
-                        className="relative block"
-                        style={{
-                          padding: "12px 24px",
-                          fontSize: "14px",
-                          fontWeight: "500",
-                          color: "rgba(255, 255, 255, 0.9)",
-                          transition: "all 0.2s ease",
-                          textDecoration: "none",
-                        }}
+                        className="relative block px-6 py-3 text-footnote-emphasized text-white/90 hover:text-white hover:bg-white/8 transition-all no-underline"
                         onMouseEnter={(e) => {
                           e.currentTarget.style.backgroundColor =
                             "rgba(255, 255, 255, 0.08)";
@@ -138,38 +127,27 @@ export default function Navigation({ locale }: NavigationProps) {
                 onMouseEnter={() => handleMouseEnter("resources")}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="flex items-center gap-1.5 text-white/70 hover:text-white transition-colors text-sm font-medium">
+                <button className="flex items-center gap-1.5 text-white/70 hover:text-white transition-colors text-subheadline-emphasized">
                   <span>Resources</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
 
                 {activeDropdown === "resources" && (
                   <div
-                    className="absolute top-full left-0 mt-2 min-w-[200px] before:absolute before:inset-x-0 before:-top-2 before:h-2"
+                    className="absolute top-full left-0 mt-2 min-w-[200px] before:absolute before:inset-x-0 before:-top-2 before:h-2 py-2 rounded-xl"
                     style={{
-                      backgroundColor: "rgba(20, 20, 20, 0.98)",
-                      backdropFilter: "blur(20px)",
-                      border: "1px solid rgba(255, 255, 255, 0.08)",
-                      borderRadius: "12px",
-                      boxShadow:
-                        "0 10px 40px rgba(0, 0, 0, 0.8), 0 2px 10px rgba(0, 0, 0, 0.5)",
-                      padding: "8px 0",
-                      animation: "slideDown 0.2s ease-out",
+                      backgroundColor: 'rgba(20, 20, 20, 0.98)',
+                      backdropFilter: 'blur(20px)',
+                      border: '1px solid rgba(255, 255, 255, 0.08)',
+                      boxShadow: '0 10px 40px rgba(0, 0, 0, 0.8), 0 2px 10px rgba(0, 0, 0, 0.5)',
+                      animation: 'slideDown 0.2s ease-out'
                     }}
                   >
                     {resources.map((resource) => (
                       <Link
                         key={resource.name}
                         href={resource.href}
-                        className="relative block"
-                        style={{
-                          padding: "12px 24px",
-                          fontSize: "14px",
-                          fontWeight: "500",
-                          color: "rgba(255, 255, 255, 0.9)",
-                          transition: "all 0.2s ease",
-                          textDecoration: "none",
-                        }}
+                        className="relative block px-6 py-3 text-footnote-emphasized text-white/90 hover:text-white hover:bg-white/8 transition-all no-underline"
                         onMouseEnter={(e) => {
                           e.currentTarget.style.backgroundColor =
                             "rgba(255, 255, 255, 0.08)";
@@ -191,21 +169,21 @@ export default function Navigation({ locale }: NavigationProps) {
               {/* Direct Links */}
               <Link
                 href={getBasePath(`/${locale}/pricing`)}
-                className="text-white/70 hover:text-white transition-colors text-sm font-medium"
+                className="text-white/70 hover:text-white transition-colors text-subheadline-emphasized"
               >
                 Pricing
               </Link>
 
               <Link
                 href={getBasePath(`/${locale}/about`)}
-                className="text-white/70 hover:text-white transition-colors text-sm font-medium"
+                className="text-white/70 hover:text-white transition-colors text-subheadline-emphasized"
               >
                 About Us
               </Link>
 
               <Link
                 href={getBasePath(`/${locale}/contact`)}
-                className="text-white/70 hover:text-white transition-colors text-sm font-medium"
+                className="text-white/70 hover:text-white transition-colors text-subheadline-emphasized"
               >
                 Contact
               </Link>
@@ -285,10 +263,7 @@ export default function Navigation({ locale }: NavigationProps) {
               className="fixed right-0 top-0 h-full w-[85%] max-w-[400px] bg-[#0a0a0a] border-l border-white/10 z-50 lg:hidden overflow-y-auto"
             >
               {/* Drawer Header */}
-              <div
-                className="relative border-b border-white/5"
-                style={{ padding: "24px" }}
-              >
+              <div className="relative border-b border-white/5 p-6">
                 <div className="flex justify-center">
                   <Image
                     src={getImagePath("/Logo.png")}
@@ -310,11 +285,7 @@ export default function Navigation({ locale }: NavigationProps) {
               {/* Drawer Content */}
               <div className="p-6">
                 <motion.div
-                  style={{
-                    display: "flex",
-                    flexDirection: "column",
-                    gap: "12px",
-                  }}
+                  className="flex flex-col gap-3"
                   initial="closed"
                   animate="open"
                   variants={{
@@ -338,29 +309,10 @@ export default function Navigation({ locale }: NavigationProps) {
                     transition={{ duration: 0.3 }}
                   >
                     <button
-                      onClick={() =>
-                        setMobileActiveDropdown(
-                          mobileActiveDropdown === "services"
-                            ? null
-                            : "services"
-                        )
-                      }
-                      className="relative w-full text-white hover:bg-white/5 rounded-lg transition-colors"
-                      style={{
-                        padding: "16px 24px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
+                      onClick={() => setMobileActiveDropdown(mobileActiveDropdown === "services" ? null : "services")}
+                      className="relative w-full text-white hover:bg-white/5 rounded-lg transition-colors px-6 py-4 flex items-center justify-center"
                     >
-                      <span
-                        style={{
-                          fontSize: "16px",
-                          fontWeight: "500",
-                        }}
-                      >
-                        Services
-                      </span>
+                      <span className="text-callout-emphasized">Services</span>
                       <motion.div
                         style={{
                           position: "absolute",
@@ -399,14 +351,7 @@ export default function Navigation({ locale }: NavigationProps) {
                                 <Link
                                   href={service.href}
                                   onClick={() => setMobileMenuOpen(false)}
-                                  className="block text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-all"
-                                  style={{
-                                    padding: "12px 20px",
-                                    fontSize: "15px",
-                                    textAlign: "center",
-                                    marginLeft: "16px",
-                                    marginRight: "16px",
-                                  }}
+                                  className="block text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-all text-subheadline text-center px-5 py-3 mx-4"
                                 >
                                   {service.name}
                                 </Link>
@@ -427,29 +372,10 @@ export default function Navigation({ locale }: NavigationProps) {
                     transition={{ duration: 0.3 }}
                   >
                     <button
-                      onClick={() =>
-                        setMobileActiveDropdown(
-                          mobileActiveDropdown === "resources"
-                            ? null
-                            : "resources"
-                        )
-                      }
-                      className="relative w-full text-white hover:bg-white/5 rounded-lg transition-colors"
-                      style={{
-                        padding: "16px 24px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                      }}
+                      onClick={() => setMobileActiveDropdown(mobileActiveDropdown === "resources" ? null : "resources")}
+                      className="relative w-full text-white hover:bg-white/5 rounded-lg transition-colors px-6 py-4 flex items-center justify-center"
                     >
-                      <span
-                        style={{
-                          fontSize: "16px",
-                          fontWeight: "500",
-                        }}
-                      >
-                        Resources
-                      </span>
+                      <span className="text-callout-emphasized">Resources</span>
                       <motion.div
                         style={{
                           position: "absolute",
@@ -489,14 +415,7 @@ export default function Navigation({ locale }: NavigationProps) {
                                 <Link
                                   href={resource.href}
                                   onClick={() => setMobileMenuOpen(false)}
-                                  className="block text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-all"
-                                  style={{
-                                    padding: "12px 20px",
-                                    fontSize: "15px",
-                                    textAlign: "center",
-                                    marginLeft: "16px",
-                                    marginRight: "16px",
-                                  }}
+                                  className="block text-white/70 hover:text-white hover:bg-white/5 rounded-lg transition-all text-subheadline text-center px-5 py-3 mx-4"
                                 >
                                   {resource.name}
                                 </Link>
@@ -519,13 +438,7 @@ export default function Navigation({ locale }: NavigationProps) {
                     <Link
                       href={getBasePath(`/${locale}/pricing`)}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="w-full text-white hover:bg-white/5 rounded-lg transition-colors block"
-                      style={{
-                        padding: "16px 24px",
-                        textAlign: "center",
-                        fontSize: "16px",
-                        fontWeight: "500",
-                      }}
+                      className="w-full text-white hover:bg-white/5 rounded-lg transition-colors block px-6 py-4 text-center text-callout-emphasized"
                     >
                       Pricing
                     </Link>
@@ -541,13 +454,7 @@ export default function Navigation({ locale }: NavigationProps) {
                     <Link
                       href={getBasePath(`/${locale}/about`)}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="w-full text-white hover:bg-white/5 rounded-lg transition-colors block"
-                      style={{
-                        padding: "16px 24px",
-                        textAlign: "center",
-                        fontSize: "16px",
-                        fontWeight: "500",
-                      }}
+                      className="w-full text-white hover:bg-white/5 rounded-lg transition-colors block px-6 py-4 text-center text-callout-emphasized"
                     >
                       About Us
                     </Link>
@@ -563,13 +470,7 @@ export default function Navigation({ locale }: NavigationProps) {
                     <Link
                       href={getBasePath(`/${locale}/contact`)}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="w-full text-white hover:bg-white/5 rounded-lg transition-colors block"
-                      style={{
-                        padding: "16px 24px",
-                        textAlign: "center",
-                        fontSize: "16px",
-                        fontWeight: "500",
-                      }}
+                      className="w-full text-white hover:bg-white/5 rounded-lg transition-colors block px-6 py-4 text-center text-callout-emphasized"
                     >
                       Contact
                     </Link>
@@ -587,24 +488,10 @@ export default function Navigation({ locale }: NavigationProps) {
                     transition={{ duration: 0.3 }}
                   >
                     <button
-                      className="w-full text-white hover:bg-white/5 rounded-lg transition-colors"
-                      style={{
-                        padding: "16px 24px",
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "center",
-                        gap: "12px",
-                      }}
+                      className="w-full text-white hover:bg-white/5 rounded-lg transition-colors px-6 py-4 flex items-center justify-center gap-3"
                     >
                       <Globe className="w-5 h-5 text-white/50" />
-                      <span
-                        style={{
-                          fontSize: "16px",
-                          fontWeight: "500",
-                        }}
-                      >
-                        Language
-                      </span>
+                      <span className="text-callout-emphasized">Language</span>
                     </button>
                   </motion.div>
 
@@ -615,11 +502,7 @@ export default function Navigation({ locale }: NavigationProps) {
                       closed: { opacity: 0, x: 50 },
                     }}
                     transition={{ duration: 0.3 }}
-                    style={{
-                      paddingTop: "24px",
-                      display: "flex",
-                      justifyContent: "center",
-                    }}
+                    className="pt-6 flex justify-center"
                   >
                     <NavigationDrawerButton />
                   </motion.div>

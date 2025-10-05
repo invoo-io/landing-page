@@ -27,6 +27,7 @@ export default function BuildForGestoriasButton({ text, onClick }: BuildForGesto
     <button
       onClick={onClick}
       style={{
+        fontFamily: 'var(--font-inter)',
         padding: '0 24px',
         height: '47px',
         maxHeight: '47px',

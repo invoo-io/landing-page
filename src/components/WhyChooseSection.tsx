@@ -22,43 +22,18 @@ export default function WhyChooseSection() {
   ];
 
   return (
-    <section style={{ 
-      padding: '96px 24px', 
-      backgroundColor: 'black' 
-    }}>
+    <section className="py-24 px-6 bg-black">
       {/* Title */}
-      <h2 style={{
-        fontWeight: 600,
-        fontSize: '48px',
-        lineHeight: '56px',
-        letterSpacing: '0.4px',
-        textAlign: 'center',
-        color: 'white',
-        maxWidth: '900px',
-        margin: '0 auto',
-        marginBottom: '64px'
-      }}>
+      <h2 className="text-large-title-emphasized text-center text-white max-w-4xl mx-auto mb-16" style={{ fontSize: '48px' }}>
         Why freelancers and gestoría should choose Invoo
       </h2>
 
       {/* Features Grid */}
-      <div style={{
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))',
-        gap: '64px',
-        maxWidth: '1000px',
-        margin: '0 auto',
-        marginBottom: '64px'
-      }}>
+      <div className="grid gap-16 max-w-5xl mx-auto mb-16" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
         {features.map((feature, index) => (
-          <div key={index} style={{
-            display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center',
-            textAlign: 'center'
-          }}>
+          <div key={index} className="flex flex-col items-center text-center">
             {/* Image */}
-            <div style={{ marginBottom: '24px' }}>
+            <div className="mb-6">
               <Image
                 src={feature.image}
                 alt={feature.title}
@@ -67,24 +42,14 @@ export default function WhyChooseSection() {
                 style={{ objectFit: 'contain' }}
               />
             </div>
-            
+
             {/* Title */}
-            <h3 style={{ 
-              fontSize: '22px', 
-              fontWeight: 600,
-              color: 'white',
-              marginBottom: '12px'
-            }}>
+            <h3 className="text-title2-emphasized text-white mb-3">
               {feature.title}
             </h3>
-            
+
             {/* Description */}
-            <p style={{ 
-              fontSize: '17px',
-              color: '#9F9F9FB2',
-              lineHeight: '1.5',
-              maxWidth: '280px'
-            }}>
+            <p className="text-body max-w-xs" style={{ color: '#9F9F9FB2' }}>
               {feature.description}
             </p>
           </div>
