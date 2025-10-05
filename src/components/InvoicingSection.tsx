@@ -43,7 +43,7 @@ export default function InvoicingSection() {
             </h3>
 
             {/* Description */}
-            <p className="text-body text-label-tertiary max-w-xs">
+            <p className="text-body max-w-xs" style={{ color: 'var(--label-secondary-dark)' }}>
               {step.description}
             </p>
           </div>

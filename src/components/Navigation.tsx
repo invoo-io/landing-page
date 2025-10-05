@@ -326,7 +326,7 @@ export default function Navigation({ locale }: NavigationProps) {
                         }}
                         transition={{ duration: 0.2 }}
                       >
-                        <ChevronDown className="w-4 h-4 text-label-tertiary" />
+                        <ChevronDown className="w-4 h-4" style={{ color: 'var(--label-secondary-dark)' }} />
                       </motion.div>
                     </button>
 
@@ -390,7 +390,7 @@ export default function Navigation({ locale }: NavigationProps) {
                         }}
                         transition={{ duration: 0.2 }}
                       >
-                        <ChevronDown className="w-4 h-4 text-label-tertiary" />
+                        <ChevronDown className="w-4 h-4" style={{ color: 'var(--label-secondary-dark)' }} />
                       </motion.div>
                     </button>
 
@@ -495,7 +495,7 @@ export default function Navigation({ locale }: NavigationProps) {
                     <button
                       className="w-full text-label-inverted hover:bg-fills-tertiary rounded-lg transition-colors px-6 py-4 flex items-center justify-center gap-3"
                     >
-                      <Globe className="w-5 h-5 text-label-tertiary" />
+                      <Globe className="w-5 h-5" style={{ color: 'var(--label-secondary-dark)' }} />
                       <span className="text-callout-emphasized">Language</span>
                     </button>
                   </motion.div>

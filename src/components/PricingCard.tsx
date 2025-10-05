@@ -71,7 +71,7 @@ export default function PricingCard({
           </div>
 
           {subtitle && (
-            <div className="text-footnote text-label-tertiary mt-2">
+            <div className="text-footnote mt-2" style={{ color: 'var(--label-secondary-dark)' }}>
               {subtitle}
             </div>
           )}

@@ -43,7 +43,7 @@ export default function FocusSection() {
           Focus on your work. We&apos;ll handle the paperwork.
         </h2>
 
-        <p className="text-callout text-label-tertiary mb-12">
+        <p className="text-callout mb-12" style={{ color: 'var(--label-secondary-dark)' }}>
           Join other freelancers who are getting ready for VeriFActu with a tool designed for Spain&apos;s autónomos
         </p>
 

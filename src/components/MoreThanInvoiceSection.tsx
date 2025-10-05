@@ -98,7 +98,7 @@ export default function MoreThanInvoiceSection() {
               <h3 className="text-title3-emphasized text-label-inverted mb-3" style={{ fontSize: "20px" }}>
                 {feature.title}
               </h3>
-              <p className="text-callout text-label-tertiary">
+              <p className="text-callout" style={{ color: 'var(--label-secondary-dark)' }}>
                 {feature.description}
               </p>
             </div>

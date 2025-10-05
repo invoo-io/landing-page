@@ -40,7 +40,7 @@ export default function BuildForGestoriasSection({
         {title}
       </h2>
 
-      <p className="text-callout text-label-tertiary mb-8">
+      <p className="text-callout mb-8" style={{ color: 'var(--label-secondary-dark)' }}>
         {paragraph}
       </p>
 

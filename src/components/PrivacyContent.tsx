@@ -4,7 +4,7 @@ export default function PrivacyContent() {
       <div className="max-w-4xl mx-auto px-6">
         <h1 className="text-5xl font-bold text-label-inverted mb-6">Privacy Policy</h1>
 
-        <p className="text-label-tertiary text-sm mb-12">Last updated: July 19, 2025</p>
+        <p className="text-sm mb-12" style={{ color: 'var(--label-secondary-dark)' }}>Last updated: July 19, 2025</p>
 
         <div className="space-y-8">
           <div>

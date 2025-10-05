@@ -35,7 +35,7 @@ export default function PricingSection() {
           style={{
             background: 'none',
             border: 'none',
-            color: activeTab === "freelancer" ? 'var(--label-inverted)' : 'var(--label-tertiary)'
+            color: activeTab === "freelancer" ? 'var(--label-inverted)' : 'var(--label-secondary-dark)'
           }}
         >
           Freelancer
@@ -49,7 +49,7 @@ export default function PricingSection() {
           style={{
             background: 'none',
             border: 'none',
-            color: activeTab === "gestoria" ? 'var(--label-inverted)' : 'var(--label-tertiary)'
+            color: activeTab === "gestoria" ? 'var(--label-inverted)' : 'var(--label-secondary-dark)'
           }}
         >
           Gestoria
