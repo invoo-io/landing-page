@@ -122,7 +122,8 @@ export default function FAQContent() {
                 <AccordionItem
                   key={`${categoryIndex}-${index}`}
                   value={`item-${categoryIndex}-${index}`}
-                  className=" bg-fills-tertiary border border-strokes-primary rounded-2xl overflow-hidden data-[state=open]:bg-fills-secondary transition-colors"
+                  className="border-0 rounded-2xl overflow-hidden data-[state=open]:bg-fills-secondary transition-colors"
+                  style={{ backgroundColor: 'var(--background-secondary-dark)' }}
                 >
                   <AccordionTrigger className="text-label-inverted hover:no-underline hover:text-label-inverted-secondary text-left font-normal px-6 py-5">
                     {item.question}
