@@ -12,7 +12,7 @@ export default async function PricingPage({
   setRequestLocale(locale);
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-bg-primary">
       <Navigation locale={locale} />
       <PricingSection />
       <Footer locale={locale} />

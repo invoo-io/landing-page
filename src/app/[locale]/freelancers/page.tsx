@@ -16,7 +16,7 @@ export default async function FreelancersPage({
   setRequestLocale(locale);
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-bg-primary">
       <Navigation locale={locale} />
       <HeroSection 
         title={

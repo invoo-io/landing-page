@@ -12,7 +12,7 @@ export default async function TermsPage({
   setRequestLocale(locale);
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-bg-primary">
       <Navigation locale={locale} />
       <TermsContent />
       <Footer locale={locale} />

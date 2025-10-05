@@ -13,7 +13,7 @@ export default async function ContactPage({
   setRequestLocale(locale);
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-bg-primary">
       <Navigation locale={locale} />
       <ContactForm />
       <FocusSection />

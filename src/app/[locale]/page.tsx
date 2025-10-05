@@ -21,7 +21,7 @@ export default async function Home({
   setRequestLocale(locale);
 
   return (
-    <div className="min-h-screen bg-bg-inverted">
+    <div className="min-h-screen bg-bg-primary">
       <Navigation locale={locale} />
       <HeroSection
         title={

@@ -108,7 +108,7 @@
      BACKGROUND COLORS
      ======================================== */
 
-  --background-primary-light: rgba(250, 250, 253, 1);
+  --background-primary-light: rgba(18, 18, 18, 1);
   --background-primary-dark: rgba(18, 18, 18, 1);
   --background-primary: var(--background-primary-light);
 

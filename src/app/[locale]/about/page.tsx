@@ -17,7 +17,7 @@ export default async function AboutPage({
   setRequestLocale(locale);
 
   return (
-    <div className="min-h-screen bg-black relative overflow-hidden">
+    <div className="min-h-screen bg-bg-primary relative overflow-hidden">
       <div className="relative z-10">
         <Navigation locale={locale} />
         <Image
