@@ -69,8 +69,8 @@ export default function ContactForm() {
   };
 
   const inputStyles: React.CSSProperties = {
-    backgroundColor: 'var(--fills-tertiary)',
-    border: '1px solid var(--strokes-primary)',
+    backgroundColor: 'var(--fills-quaternary-dark)',
+    border: 'none',
     borderRadius: '4px',
     padding: '11px 14px',
     color: 'var(--label-inverted)',
