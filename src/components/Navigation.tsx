@@ -24,7 +24,10 @@ export default function Navigation({ locale }: NavigationProps) {
     { name: "Gestorías", href: getBasePath(`/${locale}/gestorias`) },
   ];
 
-  const resources = [{ name: "FAQ", href: getBasePath(`/${locale}/faq`) }];
+  const resources = [
+    { name: "FAQ", href: getBasePath(`/${locale}/faq`), external: false },
+    { name: "Blog", href: "https://invoo.substack.com/", external: true },
+  ];
 
   const handleMouseEnter = (dropdown: string) => {
     setActiveDropdown(dropdown);
@@ -49,24 +52,24 @@ export default function Navigation({ locale }: NavigationProps) {
   return (
     <>
       <nav
-        className="w-full bg-bg-inverted/80 backdrop-blur-xl border-b border-strokes-primary/50 relative"
-        style={{ zIndex: 100 }}
+        className="w-full relative"
+        style={{ zIndex: 100, backgroundColor: 'var(--background-secondary-dark)' }}
       >
         <div className="w-full">
           <div
             className="flex items-center justify-between h-20"
             style={{
-              paddingRight: "20px",
-              paddingLeft: "20px",
+              paddingRight: "24px",
+              paddingLeft: "24px",
             }}
           >
             {/* Logo */}
             <div className="flex items-center z-50">
-              <Link href={getBasePath("/")} className="flex items-center">
+              <Link href={getBasePath("/")} className="flex items-center" prefetch={true}>
                 <Image
-                  src={getImagePath("/Logo.png")}
+                  src={getImagePath("/Logo.svg")}
                   alt="invoo"
-                  width={120}
+                  width={126}
                   height={32}
                   className="h-8 w-auto"
                   priority
@@ -82,7 +85,7 @@ export default function Navigation({ locale }: NavigationProps) {
                 onMouseEnter={() => handleMouseEnter("services")}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="flex items-center gap-1.5 text-label-inverted-secondary hover:text-label-inverted transition-colors text-subheadline-emphasized">
+                <button className="flex items-center gap-1.5 text-label-inverted hover:text-label-inverted-secondary transition-colors text-callout">
                   <span>Services</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
@@ -127,7 +130,7 @@ export default function Navigation({ locale }: NavigationProps) {
                 onMouseEnter={() => handleMouseEnter("resources")}
                 onMouseLeave={handleMouseLeave}
               >
-                <button className="flex items-center gap-1.5 text-label-inverted-secondary hover:text-label-inverted transition-colors text-subheadline-emphasized">
+                <button className="flex items-center gap-1.5 text-label-inverted hover:text-label-inverted-secondary transition-colors text-callout">
                   <span>Resources</span>
                   <ChevronDown className="w-4 h-4" />
                 </button>
@@ -147,6 +150,8 @@ export default function Navigation({ locale }: NavigationProps) {
                       <Link
                         key={resource.name}
                         href={resource.href}
+                        target={resource.external ? "_blank" : undefined}
+                        rel={resource.external ? "noopener noreferrer" : undefined}
                         className="relative block px-6 py-3 text-footnote-emphasized text-label-inverted hover:text-label-inverted hover:bg-fills-secondary transition-all no-underline"
                         onMouseEnter={(e) => {
                           e.currentTarget.style.backgroundColor =
@@ -169,21 +174,21 @@ export default function Navigation({ locale }: NavigationProps) {
               {/* Direct Links */}
               <Link
                 href={getBasePath(`/${locale}/pricing`)}
-                className="text-label-inverted-secondary hover:text-label-inverted transition-colors text-subheadline-emphasized"
+                className="text-label-inverted hover:text-label-inverted-secondary transition-colors text-callout"
               >
                 Pricing
               </Link>
 
               <Link
                 href={getBasePath(`/${locale}/about`)}
-                className="text-label-inverted-secondary hover:text-label-inverted transition-colors text-subheadline-emphasized"
+                className="text-label-inverted hover:text-label-inverted-secondary transition-colors text-callout"
               >
                 About Us
               </Link>
 
               <Link
                 href={getBasePath(`/${locale}/contact`)}
-                className="text-label-inverted-secondary hover:text-label-inverted transition-colors text-subheadline-emphasized"
+                className="text-label-inverted hover:text-label-inverted-secondary transition-colors text-callout"
               >
                 Contact
               </Link>
@@ -260,13 +265,13 @@ export default function Navigation({ locale }: NavigationProps) {
                 damping: 30,
                 stiffness: 300,
               }}
-              className="fixed right-0 top-0 h-full w-[85%] max-w-[400px] bg-bg-inverted border-l border-strokes-primary/50 z-50 lg:hidden overflow-y-auto"
+              className="fixed right-0 top-0 h-full w-[85%] max-w-[400px] bg-bg-inverted z-50 lg:hidden overflow-y-auto"
             >
               {/* Drawer Header */}
               <div className="relative border-b border-strokes-primary/20 p-6">
                 <div className="flex justify-center">
                   <Image
-                    src={getImagePath("/Logo.png")}
+                    src={getImagePath("/Logo.svg")}
                     alt="invoo"
                     width={100}
                     height={28}
@@ -414,6 +419,8 @@ export default function Navigation({ locale }: NavigationProps) {
                               >
                                 <Link
                                   href={resource.href}
+                                  target={resource.external ? "_blank" : undefined}
+                                  rel={resource.external ? "noopener noreferrer" : undefined}
                                   onClick={() => setMobileMenuOpen(false)}
                                   className="block text-label-inverted-secondary hover:text-label-inverted hover:bg-fills-tertiary rounded-lg transition-all text-subheadline text-center px-5 py-3 mx-4"
                                 >
