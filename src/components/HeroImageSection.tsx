@@ -8,19 +8,19 @@ interface HeroImageSectionProps {
 }
 
 export default function HeroImageSection({
-  backgroundImage = "/Bck-Main.png",
+  backgroundImage = "/hero-bck.png",
   dashboardImage = "/productdashboard.png",
   dashboardAlt = "Invoo Dashboard",
 }: HeroImageSectionProps) {
   return (
-    <section className="relative w-full min-h-[125vh] flex items-center justify-center overflow-hidden py-20">
+    <section className="relative w-full min-h-[125vh] flex items-center justify-center overflow-hidden mt-[156px] max-md:mt-10">
       {/* Background Image as absolute element */}
       <div className="absolute inset-0 w-full h-full">
         <Image
           src={getImagePath(backgroundImage)}
           alt="Background"
           fill
-          className="object-cover"
+          className="object-contain"
           priority
         />
       </div>

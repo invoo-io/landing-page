@@ -37,7 +37,7 @@ export default async function Home({
         buttonText="Join the waiting list"
         buttonHref="#waitlist"
       />
-      <HeroImageSection dashboardImage="/Home.png" backgroundImage="/Bck-Main.png" />
+      <HeroImageSection dashboardImage="/Home.png" />
       <WhyChooseSection />
       <InvoicingSection />
       <MoreThanInvoiceSection />
