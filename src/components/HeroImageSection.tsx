@@ -13,7 +13,7 @@ export default function HeroImageSection({
   dashboardAlt = "Invoo Dashboard",
 }: HeroImageSectionProps) {
   return (
-    <section className="relative w-full min-h-[125vh] flex items-center justify-center overflow-hidden mt-[156px] max-md:mt-10">
+    <section className="relative w-full min-h-[125vh] flex items-center justify-center overflow-hidden">
       {/* Background Image as absolute element */}
       <div className="absolute inset-0 w-full h-full">
         <Image
