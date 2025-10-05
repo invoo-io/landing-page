@@ -43,23 +43,23 @@ export default function PricingCard({
       }}
     >
       <div className="flex-1">
-        <h3 className="text-title1-emphasized mb-3" style={{ color: 'var(--label-primary)' }}>
+        <h3 className="text-title1-emphasized text-label-primary mb-3">
           {title}
         </h3>
 
         {description && (
-          <p className="text-footnote mb-6" style={{ color: 'var(--label-secondary)' }}>
+          <p className="text-footnote text-label-secondary mb-6">
             {description}
           </p>
         )}
 
         <div className="mb-6">
           <div className="flex items-baseline gap-2">
-            <span className="text-large-title-emphasized" style={{ fontSize: '48px', fontWeight: 700, color: 'var(--label-primary)' }}>
+            <span className="text-large-title-emphasized text-label-primary" style={{ fontSize: '48px', fontWeight: 700 }}>
               {price}
             </span>
             {period && (
-              <span className="text-callout" style={{ color: 'var(--label-secondary)' }}>
+              <span className="text-callout text-label-secondary">
                 {period}
               </span>
             )}
@@ -93,7 +93,7 @@ export default function PricingCard({
             {features.map((feature, index) => (
               <div key={index} className="flex items-start gap-3">
                 <Check size={20} className="text-accent-green-main flex-shrink-0 mt-0.5" />
-                <span className="text-footnote" style={{ color: 'var(--label-primary)' }}>
+                <span className="text-footnote text-label-primary">
                   {feature}
                 </span>
               </div>

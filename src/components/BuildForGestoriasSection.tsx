@@ -38,11 +38,11 @@ export default function BuildForGestoriasSection({
 }: BuildForGestoriasSectionProps) {
   const textContent = (
     <div className="max-w-full" style={{ width: '500px' }}>
-      <h2 className="text-large-title-emphasized text-label-inverted mb-6" style={{ fontSize: '48px' }}>
+      <h2 className="text-large-title-emphasized text-label-primary mb-6" style={{ fontSize: '48px' }}>
         {title}
       </h2>
 
-      <p className="text-callout mb-8" style={{ color: 'var(--label-secondary-dark)' }}>
+      <p className="text-callout text-label-secondary mb-8">
         {paragraph}
       </p>
 
@@ -103,16 +103,13 @@ export default function BuildForGestoriasSection({
   ) : null;
 
   return (
-    <section style={{
+    <section className="py-[156px] max-md:py-10" style={{
       position: 'relative',
       // height: '634px',
       overflow: 'hidden',
       display: 'flex',
       alignItems: 'center',
-      justifyContent: 'center',
-      padding: '40px 0',
-      marginTop: '120px',
-      marginBottom: '120px'
+      justifyContent: 'center'
     }}>
       {/* Content Container */}
       <div style={{

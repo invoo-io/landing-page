@@ -24,7 +24,7 @@ export default function WhyChooseSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-bg-inverted">
+    <section className="py-[156px] max-md:py-10 px-6 bg-bg-inverted">
       {/* Title */}
       <h2 className="text-large-title-emphasized text-center text-label-inverted max-w-4xl mx-auto mb-16" style={{ fontSize: '48px' }}>
         Why freelancers and gestoría should choose Invoo
@@ -33,7 +33,7 @@ export default function WhyChooseSection() {
       {/* Features Grid */}
       <div className="grid gap-16 max-w-5xl mx-auto mb-16" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
         {features.map((feature, index) => (
-          <div key={index} className="flex flex-col items-center text-center">
+          <div key={index} className="flex flex-col items-center text-center bg-bg-secondary rounded-3xl p-8">
             {/* Image */}
             <div className="mb-6">
               <Image
@@ -46,12 +46,12 @@ export default function WhyChooseSection() {
             </div>
 
             {/* Title */}
-            <h3 className="text-title2-emphasized text-label-inverted mb-3">
+            <h3 className="text-title2-emphasized text-label-primary mb-3">
               {feature.title}
             </h3>
 
             {/* Description */}
-            <p className="text-body max-w-xs" style={{ color: 'var(--label-secondary-dark)' }}>
+            <p className="text-body text-label-secondary max-w-xs">
               {feature.description}
             </p>
           </div>
@@ -72,13 +72,13 @@ export default function WhyChooseSection() {
           padding: '2px',
           display: 'inline-flex'
         }}>
-          <Button variant="outline" showArrow className="!bg-bg-inverted !border-0 !text-label-inverted">
+          <Button variant="outline" showArrow className="!bg-bg-inverted !border-0 !text-label-inverted" href="/gestorias">
             Gestoría
           </Button>
         </div>
 
         {/* Freelancer button with solid gradient background */}
-        <Button variant="gradient" showArrow>
+        <Button variant="gradient" showArrow href="/freelancers">
           Freelancer
         </Button>
       </div>

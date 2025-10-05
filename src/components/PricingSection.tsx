@@ -9,9 +9,8 @@ export default function PricingSection() {
   const [isAnnual, setIsAnnual] = useState(false);
 
   return (
-    <section style={{
+    <section className="py-[156px] max-md:py-10 px-6" style={{
       minHeight: '100vh',
-      padding: '80px 24px',
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center'

@@ -32,6 +32,7 @@ export default function MoreThanInvoiceSection() {
 
   return (
     <section
+      className="py-[156px] max-md:py-10"
       style={{
         position: "relative",
         minHeight: "634px",
@@ -85,7 +86,7 @@ export default function MoreThanInvoiceSection() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-system-grey800 rounded-xl p-8 text-center"
+              className="bg-bg-secondary rounded-3xl p-8 text-center"
               style={{ minHeight: "150px" }}
             >
               <Image
@@ -95,10 +96,10 @@ export default function MoreThanInvoiceSection() {
                 height={100}
                 style={{ objectFit: "contain", margin: "0 auto" }}
               />
-              <h3 className="text-title3-emphasized text-label-inverted mb-3" style={{ fontSize: "20px" }}>
+              <h3 className="text-title3-emphasized text-label-primary mb-3" style={{ fontSize: "20px" }}>
                 {feature.title}
               </h3>
-              <p className="text-callout" style={{ color: 'var(--label-secondary-dark)' }}>
+              <p className="text-callout text-label-secondary">
                 {feature.description}
               </p>
             </div>
