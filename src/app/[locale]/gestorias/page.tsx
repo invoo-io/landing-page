@@ -31,11 +31,12 @@ export default async function GestoriasPage({
         buttonHref="#contact"
       />
       <HeroImageSection dashboardImage="/Gestoria.png" />
-      <BuildForGestoriasSection 
+      <BuildForGestoriasSection
         imageSrc="/calendar.png"
         imageWidth={350}
         imageHeight={350}
         offsetImage={false}
+        maxImageWidth={160}
         title="Always up to date"
         paragraph="No more chasing clients for invoices. See every invoice and expense the moment it's created."
         features={[
@@ -45,11 +46,12 @@ export default async function GestoriasPage({
         ]}
         buttonText="Join the waiting list"
       />
-      <BuildForGestoriasSection 
+      <BuildForGestoriasSection
         imageSrc="/Down.png"
         imageWidth={350}
         imageHeight={350}
         offsetImage={false}
+        maxImageWidth={160}
         title="Data you can actually use"
         paragraph="Download clean CSVs or XMLs ready for your accounting software, no retyping required"
         features={[
@@ -61,11 +63,12 @@ export default async function GestoriasPage({
         imagePosition="left"
         showImagePlaceholder={true}
       />
-      <BuildForGestoriasSection 
+      <BuildForGestoriasSection
         imageSrc="/clock.png"
         imageWidth={350}
         imageHeight={350}
         offsetImage={false}
+        maxImageWidth={160}
         title="Tax periods in seconds"
         paragraph="Pre-calculated Modelo 130 and 303 summaries per client help you prepare declarations faster"
         features={[
@@ -81,7 +84,8 @@ export default async function GestoriasPage({
         imageSrc="/Note.png"
         imageWidth={350}
         imageHeight={350}
-        offsetImage={false} 
+        offsetImage={false}
+        maxImageWidth={160}
         title="Zero cost, zero risk"
         paragraph="Invoo is free for gestorías. Clients pay their subscription, you get the tools, no barriers to adoption"
         features={[

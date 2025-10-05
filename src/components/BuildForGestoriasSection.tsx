@@ -18,6 +18,7 @@ interface BuildForGestoriasSectionProps {
   imageWidth?: number;
   imageHeight?: number;
   offsetImage?: boolean;
+  maxImageWidth?: number;
 }
 
 export default function BuildForGestoriasSection({
@@ -32,7 +33,8 @@ export default function BuildForGestoriasSection({
   showImagePlaceholder = false,
   imageWidth = 800,
   imageHeight = 700,
-  offsetImage = true
+  offsetImage = true,
+  maxImageWidth
 }: BuildForGestoriasSectionProps) {
   const textContent = (
     <div className="max-w-full" style={{ width: '500px' }}>
@@ -74,7 +76,7 @@ export default function BuildForGestoriasSection({
   const imageContent = imageSrc ? (
     <div style={{
       width: 'auto',
-      // maxWidth: '100%',
+      maxWidth: maxImageWidth ? `${maxImageWidth}px` : undefined,
       height: 'auto',
       marginRight: offsetImage ? (imagePosition === 'right' ? '-300px' : '300px') : '0',
     }}>
@@ -104,12 +106,13 @@ export default function BuildForGestoriasSection({
     <section style={{
       position: 'relative',
       // height: '634px',
-      backgroundColor: 'var(--background-inverted)',
       overflow: 'hidden',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      padding: '40px 0'
+      padding: '40px 0',
+      marginTop: '120px',
+      marginBottom: '120px'
     }}>
       {/* Content Container */}
       <div style={{
