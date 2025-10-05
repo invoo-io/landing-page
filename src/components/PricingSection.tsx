@@ -89,7 +89,7 @@ export default function PricingSection() {
             <PricingCard
               title="Pro"
               description="All the tools to invoice and stay compliant, unlimited and connected with your gestoría"
-              price={isAnnual ? "€8.25" : "€10"}
+              price={isAnnual ? "€9.92" : "€11.90"}
               period="per month"
               badge={isAnnual ? "Save 2 months!" : "7 days - Free to try"}
               badgeColor="#22C55E"
