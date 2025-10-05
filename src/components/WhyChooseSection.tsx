@@ -1,5 +1,7 @@
+"use client";
+
 import Image from "next/image";
-import WhyChooseButtons from "./WhyChooseButtons";
+import Button from "./ui/Button";
 import { getImagePath } from "@/lib/utils";
 
 export default function WhyChooseSection() {
@@ -57,7 +59,29 @@ export default function WhyChooseSection() {
       </div>
 
       {/* Buttons */}
-      <WhyChooseButtons />
+      <div style={{
+        display: 'flex',
+        justifyContent: 'center',
+        gap: '16px',
+        flexWrap: 'wrap'
+      }}>
+        {/* Gestoría button with gradient border */}
+        <div style={{
+          background: 'linear-gradient(94.28deg, var(--accent-blue-main) 3.12%, var(--accent-purple-main) 95.84%)',
+          borderRadius: '12px',
+          padding: '2px',
+          display: 'inline-flex'
+        }}>
+          <Button variant="outline" showArrow className="!bg-bg-inverted !border-0 !text-label-inverted">
+            Gestoría
+          </Button>
+        </div>
+
+        {/* Freelancer button with solid gradient background */}
+        <Button variant="gradient" showArrow>
+          Freelancer
+        </Button>
+      </div>
     </section>
   );
 }

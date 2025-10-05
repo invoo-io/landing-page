@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
-import BuildForGestoriasButton from "./BuildForGestoriasButton";
+import Button from "./ui/Button";
+import { DrawerComponent } from "./DrawerComponent";
 import { Check } from "lucide-react";
 
 interface BuildForGestoriasSectionProps {
@@ -42,7 +45,7 @@ export default function BuildForGestoriasSection({
       </p>
 
       {/* Features List */}
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 mb-8">
         {features.map((feature, index) => (
           <div key={index} className="flex items-center gap-3">
             <Check size={20} className="text-accent-green-main" />
@@ -53,7 +56,18 @@ export default function BuildForGestoriasSection({
         ))}
       </div>
 
-      <BuildForGestoriasButton text={buttonText} onClick={buttonOnClick} />
+      {/* Button */}
+      {(buttonText === "Learn More" || buttonText === "Join the waiting list") ? (
+        <DrawerComponent
+          triggerText={buttonText}
+          title=""
+          description=""
+        />
+      ) : (
+        <Button variant="gradient" showArrow onClick={buttonOnClick}>
+          {buttonText}
+        </Button>
+      )}
     </div>
   );
 
