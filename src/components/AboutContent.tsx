@@ -2,7 +2,7 @@ import React from "react";
 
 export default function AboutContent() {
   return (
-    <section className="min-h-screen bg-bg-inverted flex items-center justify-center px-6 mb-40">
+    <section className="min-h-screen flex items-center justify-center px-6 mb-40">
       <div className="max-w-4xl w-full flex flex-col gap-10 text-left">
         {/* Built from real experience section */}
         <div className="mb-8">
