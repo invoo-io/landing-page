@@ -1,4 +1,4 @@
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import HeroImageSection from "@/components/HeroImageSection";
@@ -20,37 +20,39 @@ export default async function Home({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const t = await getTranslations({ locale, namespace: "home" });
+
+  // Split title for gradient: "Create " + "compliant invoices" + " in 30 seconds"
+  // ES: "Crea " + "facturas conformes" + " en 30 segundos"
+  const titleParts = t("hero.title").split(" ");
+  const firstWord = titleParts[0]; // "Create" or "Crea"
+  const middleWords = titleParts.slice(1, -3).join(" "); // "compliant invoices" or "facturas conformes"
+  const lastThreeWords = titleParts.slice(-3).join(" "); // "in 30 seconds" or "en 30 segundos"
+
   return (
     <div className="min-h-screen bg-bg-primary">
       <Navigation locale={locale} />
       <HeroSection
         title={
           <>
-            <span className="text-label-inverted">Create and send</span>{" "}
-            <GradientText>Compliant</GradientText>
-            <br />
-            <GradientText>Invoices</GradientText>{" "}
-            <span className="text-label-inverted">in 30 seconds.</span>
+            <span className="text-label-inverted">{firstWord} </span>
+            <GradientText>{middleWords}</GradientText>
+            <span className="text-label-inverted"> {lastThreeWords}</span>
           </>
         }
-        paragraph="Invoo helps freelancers and gestorías work faster together: VeriFActu-ready, professional PDFs, instant sharing, and automatic tax summaries."
-        buttonText="Join the waiting list"
+        paragraph={t("hero.description")}
+        buttonText={t("hero.cta")}
         buttonHref="#waitlist"
       />
       <HeroImageSection dashboardImage="/Home.png" />
       <WhyChooseSection />
       <InvoicingSection />
       <MoreThanInvoiceSection />
-      <BuildForGestoriasSection 
-        title="Built for gestorías"
-        paragraph="Invoo is not just for freelancers. Gestorías get real-time access to client invoices and expenses, without chasing or retrying. Free, secure, and always VeriFActu compliant."
-        features={[
-          "Real-time multi-client data",
-          "Bulk CSV export",
-          "Quarterly tax summaries"
-        ]}
-        buttonText="Learn More"
-        // imageSrc={getImagePath("/productdashboard.png")}
+      <BuildForGestoriasSection
+        title={t("gestoriasBlock.title")}
+        paragraph={t("gestoriasBlock.description")}
+        features={t.raw("gestoriasBlock.features")}
+        buttonText={t("gestoriasBlock.cta")}
         imageSrc={getImagePath("/Gestoria.png")}
         imageAlt="Gestorías Dashboard"
         imagePosition="right"

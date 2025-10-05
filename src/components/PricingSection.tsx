@@ -1,12 +1,17 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslations } from "next-intl";
 import PricingCard from "./PricingCard";
 import GradientText from "./ui/GradientText";
 
 export default function PricingSection() {
+  const t = useTranslations("pricing");
   const [activeTab, setActiveTab] = useState<"freelancer" | "gestoria">("freelancer");
   const [isAnnual, setIsAnnual] = useState(false);
+
+  // Split title at the period to apply gradient
+  const titleParts = t("header.title").split(". ");
 
   return (
     <section className="py-[156px] max-md:py-10 px-6" style={{
@@ -18,11 +23,11 @@ export default function PricingSection() {
       {/* Header */}
       <div className="text-center mb-16 max-w-3xl">
         <h1 className="text-large-title-emphasized mb-6" style={{ fontSize: '64px' }}>
-          <GradientText>Simple pricing</GradientText>
-          <span className="text-label-inverted">. No surprises</span>
+          <GradientText>{titleParts[0]}</GradientText>
+          <span className="text-label-inverted">. {titleParts[1]}</span>
         </h1>
         <p className="text-headline text-label-inverted-secondary">
-          Choose the plan that fits your needs. Switch anytime. Cancel anytime
+          {t("header.description")}
         </p>
       </div>
 
@@ -37,7 +42,7 @@ export default function PricingSection() {
             color: activeTab === "freelancer" ? 'var(--label-inverted)' : 'var(--label-secondary-dark)'
           }}
         >
-          Freelancer
+          {t("tabs.freelancer")}
           {activeTab === "freelancer" && (
             <div className="absolute -bottom-px left-0 right-0 h-0.5 rounded-sm" style={{ background: 'var(--accent-blue-main)' }} />
           )}
@@ -51,7 +56,7 @@ export default function PricingSection() {
             color: activeTab === "gestoria" ? 'var(--label-inverted)' : 'var(--label-secondary-dark)'
           }}
         >
-          Gestoria
+          {t("tabs.gestoria")}
           {activeTab === "gestoria" && (
             <div className="absolute -bottom-px left-0 right-0 h-0.5 rounded-sm" style={{ background: 'var(--accent-blue-main)' }} />
           )}
@@ -70,27 +75,24 @@ export default function PricingSection() {
           <>
             {/* Free Plan */}
             <PricingCard
-              title="Free"
-              description="For freelancers testing VeriFActu without commitments"
-              price="€0"
-              period="per month"
-              subtitle="Free Forever"
-              buttonText="Get started free →"
+              title={t("freelancer.free.title")}
+              description={t("freelancer.free.description")}
+              price={t("freelancer.free.price")}
+              period={t("freelancer.free.period")}
+              subtitle={t("freelancer.free.badge")}
+              buttonText={t("freelancer.free.cta")}
               buttonVariant="gradient"
               buttonHref="#waitlist"
-              features={[
-                "Unlimited invoices",
-                "10 Mb Expense uploads"
-              ]}
+              features={t.raw("freelancer.free.features")}
             />
 
             {/* Pro Plan */}
             <PricingCard
-              title="Pro"
-              description="All the tools to invoice and stay compliant, unlimited and connected with your gestoría"
-              price={isAnnual ? "€9.92" : "€11.90"}
-              period="per month"
-              badge={isAnnual ? "Save 2 months!" : "7 days - Free to try"}
+              title={t("freelancer.pro.title")}
+              description={t("freelancer.pro.description")}
+              price={isAnnual ? t("freelancer.pro.priceAnnual") : t("freelancer.pro.priceMonthly")}
+              period={t("freelancer.pro.period")}
+              badge={isAnnual ? t("freelancer.pro.badgeAnnual") : t("freelancer.pro.badgeMonthly")}
               badgeColor="#22C55E"
               subtitle={
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -131,21 +133,14 @@ export default function PricingSection() {
                     </span>
                   </label>
                   <span className="text-footnote text-label-inverted-secondary">
-                    Annual {isAnnual && <span className="text-accent-green-main">Save 2 months!</span>}
+                    {t("freelancer.pro.toggle")} {isAnnual && <span className="text-accent-green-main">{t("freelancer.pro.toggleSave")}</span>}
                   </span>
                 </div>
               }
-              buttonText="Get started →"
+              buttonText={t("freelancer.pro.cta")}
               buttonVariant="gradient"
               buttonHref="#waitlist"
-              features={[
-                "Unlimited invoices",
-                "Expense tracking (receipts)",
-                "VeriFactu QR + AEAT submission",
-                "Pre-calculated Modelo 130 & 303",
-                "One-click CSV export",
-                "Gestoría dashboard access"
-              ]}
+              features={t.raw("freelancer.pro.features")}
               isHighlighted={true}
             />
           </>
@@ -153,39 +148,27 @@ export default function PricingSection() {
           <>
             {/* Gestoria Free Plan */}
             <PricingCard
-              title="Free"
-              description="Give your clients modern invoicing, get real-time access, free forever"
-              price="€0"
-              period="per month"
-              subtitle="Free Forever"
-              buttonText="Contact Us →"
+              title={t("gestoria.free.title")}
+              description={t("gestoria.free.description")}
+              price={t("gestoria.free.price")}
+              period={t("gestoria.free.period")}
+              subtitle={t("gestoria.free.badge")}
+              buttonText={t("gestoria.free.cta")}
               buttonVariant="gradient"
               buttonHref="#contact"
-              features={[
-                "Unlimited clients",
-                "Invoice/expense sync",
-                "CSV export",
-                "Quarterly summaries",
-                "Notifications for new data"
-              ]}
+              features={t.raw("gestoria.free.features")}
             />
 
             {/* Enterprise Plan */}
             <PricingCard
-              title="Enterprise"
-              description="Let's build together. Co-develop workflows, and advanced dashboards tailored to your Gestoría"
-              price="Flexible Billing"
-              subtitle="Custom Plans"
-              buttonText="Contact Us →"
+              title={t("gestoria.enterprise.title")}
+              description={t("gestoria.enterprise.description")}
+              price={t("gestoria.enterprise.price")}
+              subtitle={t("gestoria.enterprise.badge")}
+              buttonText={t("gestoria.enterprise.cta")}
               buttonVariant="gradient"
               buttonHref="#contact"
-              features={[
-                "All in free included",
-                "Custom features & integrations",
-                "Entire Workflow Coverage",
-                "Priority support",
-                "API/ERP integrations"
-              ]}
+              features={t.raw("gestoria.enterprise.features")}
               isHighlighted={true}
             />
           </>

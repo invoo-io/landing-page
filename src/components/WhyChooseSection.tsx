@@ -1,25 +1,31 @@
 "use client";
 
 import Image from "next/image";
+import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 import Button from "./ui/Button";
-import { getImagePath } from "@/lib/utils";
+import { getImagePath, getBasePath } from "@/lib/utils";
 
 export default function WhyChooseSection() {
+  const t = useTranslations("home.whyChoose");
+  const params = useParams();
+  const locale = params.locale as string;
+
   const features = [
     {
       image: getImagePath("/clock.png"),
-      title: "Save time",
-      description: "Create and send invoices in 30 seconds: no Excel, no Word."
+      title: t("card1.title"),
+      description: t("card1.description")
     },
     {
       image: getImagePath("/paper.png"),
-      title: "Always compliant",
-      description: "Automatic VeriFActu compliance, QR included, no stress with AEAT."
+      title: t("card2.title"),
+      description: t("card2.description")
     },
     {
       image: getImagePath("/personbook.png"),
-      title: "Gestoría-friendly",
-      description: "Share invoices and expenses directly with your gestoría. No more retyping."
+      title: t("card3.title"),
+      description: t("card3.description")
     }
   ];
 
@@ -27,7 +33,7 @@ export default function WhyChooseSection() {
     <section className="py-[156px] max-md:py-10 px-6 bg-bg-inverted">
       {/* Title */}
       <h2 className="text-large-title-emphasized text-center text-label-inverted max-w-4xl mx-auto mb-16" style={{ fontSize: '48px' }}>
-        Why freelancers and gestoría should choose Invoo
+        {t("title")}
       </h2>
 
       {/* Features Grid */}
@@ -72,14 +78,14 @@ export default function WhyChooseSection() {
           padding: '2px',
           display: 'inline-flex'
         }}>
-          <Button variant="outline" showArrow className="!bg-bg-inverted !border-0 !text-label-inverted" href="/gestorias">
-            Gestoría
+          <Button variant="outline" showArrow className="!bg-bg-inverted !border-0 !text-label-inverted" href={getBasePath(`/${locale}/gestorias`)}>
+            {t("cta1")}
           </Button>
         </div>
 
         {/* Freelancer button with solid gradient background */}
-        <Button variant="gradient" showArrow href="/freelancers">
-          Freelancer
+        <Button variant="gradient" showArrow href={getBasePath(`/${locale}/freelancers`)}>
+          {t("cta2")}
         </Button>
       </div>
     </section>

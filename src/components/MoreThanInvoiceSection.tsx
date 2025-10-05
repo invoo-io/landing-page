@@ -1,32 +1,33 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import MoreThanInvoiceButton from "./MoreThanInvoiceButton";
 import { getImagePath } from "@/lib/utils";
 
 export default function MoreThanInvoiceSection() {
+  const t = useTranslations("home.moreThanInvoicing");
+
   const features = [
     {
       image: getImagePath("/Note.png"),
-      title: "Track your expenses",
-      description:
-        "Snap a photo of your receipts and let Invoo organize them automatically",
+      title: t("card1.title"),
+      description: t("card1.description")
     },
     {
       image: getImagePath("/Calendar.png"),
-      title: "Quarterly tax ready",
-      description:
-        "We prepare pre-calculated summaries for Modelo 130 and 303, so you file faster",
+      title: t("card2.title"),
+      description: t("card2.description")
     },
     {
       image: getImagePath("/Screen.png"),
-      title: "Gestoría dashboard",
-      description:
-        "Give your gestoría real-time access to your invoices and expenses, no more email chains",
+      title: t("card3.title"),
+      description: t("card3.description")
     },
     {
       image: getImagePath("/Down.png"),
-      title: "One-click exports",
-      description:
-        "Download invoices and expenses in clean CSV format, ready for any accounting software",
+      title: t("card4.title"),
+      description: t("card4.description")
     },
   ];
 
@@ -41,6 +42,7 @@ export default function MoreThanInvoiceSection() {
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        flexDirection: "column",
       }}
     >
       {/* Background Image - absolute positioned */}
@@ -66,6 +68,11 @@ export default function MoreThanInvoiceSection() {
           priority
         />
       </div>
+
+      {/* Title */}
+      <h2 className="text-large-title-emphasized text-center text-label-inverted max-w-4xl mx-auto mb-16 relative z-10" style={{ fontSize: '48px' }}>
+        {t("title")}
+      </h2>
 
       {/* Content Container */}
       <div

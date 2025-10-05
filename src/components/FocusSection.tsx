@@ -1,10 +1,15 @@
+"use client";
+
 import Image from "next/image";
+import { useTranslations } from "next-intl";
 import FocusButton from "./FocusButton";
 import { getImagePath } from "@/lib/utils";
 
 export default function FocusSection() {
+  const t = useTranslations("home.focus");
+
   return (
-    <section style={{ 
+    <section style={{
       position: 'relative',
       minHeight: '400px',
       display: 'flex',
@@ -24,7 +29,7 @@ export default function FocusSection() {
           src={getImagePath("/focussectionbgimg.jpg")}
           alt="Background"
           fill
-          style={{ 
+          style={{
             objectFit: 'cover'
           }}
           priority
@@ -40,11 +45,11 @@ export default function FocusSection() {
       {/* Content */}
       <div className="relative z-10 text-center max-w-3xl">
         <h2 className="text-large-title-emphasized text-label-inverted mb-6" style={{ fontSize: '48px' }}>
-          Focus on your work. We&apos;ll handle the paperwork.
+          {t("title")}
         </h2>
 
         <p className="text-callout mb-12" style={{ color: 'var(--label-secondary-dark)' }}>
-          Join other freelancers who are getting ready for VeriFActu with a tool designed for Spain&apos;s autónomos
+          {t("description")}
         </p>
 
         <div className="flex justify-center">

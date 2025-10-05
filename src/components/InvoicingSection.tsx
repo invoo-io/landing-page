@@ -1,21 +1,26 @@
+"use client";
+
+import { useTranslations } from "next-intl";
 import InvoicingButton from "./InvoicingButton";
 
 export default function InvoicingSection() {
+  const t = useTranslations("home.invoicing");
+
   const steps = [
     {
       number: "1",
-      title: "Create",
-      description: "Enter amount and client, Invoo builds your professional, VeriFActu-ready invoice instantly."
+      title: t("step1.title"),
+      description: t("step1.description")
     },
     {
       number: "2",
-      title: "Deliver",
-      description: "We send it automatically to AEAT (VeriFActu), your gestoría, and your client."
+      title: t("step2.title"),
+      description: t("step2.description")
     },
     {
       number: "3",
-      title: "Done",
-      description: "All invoices stored and summarized. You just get paid, no extra paperwork."
+      title: t("step3.title"),
+      description: t("step3.description")
     }
   ];
 
@@ -23,7 +28,7 @@ export default function InvoicingSection() {
     <section className="py-[156px] max-md:py-10 px-6 bg-bg-secondary">
       {/* Title */}
       <h2 className="text-large-title-emphasized text-center text-label-primary max-w-4xl mx-auto mb-16" style={{ fontSize: '48px' }}>
-        Invoicing made simple
+        {t("title")}
       </h2>
 
       {/* Steps Grid */}

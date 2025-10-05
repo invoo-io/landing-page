@@ -1,5 +1,8 @@
+"use client";
+
 import Image from "next/image";
 import Link from "next/link";
+import { useTranslations } from "next-intl";
 import { Facebook, Linkedin, X } from "lucide-react";
 import { getImagePath, getBasePath } from "@/lib/utils";
 
@@ -8,6 +11,8 @@ interface FooterProps {
 }
 
 export default function Footer({ locale }: FooterProps) {
+  const t = useTranslations("home.footer");
+
   return (
     <footer className="bg-system-grey800 text-label-inverted px-6 pt-20 pb-10">
       <div className="max-w-6xl mx-auto">
@@ -24,43 +29,43 @@ export default function Footer({ locale }: FooterProps) {
               />
             </div>
             <p className="text-callout text-label-inverted-secondary">
-              The gestoría-friendly invoicing platform that connects freelancers, clients, and tax compliance in one seamless flow
+              {t("description")}
             </p>
           </div>
 
           {/* Invoo column */}
           <div>
             <h3 className="text-headline text-label-inverted mb-6">
-              Invoo
+              {t("invooTitle")}
             </h3>
             <ul className="list-none p-0 flex flex-col gap-4">
-              <li><Link href={getBasePath(`/${locale}/about`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">About Us</Link></li>
-              <li><Link href={getBasePath(`/${locale}/terms`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">Terms of Use</Link></li>
-              <li><Link href={getBasePath(`/${locale}/privacy`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">Privacy Policy</Link></li>
-              <li><Link href={getBasePath(`/${locale}/contact`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">Contact</Link></li>
+              <li><Link href={getBasePath(`/${locale}/about`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">{t("aboutUs")}</Link></li>
+              <li><Link href={getBasePath(`/${locale}/terms`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">{t("terms")}</Link></li>
+              <li><Link href={getBasePath(`/${locale}/privacy`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">{t("privacy")}</Link></li>
+              <li><Link href={getBasePath(`/${locale}/contact`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">{t("contact")}</Link></li>
             </ul>
           </div>
 
           {/* Services column */}
           <div>
             <h3 className="text-headline text-label-inverted mb-6">
-              Services
+              {t("servicesTitle")}
             </h3>
             <ul className="list-none p-0 flex flex-col gap-4">
-              <li><Link href={getBasePath(`/${locale}/freelancers`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">For Freelancers</Link></li>
-              <li><Link href={getBasePath(`/${locale}/gestorias`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">For Gestoría</Link></li>
-              <li><Link href={getBasePath(`/${locale}/pricing`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">Pricing</Link></li>
+              <li><Link href={getBasePath(`/${locale}/freelancers`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">{t("forFreelancers")}</Link></li>
+              <li><Link href={getBasePath(`/${locale}/gestorias`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">{t("forGestorias")}</Link></li>
+              <li><Link href={getBasePath(`/${locale}/pricing`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">{t("pricing")}</Link></li>
             </ul>
           </div>
 
           {/* Resources column */}
           <div>
             <h3 className="text-headline text-label-inverted mb-6">
-              Resources
+              {t("resourcesTitle")}
             </h3>
             <ul className="list-none p-0 flex flex-col gap-4">
-              <li><Link href={getBasePath(`/${locale}/faq`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">FAQs</Link></li>
-              <li><a href="https://invoo.substack.com/" target="_blank" rel="noopener noreferrer" className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">Blog</a></li>
+              <li><Link href={getBasePath(`/${locale}/faq`)} className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">{t("faqs")}</Link></li>
+              <li><a href="https://invoo.substack.com/" target="_blank" rel="noopener noreferrer" className="text-callout no-underline text-label-inverted-secondary hover:text-label-inverted transition-colors">{t("blog")}</a></li>
             </ul>
           </div>
         </div>
@@ -68,7 +73,7 @@ export default function Footer({ locale }: FooterProps) {
         {/* Bottom section */}
         <div className="flex justify-between items-center pt-8 border-t border-strokes-primary">
           <p className="text-footnote text-label-inverted-secondary">
-            © 2025 Invoo.es. Todos los derechos reservados. Hecho con amor para autónomos españoles
+            {t("copyright")}
           </p>
 
           {/* Social icons */}

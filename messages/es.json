@@ -59,6 +59,100 @@
     "exports": "Exportación en un clic",
     "getStarted": "Empezar"
   },
+  "freelancersPage": {
+    "header": {
+      "title": "Facturación sin estrés",
+      "description": "Facturas profesionales, cumplimiento Verifactu automático y envío instantáneo a Hacienda, tu cliente y tu gestoría",
+      "cta": "Únete a la lista de espera →"
+    },
+    "block1": {
+      "title": "Crea facturas profesionales en segundos",
+      "description": "Olvida las plantillas y trucos de Excel. Invoo genera PDFs pulidos siempre correctamente numerados y listos para enviar",
+      "features": [
+        "Datos de cliente autocompletados",
+        "Plantillas PDF profesionales",
+        "Numeración automática"
+      ],
+      "cta": "Únete a la lista de espera →"
+    },
+    "block2": {
+      "title": "Cumplimiento gestionado por ti",
+      "description": "Cada factura incluye el QR oficial Verifactu y se envía a Hacienda en segundo plano, así nunca te preocupas por errores o multas",
+      "features": [
+        "Generación automática de QR",
+        "Envío seguro a Hacienda",
+        "Trazabilidad completa con verificación de estado"
+      ],
+      "cta": "Únete a la lista de espera →"
+    },
+    "block3": {
+      "title": "Tus finanzas en una vista simple",
+      "description": "Desde gastos diarios hasta modelos trimestrales, Invoo centraliza todo para que veas el panorama general sin cambiar de herramientas",
+      "features": [
+        "Captura y registra gastos",
+        "Resúmenes mensuales automáticos",
+        "Modelo 130/303 pre-calculado"
+      ],
+      "cta": "Únete a la lista de espera →"
+    },
+    "block4": {
+      "title": "Comparte sin esfuerzo con tu gestoría",
+      "description": "Sin más perseguir o reenviar PDFs. Tu gestoría ve facturas y gastos en tiempo real, sin coste para ellos",
+      "features": [
+        "Acceso directo para tu gestoría",
+        "Sin cadenas de emails ni reescribir",
+        "Gratis para gestorías"
+      ],
+      "cta": "Únete a la lista de espera →"
+    }
+  },
+  "gestoriasPage": {
+    "header": {
+      "title": "Menos papeleo, más asesoramiento",
+      "description": "Invoo da a las gestorías acceso en tiempo real a facturas y gastos de clientes, siempre conforme con Verifactu, siempre gratis",
+      "cta": "Únete a la lista de espera →"
+    },
+    "block1": {
+      "title": "Siempre actualizado",
+      "description": "Sin más perseguir clientes por facturas. Ve cada factura y gasto en el momento que se crea",
+      "features": [
+        "Sincronización instantánea de facturas + gastos",
+        "QR Verifactu incluido automáticamente",
+        "Alertas cuando aparece nueva actividad"
+      ],
+      "cta": "Únete a la lista de espera →"
+    },
+    "block2": {
+      "title": "Datos que puedes usar",
+      "description": "Descarga CSVs o XMLs limpios listos para tu software contable, sin reescribir",
+      "features": [
+        "Exportación CSV en un clic",
+        "Descargas masivas trimestrales o mensuales",
+        "Exportaciones XML alineadas con estándares AEAT"
+      ],
+      "cta": "Únete a la lista de espera →"
+    },
+    "block3": {
+      "title": "Periodos impositivos en segundos",
+      "description": "Resúmenes pre-calculados de Modelo 130 y 303 por cliente te ayudan a preparar declaraciones más rápido",
+      "features": [
+        "Resúmenes auto-generados",
+        "Desgloses claros de bases e IVA",
+        "Fácil de revisar y validar"
+      ],
+      "cta": "Únete a la lista de espera →"
+    },
+    "block4": {
+      "title": "Cero coste, cero riesgo",
+      "description": "Invoo es gratis para gestorías. Los clientes pagan su suscripción, tú obtienes las herramientas, sin barreras de adopción",
+      "features": [
+        "Acceso gratuito al panel",
+        "Clientes ilimitados",
+        "Diseñado para colaboración, no reemplazo"
+      ],
+      "cta": "Únete a la lista de espera →"
+    }
+  },
   "gestorias": {
     "title": "Diseñado para gestorías",
     "desc": "Gestiona múltiples clientes sin esfuerzo desde un panel centralizado",
@@ -87,6 +181,534 @@
     },
     "resources": {
       "title": "Recursos"
+    }
+  },
+  "faq": {
+    "title": "FAQs",
+    "categories": {
+      "compliance": {
+        "title": "Cumplimiento (VeriFactu / AEAT)",
+        "questions": {
+          "q1": {
+            "question": "¿Es Invoo compatible con VeriFactu?",
+            "answer": "Sí. Invoo está diseñado para cumplir con el Reglamento VeriFactu (RD 1007/2023). Generamos el QR VeriFactu y gestionamos el flujo de envío a la AEAT a través de nuestro proveedor de API. Puedes consultar estados y exportar evidencias para auditorías."
+          },
+          "q2": {
+            "question": "¿Cuándo entra en vigor VeriFactu de forma obligatoria?",
+            "answer": "Para desarrolladores de software, desde julio de 2025; para empresas, desde enero de 2026; y para autónomos, desde julio de 2026. Algunos detalles se implementan por fases. Te avisaremos en la app cuando activemos los endpoints de producción de la AEAT. Si esperas al último momento (como el 38-40% de autónomos, según encuestas), podrías enfrentar costes de adaptación urgentes; considera probar Invoo ahora para una transición suave."
+          },
+          "q3": {
+            "question": "¿VeriFactu significa que las facturas se aprueban al instante por la AEAT?",
+            "answer": "No. La factura incluye el QR y se envía a la AEAT, pero la aceptación depende de ellos. Puedes rastrear el estado y corregir si es necesario (por ejemplo, rectificativas)."
+          },
+          "q4": {
+            "question": "¿Necesito mi propio certificado digital?",
+            "answer": "No para empezar. Nuestro proveedor gestiona el intercambio seguro con la AEAT; manejamos las cargas técnicas y devolvemos el QR y estado. Para personalizaciones enterprise (como usar tu certificado), contáctanos más adelante."
+          },
+          "q5": {
+            "question": "¿Quién está obligado a usar VeriFactu?",
+            "answer": "Autónomos, pymes y empresas que facturen menos de 6M€ anuales, excepto exentos como REGE o grandes contribuyentes en SII. Si eres un freelancer con pocos clientes, elige software simple como Invoo; para gestorías con cientos de clientes, usa nuestro dashboard gratuito para centralizar."
+          },
+          "q6": {
+            "question": "¿Cuáles son las sanciones por no cumplir con VeriFactu?",
+            "answer": "Hasta 50.000€ por no usar software homologado o manipular registros. Evítalo con Invoo, que asegura trazabilidad."
+          },
+          "q7": {
+            "question": "¿Puedo seguir usando Excel o Word para facturar?",
+            "answer": "No, VeriFactu exige software homologado que envíe datos en tiempo real a la AEAT. Invoo reemplaza eso con una interfaz simple; como opción, migra datos de Excel vía CSV, pero recomendamos automatizar para ahorrar tiempo."
+          }
+        }
+      },
+      "scope": {
+        "title": "Alcance y Disponibilidad",
+        "questions": {
+          "q1": {
+            "question": "¿Para quién es Invoo?",
+            "answer": "Para freelancers (autónomos), pymes en España y sus gestorías. Optimizamos flujos de cumplimiento español, como sincronización automática con gestorías. No reemplazamos a tu gestor, sino que lo potenciamos, mejorando retención al reducir errores de coordinación."
+          },
+          "q2": {
+            "question": "¿Qué incluye Invoo en el lanzamiento?",
+            "answer": "Facturación core con QR VeriFactu y envío a AEAT, captura de gastos, precálculos trimestrales (Modelos 130 y 303), acceso para gestorías y exportaciones CSV. Funciones avanzadas como multi-moneda se añaden progresivamente. Prueba el plan gratuito para validar; si necesitas escalabilidad, sube a pro."
+          },
+          "q3": {
+            "question": "¿Hay app móvil?",
+            "answer": "Priorizamos desktop, pero la web móvil es 100% usable para escanear recibos on-the-go. Una app nativa podría venir si hay demanda; mientras, usa el navegador para simplicidad operativa."
+          },
+          "q4": {
+            "question": "¿Invoo soporta facturas recurrentes?",
+            "answer": "Sí, automatiza envíos mensuales para clientes fijos. Configura variaciones para extras sin complejidad. Alterna con recordatorios manuales si prefieres control total, pero la automatización reduce errores."
+          },
+          "q5": {
+            "question": "¿Es Invoo fácil para usuarios no tech-savvy?",
+            "answer": "Absolutamente, con interfaz simple y guías paso a paso. Crea facturas en <30s sin cálculos manuales. Si la curva de aprendizaje preocupa, empieza con nuestro onboarding gratuito; o integra con tu gestoría para delegar."
+          },
+          "q6": {
+            "question": "¿Invoo maneja multi-moneda e IVA internacional?",
+            "answer": "Sí, soporta conversiones automáticas y manejo de IVA para clientes extranjeros. Reduce complejidad fiscal; como alternativa, exporta a herramientas externas, pero la integración nativa simplifica la retención."
+          }
+        }
+      },
+      "pricing": {
+        "title": "Precios",
+        "questions": {
+          "q1": {
+            "question": "¿Cuánto cuesta Invoo?",
+            "answer": "Freelancers: Starter gratuito y Pro a 9,90€/mes; gestorías: Dashboard gratuito y Enterprise personalizado. Planes anuales con descuentos disponibles. Consulta la página de Precios para tiers actuales."
+          },
+          "q2": {
+            "question": "¿Puedo cancelar en cualquier momento? ¿Ofrecen reembolsos?",
+            "answer": "Sí, el plan mensual se cancela en cualquier momento; reembolso de 30 días en upgrades anuales. Flexible para probar sin riesgo, mejorando activación."
+          },
+          "q3": {
+            "question": "¿El plan para gestorías es realmente gratuito?",
+            "answer": "Sí, acceso a datos de clientes, exportaciones CSV, notificaciones y resúmenes sin coste. Enterprise para integraciones personalizadas."
+          }
+        }
+      },
+      "privacy": {
+        "title": "Datos y Privacidad (GDPR)",
+        "questions": {
+          "q1": {
+            "question": "¿Dónde se almacenan mis datos?",
+            "answer": "En infraestructura basada en la UE con procesadores GDPR-compliant. Minimizamos retención y ofrecemos exportaciones bajo demanda."
+          },
+          "q2": {
+            "question": "¿Quién puede ver mis facturas y gastos?",
+            "answer": "Solo tú y la gestoría que invites explícitamente. Nunca vendemos datos; revoca acceso en cualquier momento."
+          },
+          "q3": {
+            "question": "¿Puedo exportar mis datos?",
+            "answer": "Sí, CSV (y pronto XML para artefactos de cumplimiento) bajo demanda."
+          }
+        }
+      },
+      "operations": {
+        "title": "Operaciones y Soporte",
+        "questions": {
+          "q1": {
+            "question": "¿Qué pasa si la AEAT está caída?",
+            "answer": "Encolamos envíos y reintentamos automáticamente; verás estado pendiente hasta resolución."
+          },
+          "q2": {
+            "question": "¿Cuándo estará Invoo disponible al público?",
+            "answer": "Preparamos lanzamiento con piloto pequeño, luego expansión. No publicamos fecha exacta hasta readiness. Únete a la waitlist."
+          },
+          "q3": {
+            "question": "¿Cómo afecta VeriFactu a mi gestoría?",
+            "answer": "Las gestorías deben usarlo para su facturación propia y verán beneficios en dashboards como el nuestro: visibilidad en tiempo real de clientes, cero entrada manual. Para Ana gestionando cientos, reduce operaciones; invita clientes a Invoo gratis o integra con tu software actual."
+          }
+        }
+      }
+    }
+  },
+  "about": {
+    "header": {
+      "title": "Ayudando a autónomos y gestorías a trabajar mejor juntos",
+      "description": "Invoo es la plataforma de facturación amiga de las gestorías, diseñada para simplificar el cumplimiento, ahorrar tiempo y fortalecer la colaboración"
+    },
+    "block1": {
+      "title": "Nacido de la Experiencia Real",
+      "description": "Cuando nos mudamos a España, descubrimos rápidamente el laberinto que navegan los autónomos cada día — facturas interminables, gastos dispersos y obligaciones fiscales complejas. Cada autónomo que conocimos compartía la misma historia: horas perdidas en papeleo que debería tomar minutos.\nMientras tanto, las gestorías nos contaron su lado: archivos Excel obsoletos, entrada manual de datos y constante ida y vuelta con clientes solo para obtener información básica.\nEntonces llegó Verifactu — un cambio regulatorio que podría haber empeorado las cosas. En su lugar, vimos una oportunidad. El momento perfecto para construir algo mejor.\nAsí nació Invoo: una plataforma que habla ambos idiomas — la simplicidad que necesitan los autónomos y los datos completos que requieren las gestorías. Menos tiempo en papeleo, más tiempo en lo que importa."
+    },
+    "block2": {
+      "title": "Nuestra Visión",
+      "description": "Creemos que facturar no debería sentirse como un examen de Hacienda. Debería simplemente funcionar.\nNuestra misión es simple: conectar autónomos, sus clientes y gestorías en un flujo de trabajo continuo. Facturas profesionales que se crean solas. Cumplimiento Verifactu que ocurre automáticamente. Paneles para gestorías que se actualizan en tiempo real.\nSin más \"¿puedes reenviar esa factura de marzo?\" Sin más domingos perdidos en Excel. Solo facturación fluida, simple y conforme que todos pueden confiar."
+    },
+    "block3": {
+      "title": "Por Qué Invoo?",
+      "items": {
+        "item1": "Construido para la realidad española\nNo otra herramienta genérica fingiendo entender España. Sabemos qué significa el Modelo 130. Entendemos por qué tu gestoría necesita ese formato CSV específico.",
+        "item2": "¿Verifactu? Ya está resuelto\nCódigos QR, envío a AEAT, verificaciones de cumplimiento — todo automático. Tú creas facturas, nosotros manejamos la burocracia.",
+        "item3": "Las gestorías también nos adoran\nAcceso gratuito, datos en tiempo real, sin más perseguir documentos. No estamos reemplazando gestorías — estamos facilitando su trabajo.",
+        "item4": "Complejidad eliminada\nCada función gana su lugar ahorrándote tiempo. Si no hace tu vida más simple, no entra en Invoo."
+      }
+    },
+    "block4": {
+      "title": "Únete Pronto",
+      "description": "Invoo se lanza pronto. Ahora mismo, estamos trabajando mano a mano con autónomos pioneros y gestorías innovadoras para perfeccionar cada detalle.\n¿Quieres estar entre los primeros en escapar del caos de facturación? Únete a nuestra lista de espera y obtén acceso anticipado cuando lancemos.\nEl futuro de la facturación en España empieza aquí. Y empieza contigo."
+    }
+  },
+  "privacy": {
+    "title": "Política de Privacidad",
+    "lastUpdated": "Última actualización: 19 de julio de 2025",
+    "section1": {
+      "title": "1. Introducción",
+      "content": "Esta Política de Privacidad explica cómo Roques OÜ (\"Invoo\", \"nosotros\") recopila, usa y protege tus datos personales cuando usas nuestra plataforma de facturación en invoo.es (\"Servicio\").\nEstamos comprometidos a proteger tu privacidad y cumplir con el Reglamento General de Protección de Datos (RGPD) y la ley española de protección de datos (LOPDGDD).",
+      "controller": "Responsable del Tratamiento:\nRoques OÜ\nAhtri tn 12, 15551\nTallin, Estonia\nEmail: legal@invoo.es"
+    },
+    "section2": {
+      "title": "2. Datos que Recopilamos",
+      "sub1": {
+        "title": "2.1 Información de Cuenta",
+        "items": ["Nombre completo y razón social", "Email y teléfono", "NIF/NIE/CIF (identificación fiscal española)", "Dirección comercial", "Datos bancarios (para pagos)", "Contraseña (encriptada)"]
+      },
+      "sub2": {
+        "title": "2.2 Datos de Facturas y Financieros",
+        "items": ["Información de clientes (nombre, NIF, dirección)", "Detalles de facturas (importes, fechas, descripciones)", "Registros de gastos y tickets", "Cálculos fiscales (Modelo 130/303)", "Registros de cumplimiento Verifactu"]
+      },
+      "sub3": {
+        "title": "2.3 Datos de Uso",
+        "items": ["Dirección IP (anonimizada)", "Tipo de navegador y dispositivo", "Páginas visitadas y funciones usadas", "Fechas y horas de acceso", "Registros de errores y rendimiento"]
+      },
+      "sub4": {
+        "title": "2.4 Datos de Cookies",
+        "items": ["Cookies de sesión (esenciales)", "Cookies analíticas (con consentimiento)", "Cookies de preferencias"],
+        "note": "Ver nuestra Política de Cookies (Sección 8) para más detalles."
+      }
+    },
+    "section3": {
+      "title": "3. Cómo Usamos tus Datos",
+      "sub1": {
+        "title": "3.1 Base Legal para el Tratamiento",
+        "intro": "Procesamos tus datos basándonos en:",
+        "items": ["Contrato: Para proporcionar nuestro Servicio", "Obligación Legal: Cumplimiento fiscal y requisitos Verifactu", "Consentimiento: Comunicaciones de marketing y analítica", "Interés Legítimo: Seguridad y prevención de fraude"]
+      },
+      "sub2": {
+        "title": "3.2 Finalidades",
+        "items": ["Proporcionar servicios de facturación y gestión de gastos", "Generar facturas conformes con Verifactu", "Enviar datos a la AEAT mediante API", "Calcular obligaciones fiscales", "Procesar pagos mediante Stripe", "Enviar notificaciones del servicio", "Proporcionar soporte al cliente", "Mejorar nuestro Servicio (con consentimiento)", "Enviar comunicaciones de marketing (con consentimiento)"]
+      }
+    },
+    "section4": {
+      "title": "4. Compartir Datos",
+      "sub1": {
+        "title": "4.1 Compartimos Datos Con:",
+        "items": ["Tu Gestoría: Cuando autorizas el acceso", "AEAT: Para cumplimiento Verifactu", "Stripe: Para procesamiento de pagos", "AWS: Para alojamiento seguro (servidores UE)", "Resend: Para emails transaccionales", "Google Analytics: Para analítica de uso (con consentimiento)"]
+      },
+      "sub2": {
+        "title": "4.2 Nunca:",
+        "items": ["Vendemos tus datos personales", "Compartimos datos con terceros para marketing", "Transferimos datos fuera de la UE (excepto lo indicado)"]
+      },
+      "sub3": {
+        "title": "4.3 Solicitudes Gubernamentales",
+        "content": "Podemos divulgar datos si la ley lo requiere o por proceso legal válido. Te notificaremos a menos que esté legalmente prohibido."
+      }
+    },
+    "section5": {
+      "title": "5. Seguridad de Datos",
+      "intro": "Implementamos medidas de seguridad estándar de la industria:",
+      "items": ["Encriptación en tránsito (TLS/SSL)", "Encriptación en reposo (AES-256)", "Hash seguro de contraseñas (bcrypt)", "Auditorías de seguridad regulares", "Controles de acceso y monitoreo", "Copias de seguridad diarias"],
+      "note": "Aunque nos esforzamos por proteger tus datos, ningún sistema es 100% seguro. Eres responsable de mantener tus credenciales de cuenta."
+    },
+    "section6": {
+      "title": "6. Tus Derechos",
+      "intro": "Bajo el RGPD, tienes derecho a:",
+      "items": ["Acceso: Solicitar una copia de tus datos", "Rectificación: Corregir datos inexactos", "Supresión: Eliminar tus datos (con excepciones)", "Portabilidad: Exportar tus datos", "Limitación: Limitar el tratamiento", "Oposición: Oponerte a cierto tratamiento", "Retirar Consentimiento: Para tratamiento basado en consentimiento"],
+      "contact": "Para ejercer tus derechos, contacta: legal@invoo.es",
+      "deletion": {
+        "title": "6.1 Eliminación de Cuenta",
+        "intro": "Puedes eliminar tu cuenta en cualquier momento. Sin embargo:",
+        "items": ["Los registros fiscales deben conservarse 7 años por ley española", "Las facturas activas serán archivadas", "La eliminación es permanente tras periodo de recuperación de 90 días"]
+      }
+    },
+    "section7": {
+      "title": "7. Retención de Datos",
+      "items": ["Cuentas activas: Datos retenidos mientras la cuenta esté activa", "Tras eliminación: 90 días para recuperación", "Registros fiscales: 7 años (requisito legal)", "Copias de seguridad: Retención rotativa de 30 días", "Datos de marketing: Hasta retirada del consentimiento", "Datos analíticos: 26 meses"]
+    },
+    "section8": {
+      "title": "8. Política de Cookies",
+      "sub1": {
+        "title": "8.1 Cookies Esenciales",
+        "intro": "Siempre activas, requeridas para el funcionamiento:",
+        "items": ["Gestión de sesión", "Tokens de seguridad", "Preferencias de usuario"]
+      },
+      "sub2": {
+        "title": "8.2 Cookies Analíticas (Requieren Consentimiento)",
+        "intro": "Cookies de Google Analytics para entender el uso:",
+        "items": ["_ga: 2 años", "_gid: 24 horas", "_gat: 1 minuto"]
+      },
+      "sub3": {
+        "title": "8.3 Gestión de Cookies",
+        "intro": "Puedes controlar las cookies mediante:",
+        "items": ["Nuestro banner de cookies (rechazar/aceptar)", "Configuración del navegador", "Opt-out Google Analytics: tools.google.com/dlpage/gaoptout"],
+        "note": "La ley española requiere consentimiento explícito para cookies analíticas. Puedes retirar el consentimiento en cualquier momento."
+      }
+    },
+    "section9": {
+      "title": "9. Comunicaciones de Marketing",
+      "sub1": {
+        "title": "9.1 Tipos",
+        "items": ["Actualizaciones del servicio (sin consentimiento necesario)", "Anuncios de producto (requiere consentimiento)", "Newsletters (requiere consentimiento)"]
+      },
+      "sub2": {
+        "title": "9.2 Cancelar Suscripción",
+        "content": "Cada email de marketing incluye un enlace para cancelar suscripción. También puedes actualizar preferencias en tu cuenta."
+      }
+    },
+    "section10": {
+      "title": "10. Privacidad de Menores",
+      "content": "Nuestro Servicio es solo para fines empresariales. Los usuarios deben tener al menos 16 años. No recopilamos datos de menores de 16 años a sabiendas."
+    },
+    "section11": {
+      "title": "11. Transferencias Internacionales",
+      "intro": "Tus datos se almacenan en servidores AWS en la UE. Algunos servicios implican transferencias limitadas:",
+      "items": ["Stripe (EEUU): Certificado EU-US Data Privacy Framework", "Google Analytics (EEUU): Solo con tu consentimiento"],
+      "note": "Estas transferencias están protegidas por garantías apropiadas."
+    },
+    "section12": {
+      "title": "12. Especificidades de Protección de Datos en España",
+      "sub1": {
+        "title": "12.1 Protección Mejorada para Datos Financieros",
+        "content": "Las autoridades españolas consideran los datos financieros y NIF/NIE como que requieren protección especial. Implementamos salvaguardas adicionales para estos datos."
+      },
+      "sub2": {
+        "title": "12.2 Derechos Digitales",
+        "intro": "Bajo la LOPDGDD, tienes derechos adicionales incluyendo:",
+        "items": ["Derecho al testamento digital", "Derecho al olvido en internet", "Protección contra perfilado automatizado"]
+      },
+      "sub3": {
+        "title": "12.3 Autoridad de Supervisión",
+        "content": "Agencia Española de Protección de Datos (AEPD)\nC/ Jorge Juan, 6\n28001 Madrid, España\nwww.aepd.es"
+      }
+    },
+    "section13": {
+      "title": "13. Actualizaciones de esta Política",
+      "content": "Podemos actualizar esta Política de Privacidad. Los cambios materiales serán notificados por email o aviso en el Servicio 30 días antes de entrar en vigor."
+    },
+    "section14": {
+      "title": "14. Contáctanos",
+      "intro": "Para preguntas o preocupaciones sobre privacidad:",
+      "contact": "Contacto de Protección de Datos:\nEmail: legal@invoo.es\nDirección: Roques OÜ, Ahtri tn 12, 15551, Tallin, Estonia",
+      "note": "También tienes derecho a presentar una reclamación ante la AEPD si crees que tus derechos han sido violados."
+    }
+  },
+  "terms": {
+    "title": "Términos y Condiciones",
+    "lastUpdated": "Última actualización: 19 de julio de 2025",
+    "section1": {
+      "title": "1. Aceptación de Términos",
+      "content": "Estos Términos y Condiciones (\"Términos\") constituyen un acuerdo legalmente vinculante entre usted (\"Usuario\", \"usted\") y Roques OÜ, empresa estonia registrada en Harju maakond, Tallinn, Kesklinna linnaosa, Ahtri tn 12, 15551, Estonia (\"Empresa\", \"nosotros\", \"Invoo\").\nAl acceder o usar nuestra plataforma de facturación en invoo.es (\"Servicio\"), acepta cumplir estos Términos. Si no está de acuerdo con alguna parte, no puede acceder al Servicio."
+    },
+    "section2": {
+      "title": "2. Descripción del Servicio",
+      "intro": "Invoo proporciona una plataforma de facturación y gestión de gastos en la nube diseñada para autónomos españoles y gestorías, incluyendo:",
+      "items": ["Creación y gestión de facturas", "Cumplimiento Verifactu y generación de código QR", "Envío a AEAT mediante API de terceros", "Seguimiento de gastos", "Cálculo de impuestos (Modelo 130/303)", "Panel de colaboración para gestorías"]
+    },
+    "section3": {
+      "title": "3. Registro de Cuenta",
+      "items": ["3.1. Debe proporcionar información precisa, completa y actual.", "3.2. Es responsable de mantener la seguridad de sus credenciales.", "3.3. Debe notificarnos inmediatamente cualquier acceso no autorizado.", "3.4. Las cuentas empresariales deben ser registradas por un representante autorizado."]
+    },
+    "section4": {
+      "title": "4. Precios y Pagos",
+      "sub1": {
+        "title": "4.1. Planes de Suscripción:",
+        "items": ["Plan Gratis: 0€/mes (funciones limitadas)", "Plan Pro: 9,90€/mes o 99€/año", "Plan Gestoría: Gratis", "Enterprise: Precio personalizado"]
+      },
+      "sub2": {
+        "title": "4.2. IVA/Impuestos:",
+        "items": ["Empresas españolas con NIF válido: 0% IVA (inversión del sujeto pasivo)", "Autónomos/particulares españoles: 21% IVA español añadido", "Clientes fuera de la UE: 0% IVA"]
+      },
+      "sub3": {
+        "title": "4.3. Facturación:",
+        "items": ["Pagos procesados mediante Stripe", "Suscripciones mensuales cobradas el mismo día del mes", "Suscripciones anuales cobradas por adelantado", "Todas las tarifas son no reembolsables excepto por ley"]
+      },
+      "sub4": {
+        "title": "4.4. Reembolsos:",
+        "items": ["Solo en casos de mal funcionamiento probado del software", "Las solicitudes deben enviarse dentro de 14 días", "No hay reembolsos prorrateados por meses parciales"]
+      }
+    },
+    "section5": {
+      "title": "5. Obligaciones del Usuario",
+      "intro": "Usted acepta:",
+      "items": ["Usar el Servicio cumpliendo las leyes fiscales españolas", "Proporcionar datos de factura precisos", "No usar el Servicio para actividades ilegales", "No intentar eludir los requisitos de Verifactu", "Mantener copias de seguridad apropiadas"]
+    },
+    "section6": {
+      "title": "6. Cumplimiento Verifactu",
+      "items": ["6.1. Invoo implementa requisitos Verifactu según RD 1007/2023.", "6.2. Confiamos en APIs de terceros para envío a AEAT.", "6.3. Aunque aseguramos la implementación correcta, no somos responsables de:", "   - Fallos o caídas de API de terceros", "   - Cambios en requisitos regulatorios", "   - Indisponibilidad del sistema AEAT", "6.4. Usted sigue siendo responsable del cumplimiento fiscal."]
+    },
+    "section7": {
+      "title": "7. Acceso Gestoría",
+      "items": ["7.1. Los usuarios pueden otorgar acceso gratuito a su gestoría.", "7.2. El usuario es responsable de verificar la legitimidad de la gestoría.", "7.3. Las gestorías pueden:", "   - Ver facturas y gastos del cliente", "   - Exportar datos (CSV/XML)", "   - Generar resúmenes fiscales", "7.4. Las gestorías no pueden eliminar datos del cliente.", "7.5. El acceso puede ser revocado en cualquier momento."]
+    },
+    "section8": {
+      "title": "8. Protección de Datos",
+      "items": ["8.1. Procesamos datos personales según nuestra Política de Privacidad y RGPD.", "8.2. Los datos se alojan en servidores AWS EU."],
+      "retention": {
+        "title": "8.3. Retención de Datos:",
+        "items": ["Datos de cuenta activa: Mientras la cuenta esté activa", "Tras eliminación: 90 días para recuperación", "Registros fiscales: 7 años según ley", "Copias de seguridad: Retención rotativa de 30 días"]
+      },
+      "ownership": "8.4. Usted es propietario de sus datos y puede exportarlos."
+    },
+    "section9": {
+      "title": "9. Propiedad Intelectual",
+      "items": ["9.1. El Servicio y su contenido original son nuestra propiedad.", "9.2. Usted mantiene la propiedad de los datos que introduce.", "9.3. Nos otorga licencia para usar sus datos solo para proporcionar el Servicio."]
+    },
+    "section10": {
+      "title": "10. Disponibilidad del Servicio",
+      "items": ["10.1. Nos esforzamos por alta disponibilidad pero no garantizamos tiempo específico.", "10.2. El servicio puede estar temporalmente no disponible por mantenimiento.", "10.3. No somos responsables de interrupciones fuera de nuestro control."]
+    },
+    "section11": {
+      "title": "11. Limitación de Responsabilidad",
+      "intro": "En la medida máxima permitida por ley:",
+      "items": ["11.1. El Servicio se proporciona \"tal cual\" sin garantías.", "11.2. No somos responsables de daños indirectos o consecuentes.", "11.3. Nuestra responsabilidad total no excederá las tarifas pagadas en 12 meses.", "11.4. No somos responsables de sanciones fiscales por su uso del Servicio."]
+    },
+    "section12": {
+      "title": "12. Indemnización",
+      "intro": "Acepta indemnizar a Invoo de cualquier reclamación derivada de:",
+      "items": ["Su uso del Servicio", "Violación de estos Términos", "Violación de cualquier ley o derechos de terceros", "Datos inexactos que proporcione"]
+    },
+    "section13": {
+      "title": "13. Terminación",
+      "items": ["13.1. Puede cancelar su suscripción en cualquier momento.", "13.2. Podemos terminar o suspender el acceso por violaciones.", "13.3. Tras la terminación, puede exportar sus datos durante 90 días."]
+    },
+    "section14": {
+      "title": "14. Ley Aplicable",
+      "law": "14.1. Estos Términos se rigen por la ley estonia.",
+      "disputes": {
+        "title": "14.2. Resolución de Disputas:",
+        "items": ["Disputas B2B: Tribunales estonios en Tallin", "Disputas B2C: Los usuarios también pueden presentar en sus tribunales locales según ley de protección al consumidor de la UE"]
+      }
+    },
+    "section15": {
+      "title": "15. Cambios en Términos",
+      "items": ["15.1. Podemos modificar estos Términos con 30 días de aviso.", "15.2. El uso continuado tras cambios constituye aceptación.", "15.3. Los cambios materiales se notificarán por email."]
+    },
+    "section16": {
+      "title": "16. Información de Contacto",
+      "contact": "Roques OÜ\nAhtri tn 12, 15551\nTallin, Estonia\nEmail: legal@invoo.io"
+    }
+  },
+  "pricing": {
+    "header": {
+      "title": "Precios simples. Sin sorpresas",
+      "description": "Elige el plan que se ajuste a tus necesidades. Cambia cuando quieras. Cancela cuando quieras"
+    },
+    "tabs": {
+      "freelancer": "Autónomos and PYME",
+      "gestoria": "Gestoría"
+    },
+    "freelancer": {
+      "free": {
+        "title": "Gratis",
+        "description": "Perfecto para probar Invoo sin compromiso",
+        "price": "0€",
+        "period": "al mes",
+        "badge": "Gratis Para Siempre",
+        "cta": "Únete a la lista de espera →",
+        "features": ["Facturas ilimitadas", "50 MB almacenamiento de gastos"]
+      },
+      "pro": {
+        "title": "Pro",
+        "description": "Todo lo que necesitas para cumplir normativas y conectar con tu gestoría",
+        "priceMonthly": "9,90€",
+        "priceAnnual": "9,92€",
+        "period": "al mes",
+        "badgeMonthly": "7 días - Prueba gratis",
+        "badgeAnnual": "¡Ahorra 2 meses!",
+        "toggle": "Anual",
+        "toggleSave": "¡Ahorra 2 meses!",
+        "cta": "Únete a la lista de espera →",
+        "features": ["Facturas ilimitadas", "Registro de gastos (tickets ilimitados)", "QR Verifactu + envío a Hacienda", "Modelo 130 y 303 pre-calculados", "Exportación CSV en un clic", "Acceso panel para tu gestoría"]
+      }
+    },
+    "gestoria": {
+      "free": {
+        "title": "Gratis",
+        "description": "Ofrece facturación moderna a tus clientes, recibe datos organizados en tiempo real",
+        "price": "0€",
+        "period": "al mes",
+        "badge": "Gratis Para Siempre",
+        "cta": "Contáctanos →",
+        "features": ["Clientes ilimitados", "Sincronización facturas/gastos", "Exportación CSV", "Resúmenes trimestrales", "Notificaciones de nuevos datos"]
+      },
+      "enterprise": {
+        "title": "Enterprise",
+        "description": "Construyamos juntos. Flujos de trabajo y paneles personalizados para tu gestoría",
+        "price": "Facturación Flexible",
+        "badge": "Planes Personalizados",
+        "cta": "Contáctanos →",
+        "features": ["Todo lo del plan Gratis incluido", "Funciones e integraciones personalizadas", "Cobertura completa del flujo de trabajo", "Soporte prioritario", "Integraciones API/ERP"]
+      }
+    }
+  },
+  "home": {
+    "hero": {
+      "title": "Crea facturas conformes en 30 segundos",
+      "description": "Invoo ayuda a autónomos, PYMES y gestorías a trabajar más rápido juntos: listo para Verifactu, PDFs profesionales, compartir instantáneo y resúmenes fiscales automáticos",
+      "cta": "Únete a la lista de espera →"
+    },
+    "whyChoose": {
+      "title": "Por qué autónomos, PYMES y gestorías eligen Invoo",
+      "card1": {
+        "title": "Ahorra tiempo",
+        "description": "Crea y envía facturas en 30 segundos, sin Excel, sin Word"
+      },
+      "card2": {
+        "title": "Siempre conforme",
+        "description": "Cumplimiento Verifactu automático con QR, sin estrés con Hacienda"
+      },
+      "card3": {
+        "title": "Gestoría-friendly",
+        "description": "Comparte facturas y gastos directamente con tu gestoría. Sin más reescribir"
+      },
+      "cta1": "Gestoría →",
+      "cta2": "Autónomos y PYMES →"
+    },
+    "invoicing": {
+      "title": "Facturación simplificada",
+      "step1": {
+        "title": "Crea",
+        "description": "Introduce importe y cliente. Invoo genera tu factura profesional lista para Verifactu al instante"
+      },
+      "step2": {
+        "title": "Envía",
+        "description": "La mandamos automáticamente a Hacienda (Verifactu), tu gestoría y tu cliente"
+      },
+      "step3": {
+        "title": "Listo",
+        "description": "Todas las facturas guardadas y resumidas. Tú solo cobras, sin papeleo extra"
+      },
+      "cta": "Únete a la lista de espera →"
+    },
+    "moreThanInvoicing": {
+      "title": "Más que facturación",
+      "card1": {
+        "title": "Registra tus gastos",
+        "description": "Haz una foto de los tickets y deja que Invoo los organice automáticamente"
+      },
+      "card2": {
+        "title": "Impuestos trimestrales listos",
+        "description": "Resúmenes pre-calculados para Modelo 130 y 303, para que declares más rápido"
+      },
+      "card3": {
+        "title": "Panel para gestorías",
+        "description": "Tu gestoría accede en tiempo real a tus facturas y gastos, sin cadenas de emails"
+      },
+      "card4": {
+        "title": "Exportación en un clic",
+        "description": "Descarga facturas y gastos en formato CSV limpio, listo para cualquier software contable"
+      },
+      "cta": "Únete a la lista de espera →"
+    },
+    "gestoriasBlock": {
+      "title": "Diseñado para gestorías",
+      "description": "Invoo no es solo para autónomos. Las gestorías obtienen acceso a datos de clientes en tiempo real sin perseguir documentos ni reescribir. Gratis, seguro y siempre conforme con Verifactu",
+      "features": [
+        "Datos multi-cliente en tiempo real",
+        "Exportación CSV masiva",
+        "Resúmenes fiscales trimestrales"
+      ],
+      "cta": "Descubre más →"
+    },
+    "focus": {
+      "title": "Céntrate en tu trabajo. Nosotros nos encargamos del papeleo",
+      "description": "Únete a otros autónomos preparándose para Verifactu con una herramienta diseñada para España",
+      "cta": "Únete a la lista de espera →"
+    },
+    "footer": {
+      "description": "La plataforma de facturación amigable con gestorías que conecta autónomos, clientes y cumplimiento fiscal en un solo flujo",
+      "invooTitle": "Invoo",
+      "aboutUs": "Sobre Nosotros",
+      "terms": "Términos de Uso",
+      "privacy": "Política de Privacidad",
+      "contact": "Contacto",
+      "servicesTitle": "Servicios",
+      "forFreelancers": "Para Autónomos y PYMES",
+      "forGestorias": "Para Gestorías",
+      "pricing": "Precios",
+      "resourcesTitle": "Recursos",
+      "faqs": "Preguntas Frecuentes",
+      "blog": "Blog",
+      "copyright": "© 2025 Invoo.es. Todos los derechos reservados. Hecho con ♥ para autónomos españoles"
     }
   }
 }

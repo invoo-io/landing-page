@@ -1,70 +1,90 @@
-import React from "react";
+"use client";
+
+import { useTranslations } from "next-intl";
 
 export default function AboutContent() {
+  const t = useTranslations("about");
+
+  const renderParagraphs = (text: string) => {
+    return text.split('\n').map((paragraph, index) => (
+      <p key={index} className="text-title3 text-label-inverted-secondary mb-4 last:mb-0" style={{ fontSize: '20px', lineHeight: '36px' }}>
+        {paragraph}
+      </p>
+    ));
+  };
+
+  const renderItemContent = (text: string) => {
+    const lines = text.split('\n');
+    return (
+      <div>
+        <p className="text-title3 text-label-inverted font-semibold mb-1" style={{ fontSize: '20px', lineHeight: '36px' }}>
+          {lines[0]}
+        </p>
+        {lines.slice(1).map((line, index) => (
+          <p key={index} className="text-title3 text-label-inverted-secondary" style={{ fontSize: '20px', lineHeight: '36px' }}>
+            {line}
+          </p>
+        ))}
+      </div>
+    );
+  };
+
   return (
     <section className="min-h-screen flex items-center justify-center px-6 mb-40">
       <div className="max-w-4xl w-full flex flex-col gap-10 text-left">
-        {/* Built from real experience section */}
+        {/* Block 1: Born from real experience section */}
         <div className="mb-8">
           <h2 className="text-title1-emphasized text-label-inverted mb-6">
-            Born from real experience
+            {t("block1.title")}
           </h2>
-          <p className="text-title3 text-label-inverted-secondary" style={{ fontSize: '20px', lineHeight: '36px' }}>
-            When moving to Spain, we quickly discovered how complex life can be for freelancers — from endless invoices and expenses to navigating taxes. Talking with autónomos revealed the same frustrations. At the same time, gestorías shared how outdated tools slow them down. Then came VeriFactu: a regulatory shift and the perfect moment to build something better. That&apos;s how Invoo was born — a platform designed to empower both freelancers and gestorías, saving time, money, and stress.
-          </p>
+          <div>
+            {renderParagraphs(t("block1.description"))}
+          </div>
         </div>
 
-        {/* Our vision section */}
+        {/* Block 2: Our vision section */}
         <div className="mb-8">
           <h3 className="text-title1-emphasized text-label-inverted mb-6">
-            Our vision
+            {t("block2.title")}
           </h3>
-          <p className="text-title3 text-label-inverted-secondary" style={{ fontSize: '20px', lineHeight: '36px' }}>
-            We believe invoicing should be simple, compliant, and collaborative. Our mission is to connect freelancers, clients, and gestorías in one seamless flow — where professional invoices, VeriFactu compliance, and gestoría dashboards work together without friction.
-          </p>
+          <div>
+            {renderParagraphs(t("block2.description"))}
+          </div>
         </div>
 
-        {/* Why Invoo section */}
+        {/* Block 3: Why Invoo section */}
         <div className="mb-8">
           <h3 className="text-title1-emphasized text-label-inverted mb-8">
-            Why Invoo
+            {t("block3.title")}
           </h3>
           <div className="space-y-6">
             <div className="flex items-start gap-4">
               <span className="text-2xl mt-1">🚀</span>
-              <p className="text-title3 text-label-inverted-secondary" style={{ fontSize: '20px', lineHeight: '36px' }}>
-                Modern tools built for Spain&apos;s freelancers
-              </p>
+              {renderItemContent(t("block3.items.item1"))}
             </div>
             <div className="flex items-start gap-4">
               <span className="text-2xl mt-1">🧾</span>
-              <p className="text-title3 text-label-inverted-secondary" style={{ fontSize: '20px', lineHeight: '36px' }}>
-                Automatic Verifactu compliance with every invoice
-              </p>
+              {renderItemContent(t("block3.items.item2"))}
             </div>
             <div className="flex items-start gap-4">
               <span className="text-2xl mt-1">🤝</span>
-              <p className="text-title3 text-label-inverted-secondary" style={{ fontSize: '20px', lineHeight: '36px' }}>
-                Gestoría-friendly design — no retyping, no chasing, no stress
-              </p>
+              {renderItemContent(t("block3.items.item3"))}
             </div>
             <div className="flex items-start gap-4">
               <span className="text-2xl mt-1">💡</span>
-              <p className="text-title3 text-label-inverted-secondary" style={{ fontSize: '20px', lineHeight: '36px' }}>
-                Focused on saving time, not adding complexity
-              </p>
+              {renderItemContent(t("block3.items.item4"))}
             </div>
           </div>
         </div>
 
-        {/* We're just getting started section */}
+        {/* Block 4: Join us early section */}
         <div className="pt-8">
           <h3 className="text-title1-emphasized text-label-inverted mb-6">
-            We&apos;re just getting started
+            {t("block4.title")}
           </h3>
-          <p className="text-title3 text-label-inverted-secondary" style={{ fontSize: '20px', lineHeight: '36px' }}>
-          Invoo is preparing for launch soon. We&apos;re working closely with early freelancers and gestorías to refine the platform before opening it to everyone. The company will be formally incorporated ahead of launch, with operations set up to serve freelancers across Spain
-          </p>
+          <div>
+            {renderParagraphs(t("block4.description"))}
+          </div>
         </div>
       </div>
     </section>

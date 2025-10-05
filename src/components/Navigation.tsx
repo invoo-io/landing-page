@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ChevronDown, Globe, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import NavigationDrawerButton from "./NavigationDrawerButton";
@@ -19,6 +20,8 @@ export default function Navigation({ locale }: NavigationProps) {
     string | null
   >(null);
 
+  const pathname = usePathname();
+
   const services = [
     { name: "Freelancers", href: getBasePath(`/${locale}/freelancers`) },
     { name: "Gestorías", href: getBasePath(`/${locale}/gestorias`) },
@@ -28,6 +31,17 @@ export default function Navigation({ locale }: NavigationProps) {
     { name: "FAQ", href: getBasePath(`/${locale}/faq`), external: false },
     { name: "Blog", href: "https://invoo.substack.com/", external: true },
   ];
+
+  const languages = [
+    { name: "English", code: "en" },
+    { name: "Español", code: "es" },
+  ];
+
+  const getLanguageSwitchUrl = (newLocale: string) => {
+    // Replace the current locale in the pathname with the new locale
+    const pathWithoutLocale = pathname.replace(`/${locale}`, "");
+    return getBasePath(`/${newLocale}${pathWithoutLocale}`);
+  };
 
   const handleMouseEnter = (dropdown: string) => {
     setActiveDropdown(dropdown);
@@ -195,9 +209,48 @@ export default function Navigation({ locale }: NavigationProps) {
             {/* Right Side Actions - Desktop */}
             <div className="hidden lg:flex items-center gap-8">
               {/* Language Selector */}
-              <button className="flex items-center text-label-inverted-secondary hover:text-label-inverted transition-colors p-2">
-                <Globe className="w-5 h-5" />
-              </button>
+              <div
+                className="relative"
+                onMouseEnter={() => handleMouseEnter("language")}
+                onMouseLeave={handleMouseLeave}
+              >
+                <button className="flex items-center gap-1.5 text-label-inverted hover:text-label-inverted-secondary transition-colors text-callout">
+                  <Globe className="w-5 h-5" />
+                  <ChevronDown className="w-4 h-4" />
+                </button>
+
+                {activeDropdown === "language" && (
+                  <div
+                    className="absolute top-full right-0 mt-2 min-w-[160px] before:absolute before:inset-x-0 before:-top-2 before:h-2 py-2 rounded-xl"
+                    style={{
+                      backgroundColor: 'var(--background-secondary-dark)',
+                      backdropFilter: 'blur(20px)',
+                      boxShadow: '0 4px 20px rgba(255, 255, 255, 0.1), 0 1px 4px rgba(255, 255, 255, 0.05)',
+                      animation: 'slideDown 0.2s ease-out'
+                    }}
+                  >
+                    {languages.map((lang) => (
+                      <Link
+                        key={lang.code}
+                        href={getLanguageSwitchUrl(lang.code)}
+                        className="relative block px-6 py-3 text-footnote-emphasized text-label-inverted hover:text-label-inverted hover:bg-fills-secondary transition-all no-underline"
+                        onMouseEnter={(e) => {
+                          e.currentTarget.style.backgroundColor =
+                            "var(--fills-secondary)";
+                          e.currentTarget.style.color = "var(--label-inverted)";
+                        }}
+                        onMouseLeave={(e) => {
+                          e.currentTarget.style.backgroundColor = "transparent";
+                          e.currentTarget.style.color =
+                            "var(--label-inverted)";
+                        }}
+                      >
+                        {lang.name}
+                      </Link>
+                    ))}
+                  </div>
+                )}
+              </div>
 
               {/* CTA Button */}
               <NavigationDrawerButton />
@@ -484,7 +537,7 @@ export default function Navigation({ locale }: NavigationProps) {
                   {/* Divider */}
                   <div className="my-6 border-t border-strokes-primary/20" />
 
-                  {/* Language Button */}
+                  {/* Language Dropdown */}
                   <motion.div
                     variants={{
                       open: { opacity: 1, x: 0 },
@@ -493,11 +546,59 @@ export default function Navigation({ locale }: NavigationProps) {
                     transition={{ duration: 0.3 }}
                   >
                     <button
-                      className="w-full text-label-inverted hover:bg-fills-tertiary rounded-lg transition-colors px-6 py-4 flex items-center justify-center gap-3"
+                      onClick={() => setMobileActiveDropdown(mobileActiveDropdown === "language" ? null : "language")}
+                      className="relative w-full text-label-inverted hover:bg-fills-tertiary rounded-lg transition-colors px-6 py-4 flex items-center justify-center"
                     >
-                      <Globe className="w-5 h-5" style={{ color: 'var(--label-secondary-dark)' }} />
+                      <Globe className="w-5 h-5 mr-2" style={{ color: 'var(--label-secondary-dark)' }} />
                       <span className="text-callout-emphasized">Language</span>
+                      <motion.div
+                        style={{
+                          position: "absolute",
+                          right: "24px",
+                        }}
+                        animate={{
+                          rotate: mobileActiveDropdown === "language" ? 180 : 0,
+                        }}
+                        transition={{ duration: 0.2 }}
+                      >
+                        <ChevronDown className="w-4 h-4" style={{ color: 'var(--label-secondary-dark)' }} />
+                      </motion.div>
                     </button>
+
+                    <AnimatePresence>
+                      {mobileActiveDropdown === "language" && (
+                        <motion.div
+                          initial={{ height: 0, opacity: 0 }}
+                          animate={{ height: "auto", opacity: 1 }}
+                          exit={{ height: 0, opacity: 0 }}
+                          transition={{ duration: 0.2 }}
+                          className="overflow-hidden"
+                        >
+                          <div style={{ padding: "12px 0" }}>
+                            {languages.map((lang, index) => (
+                              <motion.div
+                                key={lang.code}
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: index * 0.05 }}
+                                style={{
+                                  marginBottom:
+                                    index < languages.length - 1 ? "8px" : "0",
+                                }}
+                              >
+                                <Link
+                                  href={getLanguageSwitchUrl(lang.code)}
+                                  onClick={() => setMobileMenuOpen(false)}
+                                  className="block text-label-inverted-secondary hover:text-label-inverted hover:bg-fills-tertiary rounded-lg transition-all text-subheadline text-center px-5 py-3 mx-4"
+                                >
+                                  {lang.name}
+                                </Link>
+                              </motion.div>
+                            ))}
+                          </div>
+                        </motion.div>
+                      )}
+                    </AnimatePresence>
                   </motion.div>
 
                   {/* CTA Button */}

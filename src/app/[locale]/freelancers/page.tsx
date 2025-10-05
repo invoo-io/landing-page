@@ -1,4 +1,4 @@
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import HeroImageSection from "@/components/HeroImageSection";
@@ -15,19 +15,26 @@ export default async function FreelancersPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const t = await getTranslations({ locale, namespace: "freelancersPage" });
+
+  // Split title for gradient: "Invoicing " + "without stress" (or ES: "Facturación " + "sin estrés")
+  const titleParts = t("header.title").split(" ");
+  const firstPart = titleParts[0]; // "Invoicing" or "Facturación"
+  const secondPart = titleParts.slice(1).join(" "); // "without stress" or "sin estrés"
+
   return (
     <div className="min-h-screen bg-bg-primary">
       <Navigation locale={locale} />
-      <HeroSection 
+      <HeroSection
         title={
           <>
-            <span style={{color: '#EFEFF5'}}>Invoicing </span>
-            
-            <GradientText>without the stress</GradientText>
+            <span style={{color: '#EFEFF5'}}>{firstPart} </span>
+
+            <GradientText>{secondPart}</GradientText>
           </>
         }
-        paragraph="Professional invoices, automatic VeriFactu compliance, and instant delivery to AEAT, your client, and your gestoría"
-        buttonText="Get Started"
+        paragraph={t("header.description")}
+        buttonText={t("header.cta")}
         buttonHref="#contact"
       />
       <HeroImageSection dashboardImage="/FreelanceHeroImageSection.png" />
@@ -37,14 +44,10 @@ export default async function FreelancersPage({
         imageHeight={350}
         offsetImage={false}
         maxImageWidth={160}
-        title="Create professional invoices in seconds"
-        paragraph="Skip the templates and Excel hacks. Invoo generates polished PDFs that are always correctly numbered and ready to send."
-        features={[
-          "Autofilled client data",
-          "Professional PDF templates",
-          "Automatic numbering"
-        ]}
-        buttonText="Join the waiting list"
+        title={t("block1.title")}
+        paragraph={t("block1.description")}
+        features={t.raw("block1.features")}
+        buttonText={t("block1.cta")}
       />
       <BuildForGestoriasSection
         imageSrc="/Doc.png"
@@ -52,14 +55,10 @@ export default async function FreelancersPage({
         imageHeight={350}
         offsetImage={false}
         maxImageWidth={160}
-        title="Compliance, handled for you"
-        paragraph="Every invoice includes the official VeriFActu QR and is submitted to AEAT in the background, so you never worry about errors or fines."
-        features={[
-          "Automatic QR generation",
-          "Secure AEAT submission",
-          "Full audit trail with status checks"
-        ]}
-        buttonText="Join the waiting list"
+        title={t("block2.title")}
+        paragraph={t("block2.description")}
+        features={t.raw("block2.features")}
+        buttonText={t("block2.cta")}
         imagePosition="left"
         showImagePlaceholder={true}
       />
@@ -69,14 +68,10 @@ export default async function FreelancersPage({
         imageHeight={350}
         offsetImage={false}
         maxImageWidth={160}
-        title="Your finances in one simple view"
-        paragraph="From daily expenses to quarterly models, Invoo centralizes everything so you can see the big picture without switching tools."
-        features={[
-          "Snap and log expenses",
-          "Automatic monthly summaries",
-          "Pre-calculated Modelo 130/303"
-        ]}
-        buttonText="Join the waiting list"
+        title={t("block3.title")}
+        paragraph={t("block3.description")}
+        features={t.raw("block3.features")}
+        buttonText={t("block3.cta")}
         imagePosition="right"
         showImagePlaceholder={true}
       />
@@ -86,14 +81,10 @@ export default async function FreelancersPage({
         imageHeight={350}
         offsetImage={false}
         maxImageWidth={160}
-        title="Share effortlessly with your gestoría"
-        paragraph="No more chasing or forwarding PDFs. Your gestoría sees invoices and expenses in real time, at no cost to them."
-        features={[
-          "Direct access for your gestoría",
-          "No email chains or retyping",
-          "Free for gestorías"
-        ]}
-        buttonText="Join the waiting list"
+        title={t("block4.title")}
+        paragraph={t("block4.description")}
+        features={t.raw("block4.features")}
+        buttonText={t("block4.cta")}
         imagePosition="left"
         showImagePlaceholder={true}
       />

@@ -1,4 +1,4 @@
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
 import HeroImageSection from "@/components/HeroImageSection";
@@ -15,19 +15,24 @@ export default async function GestoriasPage({
   const { locale } = await params;
   setRequestLocale(locale);
 
+  const t = await getTranslations({ locale, namespace: "gestoriasPage" });
+
+  // Split title for gradient: "Less paperwork, " + "more advising" (or ES equivalent)
+  const titleParts = t("header.title").split(", ");
+
   return (
     <div className="min-h-screen bg-bg-primary">
       <Navigation locale={locale} />
-      <HeroSection 
+      <HeroSection
         title={
           <>
-            <span style={{color: '#EFEFF5'}}>Less paperwork, </span>
-            
-            <GradientText>more advising</GradientText>
+            <span style={{color: '#EFEFF5'}}>{titleParts[0]}, </span>
+
+            <GradientText>{titleParts[1]}</GradientText>
           </>
         }
-        paragraph="Invoo gives gestoría real-time access to client invoices and expenses, always VeriFactu compliant, always free"
-        buttonText="Get Started"
+        paragraph={t("header.description")}
+        buttonText={t("header.cta")}
         buttonHref="#contact"
       />
       <HeroImageSection dashboardImage="/Gestoria.png" />
@@ -37,14 +42,10 @@ export default async function GestoriasPage({
         imageHeight={350}
         offsetImage={false}
         maxImageWidth={160}
-        title="Always up to date"
-        paragraph="No more chasing clients for invoices. See every invoice and expense the moment it's created."
-        features={[
-          "Instant invoice + expense sync",
-          "VeriFActu QR included automatically",
-          "Alerts when new activity appears"
-        ]}
-        buttonText="Join the waiting list"
+        title={t("block1.title")}
+        paragraph={t("block1.description")}
+        features={t.raw("block1.features")}
+        buttonText={t("block1.cta")}
       />
       <BuildForGestoriasSection
         imageSrc="/Down.png"
@@ -52,14 +53,10 @@ export default async function GestoriasPage({
         imageHeight={350}
         offsetImage={false}
         maxImageWidth={160}
-        title="Data you can actually use"
-        paragraph="Download clean CSVs or XMLs ready for your accounting software, no retyping required"
-        features={[
-          "One-click CSV export",
-          "Quarterly or monthly batch downloads",
-          "XML exports aligned with AEAT standards"
-        ]}
-        buttonText="Join the waiting list"
+        title={t("block2.title")}
+        paragraph={t("block2.description")}
+        features={t.raw("block2.features")}
+        buttonText={t("block2.cta")}
         imagePosition="left"
         showImagePlaceholder={true}
       />
@@ -69,14 +66,10 @@ export default async function GestoriasPage({
         imageHeight={350}
         offsetImage={false}
         maxImageWidth={160}
-        title="Tax periods in seconds"
-        paragraph="Pre-calculated Modelo 130 and 303 summaries per client help you prepare declarations faster"
-        features={[
-          "Auto-generated summaries.",
-          "Clear breakdowns of bases and IVA",
-          "Easy to review and validate"
-        ]}
-        buttonText="Join the waiting list"
+        title={t("block3.title")}
+        paragraph={t("block3.description")}
+        features={t.raw("block3.features")}
+        buttonText={t("block3.cta")}
         imagePosition="right"
         showImagePlaceholder={true}
       />
@@ -86,14 +79,10 @@ export default async function GestoriasPage({
         imageHeight={350}
         offsetImage={false}
         maxImageWidth={160}
-        title="Zero cost, zero risk"
-        paragraph="Invoo is free for gestorías. Clients pay their subscription, you get the tools, no barriers to adoption"
-        features={[
-          "Free dashboard access",
-          "Unlimited clients",
-          "Built for collaboration, not replacement"
-        ]}
-        buttonText="Join the waiting list"
+        title={t("block4.title")}
+        paragraph={t("block4.description")}
+        features={t.raw("block4.features")}
+        buttonText={t("block4.cta")}
         imagePosition="left"
         showImagePlaceholder={true}
       />

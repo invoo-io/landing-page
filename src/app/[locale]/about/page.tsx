@@ -1,4 +1,4 @@
-import { setRequestLocale } from "next-intl/server";
+import { setRequestLocale, getTranslations } from "next-intl/server";
 import Image from "next/image";
 import Navigation from "@/components/Navigation";
 import HeroSection from "@/components/HeroSection";
@@ -15,6 +15,7 @@ export default async function AboutPage({
 }) {
   const { locale } = await params;
   setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "about.header" });
 
   return (
     <div className="min-h-screen bg-bg-primary relative overflow-hidden">
@@ -39,12 +40,12 @@ export default async function AboutPage({
           title={
             <>
               <span style={{ color: "#EFEFF5" }}>
-                Helping freelancers and Gestoría{" "}
+                {locale === "en" ? "Helping freelancers and gestorías " : "Ayudando a autónomos y gestorías a "}
               </span>
-              <GradientText>work better together</GradientText>
+              <GradientText>{locale === "en" ? "work better together" : "trabajar mejor juntos"}</GradientText>
             </>
           }
-          paragraph="Invoo is the gestoría-friendly invoicing platform built to simplify compliance, save time, and empower collaboration"
+          paragraph={t("description")}
         />
         <AboutContent />
         <FocusSection />
