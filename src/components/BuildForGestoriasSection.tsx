@@ -62,8 +62,6 @@ export default function BuildForGestoriasSection({
       {(buttonText === "Learn More" || buttonText === "Join the waiting list") ? (
         <DrawerComponent
           triggerText={buttonText}
-          title=""
-          description=""
         />
       ) : (
         <Button variant="gradient" showArrow onClick={buttonOnClick}>
