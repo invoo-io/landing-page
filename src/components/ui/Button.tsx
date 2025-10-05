@@ -63,6 +63,7 @@ export default function Button({
   // Special handling for gradient variant
   if (variant === 'gradient') {
     const gradientStyle = {
+      fontFamily: 'var(--font-inter)',
       background: 'linear-gradient(94.28deg, #257DFF 3.12%, #925AFF 95.84%)',
       width: '193px',
       height: '47px',

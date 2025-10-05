@@ -85,13 +85,8 @@ export default function MoreThanInvoiceSection() {
           {features.map((feature, index) => (
             <div
               key={index}
-              style={{
-                backgroundColor: "#161616",
-                borderRadius: "12px",
-                padding: "32px",
-                minHeight: "150px",
-                textAlign: "center",
-              }}
+              className="bg-[#161616] rounded-xl p-8 text-center"
+              style={{ minHeight: "150px" }}
             >
               <Image
                 src={feature.image}
@@ -100,23 +95,10 @@ export default function MoreThanInvoiceSection() {
                 height={100}
                 style={{ objectFit: "contain", margin: "0 auto" }}
               />
-              <h3
-                style={{
-                  fontSize: "20px",
-                  fontWeight: 600,
-                  color: "white",
-                  marginBottom: "12px",
-                }}
-              >
+              <h3 className="text-title3-emphasized text-white mb-3" style={{ fontSize: "20px" }}>
                 {feature.title}
               </h3>
-              <p
-                style={{
-                  fontSize: "16px",
-                  color: "#9F9F9FB2",
-                  lineHeight: "1.5",
-                }}
-              >
+              <p className="text-callout" style={{ color: "#9F9F9FB2" }}>
                 {feature.description}
               </p>
             </div>

@@ -5,7 +5,8 @@ import { ArrowRight } from "lucide-react";
 export default function PricingButton() {
   return (
     <button
-      style={{ 
+      style={{
+        fontFamily: 'var(--font-inter)',
         padding: '0 24px',
         height: '47px',
         maxHeight: '47px',

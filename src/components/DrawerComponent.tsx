@@ -3,10 +3,8 @@
 import * as React from "react";
 import {
   Drawer,
-  DrawerClose,
   DrawerContent,
   DrawerDescription,
-  DrawerFooter,
   DrawerHeader,
   DrawerTitle,
   DrawerTrigger,
@@ -15,16 +13,10 @@ import Button from "@/components/ui/Button";
 
 interface DrawerComponentProps {
   triggerText: string;
-  title: string;
-  description: string;
-  children?: React.ReactNode;
 }
 
 export function DrawerComponent({
-  triggerText,
-  title,
-  description,
-  children
+  triggerText
 }: DrawerComponentProps) {
   const [open, setOpen] = React.useState(false);
   const [formData, setFormData] = React.useState({
@@ -92,42 +84,27 @@ export function DrawerComponent({
           gap: '24px'
         }}>
           <DrawerHeader className="text-center">
-            <DrawerTitle className="text-3xl font-semibold text-white">
+            <DrawerTitle className="text-title1-emphasized text-white" style={{ fontSize: '30px' }}>
               Join the waiting list
             </DrawerTitle>
-            <DrawerDescription className="text-gray-400 mt-2">
+            <DrawerDescription className="text-callout text-gray-400 mt-2">
               Sign up to receive notifications for our launch! The first 50 users will enjoy 3 months free.
             </DrawerDescription>
           </DrawerHeader>
 
-          <form onSubmit={handleSubmit} style={{
-            padding: '0 32px',
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '24px'
-          }}>
+          <form onSubmit={handleSubmit} className="px-8 flex flex-col gap-6">
           <div>
-            <label style={{
-              color: 'rgba(239, 239, 245, 0.9)',
-              fontSize: '13px',
-              fontWeight: 400,
-              marginBottom: '8px',
-              display: 'block'
-            }}>Name</label>
+            <label className="text-footnote mb-2 block" style={{ color: 'rgba(239, 239, 245, 0.9)' }}>Name</label>
             <input
               type="text"
               value={formData.name}
               onChange={(e) => setFormData({...formData, name: e.target.value})}
+              className="text-footnote w-full rounded outline-none transition-all"
               style={{
                 backgroundColor: 'rgba(255, 255, 255, 0.08)',
                 border: '1px solid rgba(255, 255, 255, 0.12)',
-                borderRadius: '4px',
                 padding: '11px 14px',
-                color: '#EFEFF5',
-                fontSize: '14px',
-                width: '100%',
-                outline: 'none',
-                transition: '0.2s'
+                color: '#EFEFF5'
               }}
               onFocus={(e) => {
                 e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
@@ -142,27 +119,17 @@ export function DrawerComponent({
           </div>
 
           <div>
-            <label style={{
-              color: 'rgba(239, 239, 245, 0.9)',
-              fontSize: '13px',
-              fontWeight: 400,
-              marginBottom: '8px',
-              display: 'block'
-            }}>Email</label>
+            <label className="text-footnote mb-2 block" style={{ color: 'rgba(239, 239, 245, 0.9)' }}>Email</label>
             <input
               type="email"
               value={formData.email}
               onChange={(e) => setFormData({...formData, email: e.target.value})}
+              className="text-footnote w-full rounded outline-none transition-all"
               style={{
                 backgroundColor: 'rgba(255, 255, 255, 0.08)',
                 border: '1px solid rgba(255, 255, 255, 0.12)',
-                borderRadius: '4px',
                 padding: '11px 14px',
-                color: '#EFEFF5',
-                fontSize: '14px',
-                width: '100%',
-                outline: 'none',
-                transition: '0.2s'
+                color: '#EFEFF5'
               }}
               onFocus={(e) => {
                 e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.1)';
@@ -177,15 +144,9 @@ export function DrawerComponent({
           </div>
 
           <div>
-            <label style={{
-              color: 'rgba(239, 239, 245, 0.9)',
-              fontSize: '13px',
-              fontWeight: 400,
-              marginBottom: '8px',
-              display: 'block'
-            }}>Your Profile</label>
-            <div style={{ display: 'flex', gap: '16px', flexWrap: 'wrap' }}>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
+            <label className="text-footnote mb-2 block" style={{ color: 'rgba(239, 239, 245, 0.9)' }}>Your Profile</label>
+            <div className="flex gap-4 flex-wrap">
+              <label className="flex items-center gap-2 cursor-pointer">
                 <input
                   type="radio"
                   name="profile"
@@ -199,9 +160,9 @@ export function DrawerComponent({
                     accentColor: '#000000'
                   }}
                 />
-                <span style={{ color: '#EFEFF5' }}>Autónomo</span>
+                <span className="text-footnote" style={{ color: '#EFEFF5' }}>Autónomo</span>
               </label>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
+              <label className="flex items-center gap-2 cursor-pointer">
                 <input
                   type="radio"
                   name="profile"
@@ -215,9 +176,9 @@ export function DrawerComponent({
                     accentColor: '#000000'
                   }}
                 />
-                <span style={{ color: '#EFEFF5' }}>Pyme</span>
+                <span className="text-footnote" style={{ color: '#EFEFF5' }}>Pyme</span>
               </label>
-              <label style={{ display: 'flex', alignItems: 'center', gap: '8px', cursor: 'pointer' }}>
+              <label className="flex items-center gap-2 cursor-pointer">
                 <input
                   type="radio"
                   name="profile"
@@ -231,7 +192,7 @@ export function DrawerComponent({
                     accentColor: '#000000'
                   }}
                 />
-                <span style={{ color: '#EFEFF5' }}>Gestoría</span>
+                <span className="text-footnote" style={{ color: '#EFEFF5' }}>Gestoría</span>
               </label>
             </div>
           </div>
@@ -240,6 +201,7 @@ export function DrawerComponent({
             type="submit"
             disabled={isLoading}
             style={{
+              fontFamily: 'var(--font-inter)',
               width: '100%',
               height: '47px',
               padding: '12px 16px',
@@ -271,10 +233,10 @@ export function DrawerComponent({
           </button>
 
           {error && (
-            <p className="text-red-400 text-sm text-center">{error}</p>
+            <p className="text-red-400 text-footnote text-center">{error}</p>
           )}
           {success && (
-            <p className="text-green-400 text-sm text-center">Successfully joined the waiting list!</p>
+            <p className="text-green-400 text-footnote text-center">Successfully joined the waiting list!</p>
           )}
         </form>
         </div>

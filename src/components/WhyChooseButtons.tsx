@@ -18,7 +18,8 @@ export default function WhyChooseButtons() {
         display: 'inline-flex'
       }}>
         <button
-          style={{ 
+          style={{
+            fontFamily: 'var(--font-inter)',
             padding: '0 24px',
             height: '45px',
             maxHeight: '47px',
@@ -48,7 +49,8 @@ export default function WhyChooseButtons() {
       
       {/* Freelancer button with solid gradient background */}
       <button
-        style={{ 
+        style={{
+          fontFamily: 'var(--font-inter)',
           padding: '0 24px',
           height: '47px',
           maxHeight: '47px',

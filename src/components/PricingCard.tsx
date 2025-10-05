@@ -36,79 +36,48 @@ export default function PricingCard({
 }: PricingCardProps) {
   return (
     <div
+      className="relative h-full flex flex-col rounded-3xl p-8"
       style={{
         background: isHighlighted ? 'rgba(37, 125, 255, 0.05)' : 'transparent',
         border: isHighlighted ? '2px solid #257DFF' : '1px solid rgba(255, 255, 255, 0.1)',
-        borderRadius: '24px',
-        padding: '40px 32px',
-        position: 'relative',
-        height: '100%',
-        display: 'flex',
-        flexDirection: 'column',
       }}
     >
-      <div style={{ flex: 1 }}>
-        <h3 style={{
-          fontSize: '32px',
-          fontWeight: 600,
-          color: 'white',
-          marginBottom: '12px'
-        }}>
+      <div className="flex-1">
+        <h3 className="text-title1-emphasized text-white mb-3">
           {title}
         </h3>
-        
+
         {description && (
-          <p style={{
-            fontSize: '14px',
-            color: 'rgba(255, 255, 255, 0.6)',
-            marginBottom: '24px',
-            lineHeight: '1.5'
-          }}>
+          <p className="text-footnote text-white/60 mb-6">
             {description}
           </p>
         )}
 
-        <div style={{ marginBottom: '24px' }}>
-          <div style={{ display: 'flex', alignItems: 'baseline', gap: '8px' }}>
-            <span style={{
-              fontSize: '48px',
-              fontWeight: 700,
-              color: 'white'
-            }}>
+        <div className="mb-6">
+          <div className="flex items-baseline gap-2">
+            <span className="text-large-title-emphasized text-white" style={{ fontSize: '48px', fontWeight: 700 }}>
               {price}
             </span>
             {period && (
-              <span style={{
-                fontSize: '16px',
-                color: 'rgba(255, 255, 255, 0.6)'
-              }}>
+              <span className="text-callout text-white/60">
                 {period}
               </span>
             )}
             {badge && (
-              <span style={{
-                fontSize: '14px',
-                color: badgeColor,
-                fontWeight: 600,
-                marginLeft: '8px'
-              }}>
+              <span className="text-footnote-emphasized ml-2" style={{ color: badgeColor }}>
                 {badge}
               </span>
             )}
           </div>
-          
+
           {subtitle && (
-            <div style={{
-              fontSize: '14px',
-              color: 'rgba(255, 255, 255, 0.5)',
-              marginTop: '8px'
-            }}>
+            <div className="text-footnote text-white/50 mt-2">
               {subtitle}
             </div>
           )}
         </div>
 
-        <div style={{ marginBottom: '32px' }}>
+        <div className="mb-8">
           <Button
             href={buttonHref}
             onClick={buttonOnClick}
@@ -119,31 +88,12 @@ export default function PricingCard({
           </Button>
         </div>
 
-        <div style={{
-          borderTop: '1px solid rgba(255, 255, 255, 0.1)',
-          paddingTop: '24px'
-        }}>
-          <div style={{
-            display: 'flex',
-            flexDirection: 'column',
-            gap: '16px'
-          }}>
+        <div className="border-t border-white/10 pt-6">
+          <div className="flex flex-col gap-4">
             {features.map((feature, index) => (
-              <div key={index} style={{
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '12px'
-              }}>
-                <Check size={20} style={{ 
-                  color: '#22C55E',
-                  flexShrink: 0,
-                  marginTop: '2px'
-                }} />
-                <span style={{
-                  fontSize: '14px',
-                  color: 'rgba(255, 255, 255, 0.9)',
-                  lineHeight: '1.5'
-                }}>
+              <div key={index} className="flex items-start gap-3">
+                <Check size={20} className="text-green-500 flex-shrink-0 mt-0.5" />
+                <span className="text-footnote text-white/90">
                   {feature}
                 </span>
               </div>
