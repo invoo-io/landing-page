@@ -15,16 +15,16 @@ interface NavigationProps {
 export default function Navigation({ locale }: NavigationProps) {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [mobileActiveDropdown, setMobileActiveDropdown] = useState<string | null>(null);
+  const [mobileActiveDropdown, setMobileActiveDropdown] = useState<
+    string | null
+  >(null);
 
   const services = [
     { name: "Freelancers", href: getBasePath(`/${locale}/freelancers`) },
-    { name: "Gestorías", href: getBasePath(`/${locale}/gestorias`) }
+    { name: "Gestorías", href: getBasePath(`/${locale}/gestorias`) },
   ];
 
-  const resources = [
-    { name: "FAQ", href: getBasePath(`/${locale}/faq`) }
-  ];
+  const resources = [{ name: "FAQ", href: getBasePath(`/${locale}/faq`) }];
 
   const handleMouseEnter = (dropdown: string) => {
     setActiveDropdown(dropdown);
@@ -37,18 +37,21 @@ export default function Navigation({ locale }: NavigationProps) {
   // Prevent body scroll when mobile menu is open
   useEffect(() => {
     if (mobileMenuOpen) {
-      document.body.style.overflow = 'hidden';
+      document.body.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     }
     return () => {
-      document.body.style.overflow = 'unset';
+      document.body.style.overflow = "unset";
     };
   }, [mobileMenuOpen]);
 
   return (
     <>
-      <nav className="w-full bg-black/80 backdrop-blur-xl border-b border-white/5 relative" style={{ zIndex: 100 }}>
+      <nav
+        className="w-full bg-black/80 backdrop-blur-xl border-b border-white/5 relative"
+        style={{ zIndex: 100 }}
+      >
         <div className="w-full">
           <div
             className="flex items-center justify-between h-20"
@@ -101,12 +104,14 @@ export default function Navigation({ locale }: NavigationProps) {
                         href={service.href}
                         className="relative block px-6 py-3 text-footnote-emphasized text-white/90 hover:text-white hover:bg-white/8 transition-all no-underline"
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
-                          e.currentTarget.style.color = '#ffffff';
+                          e.currentTarget.style.backgroundColor =
+                            "rgba(255, 255, 255, 0.08)";
+                          e.currentTarget.style.color = "#ffffff";
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = 'transparent';
-                          e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)';
+                          e.currentTarget.style.backgroundColor = "transparent";
+                          e.currentTarget.style.color =
+                            "rgba(255, 255, 255, 0.9)";
                         }}
                       >
                         {service.name}
@@ -144,12 +149,14 @@ export default function Navigation({ locale }: NavigationProps) {
                         href={resource.href}
                         className="relative block px-6 py-3 text-footnote-emphasized text-white/90 hover:text-white hover:bg-white/8 transition-all no-underline"
                         onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.08)';
-                          e.currentTarget.style.color = '#ffffff';
+                          e.currentTarget.style.backgroundColor =
+                            "rgba(255, 255, 255, 0.08)";
+                          e.currentTarget.style.color = "#ffffff";
                         }}
                         onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = 'transparent';
-                          e.currentTarget.style.color = 'rgba(255, 255, 255, 0.9)';
+                          e.currentTarget.style.backgroundColor = "transparent";
+                          e.currentTarget.style.color =
+                            "rgba(255, 255, 255, 0.9)";
                         }}
                       >
                         {resource.name}
@@ -195,7 +202,7 @@ export default function Navigation({ locale }: NavigationProps) {
 
             {/* Mobile menu button */}
             <div className="lg:hidden z-50">
-              <motion.button 
+              <motion.button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="text-white/70 hover:text-white p-2 relative"
                 whileTap={{ scale: 0.95 }}
@@ -245,13 +252,13 @@ export default function Navigation({ locale }: NavigationProps) {
 
             {/* Drawer */}
             <motion.div
-              initial={{ x: '100%' }}
+              initial={{ x: "100%" }}
               animate={{ x: 0 }}
-              exit={{ x: '100%' }}
-              transition={{ 
+              exit={{ x: "100%" }}
+              transition={{
                 type: "spring",
                 damping: 30,
-                stiffness: 300
+                stiffness: 300,
               }}
               className="fixed right-0 top-0 h-full w-[85%] max-w-[400px] bg-[#0a0a0a] border-l border-white/10 z-50 lg:hidden overflow-y-auto"
             >
@@ -283,18 +290,21 @@ export default function Navigation({ locale }: NavigationProps) {
                   animate="open"
                   variants={{
                     open: {
-                      transition: { staggerChildren: 0.05 }
+                      transition: { staggerChildren: 0.05 },
                     },
                     closed: {
-                      transition: { staggerChildren: 0.05, staggerDirection: -1 }
-                    }
+                      transition: {
+                        staggerChildren: 0.05,
+                        staggerDirection: -1,
+                      },
+                    },
                   }}
                 >
                   {/* Services Section */}
                   <motion.div
                     variants={{
                       open: { opacity: 1, x: 0 },
-                      closed: { opacity: 0, x: 50 }
+                      closed: { opacity: 0, x: 50 },
                     }}
                     transition={{ duration: 0.3 }}
                   >
@@ -305,16 +315,18 @@ export default function Navigation({ locale }: NavigationProps) {
                       <span className="text-callout-emphasized">Services</span>
                       <motion.div
                         style={{
-                          position: 'absolute',
-                          right: '24px'
+                          position: "absolute",
+                          right: "24px",
                         }}
-                        animate={{ rotate: mobileActiveDropdown === "services" ? 180 : 0 }}
+                        animate={{
+                          rotate: mobileActiveDropdown === "services" ? 180 : 0,
+                        }}
                         transition={{ duration: 0.2 }}
                       >
                         <ChevronDown className="w-4 h-4 text-white/50" />
                       </motion.div>
                     </button>
-                    
+
                     <AnimatePresence>
                       {mobileActiveDropdown === "services" && (
                         <motion.div
@@ -324,14 +336,17 @@ export default function Navigation({ locale }: NavigationProps) {
                           transition={{ duration: 0.2 }}
                           className="overflow-hidden"
                         >
-                          <div style={{ padding: '12px 0' }}>
+                          <div style={{ padding: "12px 0" }}>
                             {services.map((service, index) => (
                               <motion.div
                                 key={service.name}
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: index * 0.05 }}
-                                style={{ marginBottom: index < services.length - 1 ? '8px' : '0' }}
+                                style={{
+                                  marginBottom:
+                                    index < services.length - 1 ? "8px" : "0",
+                                }}
                               >
                                 <Link
                                   href={service.href}
@@ -352,7 +367,7 @@ export default function Navigation({ locale }: NavigationProps) {
                   <motion.div
                     variants={{
                       open: { opacity: 1, x: 0 },
-                      closed: { opacity: 0, x: 50 }
+                      closed: { opacity: 0, x: 50 },
                     }}
                     transition={{ duration: 0.3 }}
                   >
@@ -363,16 +378,19 @@ export default function Navigation({ locale }: NavigationProps) {
                       <span className="text-callout-emphasized">Resources</span>
                       <motion.div
                         style={{
-                          position: 'absolute',
-                          right: '24px'
+                          position: "absolute",
+                          right: "24px",
                         }}
-                        animate={{ rotate: mobileActiveDropdown === "resources" ? 180 : 0 }}
+                        animate={{
+                          rotate:
+                            mobileActiveDropdown === "resources" ? 180 : 0,
+                        }}
                         transition={{ duration: 0.2 }}
                       >
                         <ChevronDown className="w-4 h-4 text-white/50" />
                       </motion.div>
                     </button>
-                    
+
                     <AnimatePresence>
                       {mobileActiveDropdown === "resources" && (
                         <motion.div
@@ -382,14 +400,17 @@ export default function Navigation({ locale }: NavigationProps) {
                           transition={{ duration: 0.2 }}
                           className="overflow-hidden"
                         >
-                          <div style={{ padding: '12px 0' }}>
+                          <div style={{ padding: "12px 0" }}>
                             {resources.map((resource, index) => (
                               <motion.div
                                 key={resource.name}
                                 initial={{ opacity: 0, x: -20 }}
                                 animate={{ opacity: 1, x: 0 }}
                                 transition={{ delay: index * 0.05 }}
-                                style={{ marginBottom: index < resources.length - 1 ? '8px' : '0' }}
+                                style={{
+                                  marginBottom:
+                                    index < resources.length - 1 ? "8px" : "0",
+                                }}
                               >
                                 <Link
                                   href={resource.href}
@@ -410,7 +431,7 @@ export default function Navigation({ locale }: NavigationProps) {
                   <motion.div
                     variants={{
                       open: { opacity: 1, x: 0 },
-                      closed: { opacity: 0, x: 50 }
+                      closed: { opacity: 0, x: 50 },
                     }}
                     transition={{ duration: 0.3 }}
                   >
@@ -426,7 +447,7 @@ export default function Navigation({ locale }: NavigationProps) {
                   <motion.div
                     variants={{
                       open: { opacity: 1, x: 0 },
-                      closed: { opacity: 0, x: 50 }
+                      closed: { opacity: 0, x: 50 },
                     }}
                     transition={{ duration: 0.3 }}
                   >
@@ -442,7 +463,7 @@ export default function Navigation({ locale }: NavigationProps) {
                   <motion.div
                     variants={{
                       open: { opacity: 1, x: 0 },
-                      closed: { opacity: 0, x: 50 }
+                      closed: { opacity: 0, x: 50 },
                     }}
                     transition={{ duration: 0.3 }}
                   >
@@ -462,7 +483,7 @@ export default function Navigation({ locale }: NavigationProps) {
                   <motion.div
                     variants={{
                       open: { opacity: 1, x: 0 },
-                      closed: { opacity: 0, x: 50 }
+                      closed: { opacity: 0, x: 50 },
                     }}
                     transition={{ duration: 0.3 }}
                   >
@@ -478,7 +499,7 @@ export default function Navigation({ locale }: NavigationProps) {
                   <motion.div
                     variants={{
                       open: { opacity: 1, x: 0 },
-                      closed: { opacity: 0, x: 50 }
+                      closed: { opacity: 0, x: 50 },
                     }}
                     transition={{ duration: 0.3 }}
                     className="pt-6 flex justify-center"
