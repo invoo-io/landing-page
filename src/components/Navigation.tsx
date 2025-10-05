@@ -94,10 +94,9 @@ export default function Navigation({ locale }: NavigationProps) {
                   <div
                     className="absolute top-full left-0 mt-2 min-w-[200px] before:absolute before:inset-x-0 before:-top-2 before:h-2 py-2 rounded-xl"
                     style={{
-                      backgroundColor: 'var(--background-inverted)',
+                      backgroundColor: 'var(--background-secondary-dark)',
                       backdropFilter: 'blur(20px)',
-                      border: '1px solid var(--strokes-primary)',
-                      boxShadow: '0 10px 40px var(--system-overlay), 0 2px 10px color-mix(in srgb, var(--background-inverted) 50%, transparent)',
+                      boxShadow: '0 4px 20px rgba(255, 255, 255, 0.1), 0 1px 4px rgba(255, 255, 255, 0.05)',
                       animation: 'slideDown 0.2s ease-out'
                     }}
                   >
@@ -139,10 +138,9 @@ export default function Navigation({ locale }: NavigationProps) {
                   <div
                     className="absolute top-full left-0 mt-2 min-w-[200px] before:absolute before:inset-x-0 before:-top-2 before:h-2 py-2 rounded-xl"
                     style={{
-                      backgroundColor: 'var(--background-inverted)',
+                      backgroundColor: 'var(--background-secondary-dark)',
                       backdropFilter: 'blur(20px)',
-                      border: '1px solid var(--strokes-primary)',
-                      boxShadow: '0 10px 40px var(--system-overlay), 0 2px 10px color-mix(in srgb, var(--background-inverted) 50%, transparent)',
+                      boxShadow: '0 4px 20px rgba(255, 255, 255, 0.1), 0 1px 4px rgba(255, 255, 255, 0.05)',
                       animation: 'slideDown 0.2s ease-out'
                     }}
                   >
