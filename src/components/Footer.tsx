@@ -17,7 +17,7 @@ export default function Footer({ locale }: FooterProps) {
           <div>
             <div className="mb-6">
               <Image
-                src={getImagePath("/Logo.png")}
+                src={getImagePath("/Logo.svg")}
                 alt="Invoo"
                 width={130}
                 height={60}
