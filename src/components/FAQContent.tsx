@@ -101,11 +101,11 @@ export default function FAQContent() {
   ];
 
   return (
-    <section className="flex flex-col items-center justify-center bg-black" style={{ margin: '40px 0' }}>
+    <section className="flex flex-col items-center justify-center bg-bg-inverted" style={{ margin: '40px 0' }}>
       <div className="w-full max-w-3xl px-6">
         <div className="text-left mb-6">
-          <h1 className="text-5xl font-bold text-white mb-12">FAQs</h1>
-          <p className="text-white text-lg font-bold">
+          <h1 className="text-5xl font-bold text-label-inverted mb-12">FAQs</h1>
+          <p className="text-label-inverted text-lg font-bold">
             VeriFActu Compliance (AEAT)
           </p>
         </div>
@@ -114,7 +114,7 @@ export default function FAQContent() {
           {faqData.map((category, categoryIndex) => (
             <div key={categoryIndex} className="space-y-4">
               {categoryIndex > 0 && (
-                <h2 className="text-white text-lg font-bold mt-8 mb-4">
+                <h2 className="text-label-inverted text-lg font-bold mt-8 mb-4">
                   {category.category}
                 </h2>
               )}
@@ -122,12 +122,12 @@ export default function FAQContent() {
                 <AccordionItem
                   key={`${categoryIndex}-${index}`}
                   value={`item-${categoryIndex}-${index}`}
-                  className=" bg-[#0D0D0D] border border-white/5 rounded-2xl overflow-hidden data-[state=open]:bg-[#1A1A1A] transition-colors"
+                  className=" bg-fills-tertiary border border-strokes-primary rounded-2xl overflow-hidden data-[state=open]:bg-fills-secondary transition-colors"
                 >
-                  <AccordionTrigger className="text-white hover:no-underline hover:text-white/90 text-left font-normal px-6 py-5">
+                  <AccordionTrigger className="text-label-inverted hover:no-underline hover:text-label-inverted-secondary text-left font-normal px-6 py-5">
                     {item.question}
                   </AccordionTrigger>
-                  <AccordionContent className="text-white/60 px-6 pb-5 pt-0">
+                  <AccordionContent className="text-label-inverted-secondary px-6 pb-5 pt-0">
                     {item.answer}
                   </AccordionContent>
                 </AccordionItem>

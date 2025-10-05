@@ -21,16 +21,16 @@ export default async function Home({
   setRequestLocale(locale);
 
   return (
-    <div className="min-h-screen bg-black">
+    <div className="min-h-screen bg-bg-inverted">
       <Navigation locale={locale} />
-      <HeroSection 
+      <HeroSection
         title={
           <>
-            <span style={{color: '#EFEFF5'}}>Create and send</span>{" "}
+            <span className="text-label-inverted">Create and send</span>{" "}
             <GradientText>Compliant</GradientText>
             <br />
             <GradientText>Invoices</GradientText>{" "}
-            <span style={{color: '#EFEFF5'}}>in 30 seconds.</span>
+            <span className="text-label-inverted">in 30 seconds.</span>
           </>
         }
         paragraph="Invoo helps freelancers and gestorías work faster together: VeriFActu-ready, professional PDFs, instant sharing, and automatic tax summaries."

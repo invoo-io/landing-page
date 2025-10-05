@@ -35,7 +35,7 @@ export default function MoreThanInvoiceSection() {
       style={{
         position: "relative",
         minHeight: "634px",
-        backgroundColor: "black",
+        backgroundColor: "var(--background-inverted)",
         // overflow: "hidden",
         display: "flex",
         alignItems: "center",
@@ -85,7 +85,7 @@ export default function MoreThanInvoiceSection() {
           {features.map((feature, index) => (
             <div
               key={index}
-              className="bg-[#161616] rounded-xl p-8 text-center"
+              className="bg-system-grey800 rounded-xl p-8 text-center"
               style={{ minHeight: "150px" }}
             >
               <Image
@@ -95,10 +95,10 @@ export default function MoreThanInvoiceSection() {
                 height={100}
                 style={{ objectFit: "contain", margin: "0 auto" }}
               />
-              <h3 className="text-title3-emphasized text-white mb-3" style={{ fontSize: "20px" }}>
+              <h3 className="text-title3-emphasized text-label-inverted mb-3" style={{ fontSize: "20px" }}>
                 {feature.title}
               </h3>
-              <p className="text-callout" style={{ color: "#9F9F9FB2" }}>
+              <p className="text-callout text-label-tertiary">
                 {feature.description}
               </p>
             </div>

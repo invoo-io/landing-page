@@ -25,7 +25,7 @@ export default function PricingCard({
   price,
   period,
   badge,
-  badgeColor = "#22C55E",
+  badgeColor,
   buttonText,
   buttonVariant = "gradient",
   buttonHref,
@@ -38,40 +38,40 @@ export default function PricingCard({
     <div
       className="relative h-full flex flex-col rounded-3xl p-8"
       style={{
-        background: isHighlighted ? 'rgba(37, 125, 255, 0.05)' : 'transparent',
-        border: isHighlighted ? '2px solid #257DFF' : '1px solid rgba(255, 255, 255, 0.1)',
+        background: isHighlighted ? 'color-mix(in srgb, var(--accent-blue-main) 5%, transparent)' : 'transparent',
+        border: isHighlighted ? '2px solid var(--accent-blue-main)' : '1px solid var(--strokes-primary)',
       }}
     >
       <div className="flex-1">
-        <h3 className="text-title1-emphasized text-white mb-3">
+        <h3 className="text-title1-emphasized text-label-inverted mb-3">
           {title}
         </h3>
 
         {description && (
-          <p className="text-footnote text-white/60 mb-6">
+          <p className="text-footnote text-label-inverted-secondary mb-6">
             {description}
           </p>
         )}
 
         <div className="mb-6">
           <div className="flex items-baseline gap-2">
-            <span className="text-large-title-emphasized text-white" style={{ fontSize: '48px', fontWeight: 700 }}>
+            <span className="text-large-title-emphasized text-label-inverted" style={{ fontSize: '48px', fontWeight: 700 }}>
               {price}
             </span>
             {period && (
-              <span className="text-callout text-white/60">
+              <span className="text-callout text-label-inverted-secondary">
                 {period}
               </span>
             )}
             {badge && (
-              <span className="text-footnote-emphasized ml-2" style={{ color: badgeColor }}>
+              <span className="text-footnote-emphasized ml-2 text-accent-green-main">
                 {badge}
               </span>
             )}
           </div>
 
           {subtitle && (
-            <div className="text-footnote text-white/50 mt-2">
+            <div className="text-footnote text-label-tertiary mt-2">
               {subtitle}
             </div>
           )}
@@ -88,12 +88,12 @@ export default function PricingCard({
           </Button>
         </div>
 
-        <div className="border-t border-white/10 pt-6">
+        <div className="border-t border-strokes-primary pt-6">
           <div className="flex flex-col gap-4">
             {features.map((feature, index) => (
               <div key={index} className="flex items-start gap-3">
-                <Check size={20} className="text-green-500 flex-shrink-0 mt-0.5" />
-                <span className="text-footnote text-white/90">
+                <Check size={20} className="text-accent-green-main flex-shrink-0 mt-0.5" />
+                <span className="text-footnote text-label-inverted">
                   {feature}
                 </span>
               </div>

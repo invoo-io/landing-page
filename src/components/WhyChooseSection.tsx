@@ -22,9 +22,9 @@ export default function WhyChooseSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-black">
+    <section className="py-24 px-6 bg-bg-inverted">
       {/* Title */}
-      <h2 className="text-large-title-emphasized text-center text-white max-w-4xl mx-auto mb-16" style={{ fontSize: '48px' }}>
+      <h2 className="text-large-title-emphasized text-center text-label-inverted max-w-4xl mx-auto mb-16" style={{ fontSize: '48px' }}>
         Why freelancers and gestoría should choose Invoo
       </h2>
 
@@ -44,12 +44,12 @@ export default function WhyChooseSection() {
             </div>
 
             {/* Title */}
-            <h3 className="text-title2-emphasized text-white mb-3">
+            <h3 className="text-title2-emphasized text-label-inverted mb-3">
               {feature.title}
             </h3>
 
             {/* Description */}
-            <p className="text-body max-w-xs" style={{ color: '#9F9F9FB2' }}>
+            <p className="text-body text-label-tertiary max-w-xs">
               {feature.description}
             </p>
           </div>
