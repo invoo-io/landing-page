@@ -69,23 +69,23 @@ export default function ContactForm() {
   };
 
   const inputStyles: React.CSSProperties = {
-    backgroundColor: 'rgba(255, 255, 255, 0.08)',
-    border: '1px solid rgba(255, 255, 255, 0.12)',
+    backgroundColor: 'var(--fills-tertiary)',
+    border: '1px solid var(--strokes-primary)',
     borderRadius: '4px',
     padding: '11px 14px',
-    color: '#EFEFF5',
+    color: 'var(--label-inverted)',
     width: '100%',
     outline: 'none',
     transition: 'all 0.2s ease'
   };
 
   return (
-    <section className="min-h-screen bg-black flex items-center justify-center px-6 py-20">
+    <section className="min-h-screen bg-bg-inverted flex items-center justify-center px-6 py-20">
       <div className="max-w-3xl w-full">
-        <h1 className="text-large-title-emphasized text-center mb-5" style={{ fontSize: '52px', color: '#EFEFF5' }}>
+        <h1 className="text-large-title-emphasized text-label-inverted text-center mb-5" style={{ fontSize: '52px' }}>
           Contact Invoo
         </h1>
-        <p className="text-subheadline text-center mb-12" style={{ color: '#EFEFF5' }}>
+        <p className="text-subheadline text-label-inverted text-center mb-12">
           We&apos;re here to help freelancers and gestorías. Choose the topic below or use the form
         </p>
 
@@ -93,7 +93,7 @@ export default function ContactForm() {
           {/* Desktop: all 3 in one row, Tablet: Topic on top, Name/Email below, Mobile: all stacked */}
           <div className="form-grid grid gap-4 mb-5">
             <div style={{ gridArea: 'topic' }}>
-              <label className="text-footnote mb-2 block" style={{ color: 'rgba(239, 239, 245, 0.9)' }}>Topic</label>
+              <label className="text-footnote text-label-inverted-secondary mb-2 block">Topic</label>
               <select
                 name="topic"
                 value={formData.topic}
@@ -109,17 +109,17 @@ export default function ContactForm() {
                   cursor: 'pointer'
                 }}
               >
-                <option value="" style={{ backgroundColor: '#0a0a0a' }}>Select</option>
-                <option value="general" style={{ backgroundColor: '#0a0a0a' }}>General Inquiry</option>
-                <option value="support" style={{ backgroundColor: '#0a0a0a' }}>Technical Support</option>
-                <option value="pricing" style={{ backgroundColor: '#0a0a0a' }}>Pricing</option>
-                <option value="partnership" style={{ backgroundColor: '#0a0a0a' }}>Partnership</option>
-                <option value="feedback" style={{ backgroundColor: '#0a0a0a' }}>Feedback</option>
+                <option value="" style={{ backgroundColor: 'var(--background-inverted)' }}>Select</option>
+                <option value="general" style={{ backgroundColor: 'var(--background-inverted)' }}>General Inquiry</option>
+                <option value="support" style={{ backgroundColor: 'var(--background-inverted)' }}>Technical Support</option>
+                <option value="pricing" style={{ backgroundColor: 'var(--background-inverted)' }}>Pricing</option>
+                <option value="partnership" style={{ backgroundColor: 'var(--background-inverted)' }}>Partnership</option>
+                <option value="feedback" style={{ backgroundColor: 'var(--background-inverted)' }}>Feedback</option>
               </select>
             </div>
 
             <div style={{ gridArea: 'name' }}>
-              <label className="text-footnote mb-2 block" style={{ color: 'rgba(239, 239, 245, 0.9)' }}>Name</label>
+              <label className="text-footnote text-label-inverted-secondary mb-2 block">Name</label>
               <input
                 type="text"
                 name="name"
@@ -132,7 +132,7 @@ export default function ContactForm() {
             </div>
 
             <div style={{ gridArea: 'email' }}>
-              <label className="text-footnote mb-2 block" style={{ color: 'rgba(239, 239, 245, 0.9)' }}>Email</label>
+              <label className="text-footnote text-label-inverted-secondary mb-2 block">Email</label>
               <input
                 type="email"
                 name="email"
@@ -172,7 +172,7 @@ export default function ContactForm() {
           `}</style>
 
           <div className="mb-6">
-            <label className="text-footnote mb-2 block" style={{ color: 'rgba(239, 239, 245, 0.9)' }}>Message</label>
+            <label className="text-footnote text-label-inverted-secondary mb-2 block">Message</label>
             <textarea
               name="message"
               value={formData.message}
@@ -193,14 +193,14 @@ export default function ContactForm() {
           {submitStatus.type && (
             <div className="text-footnote px-4 py-3 rounded-md mb-6" style={{
               backgroundColor: submitStatus.type === 'success'
-                ? 'rgba(34, 197, 94, 0.1)'
-                : 'rgba(239, 68, 68, 0.1)',
+                ? 'color-mix(in srgb, var(--accent-green-main) 10%, transparent)'
+                : 'color-mix(in srgb, var(--accent-red-main) 10%, transparent)',
               border: `1px solid ${submitStatus.type === 'success'
-                ? 'rgba(34, 197, 94, 0.3)'
-                : 'rgba(239, 68, 68, 0.3)'}`,
+                ? 'color-mix(in srgb, var(--accent-green-main) 30%, transparent)'
+                : 'color-mix(in srgb, var(--accent-red-main) 30%, transparent)'}`,
               color: submitStatus.type === 'success'
-                ? '#86efac'
-                : '#fca5a5'
+                ? 'var(--accent-green-main)'
+                : 'var(--accent-red-main)'
             }}>
               {submitStatus.message}
             </div>

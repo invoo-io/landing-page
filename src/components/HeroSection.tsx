@@ -26,7 +26,7 @@ export default function HeroSection({
           {title}
         </h1>
 
-        <p className="text-body mb-12 max-w-3xl mx-auto" style={{ color: '#EFEFF5' }}>
+        <p className="text-body mb-12 max-w-3xl mx-auto text-label-inverted">
           {paragraph}
         </p>
 

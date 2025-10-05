@@ -1,11 +1,12 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@import "../styles/colors.css";
 
 @custom-variant dark (&:is(.dark *));
 
 @layer utilities {
   .gradient-hero-text {
-    background: linear-gradient(90deg, #257DFF 0%, #EE7AC4 93.27%);
+    background: linear-gradient(90deg, var(--accent-blue-main) 0%, var(--accent-pink-main) 93.27%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -312,14 +313,17 @@
 }
 
 :root {
-  --text-muted: rgba(255, 255, 255, 0.6);
-  --card-border: rgba(255, 255, 255, 0.05);
-  --gradient-primary: linear-gradient(135deg, #5D5FEF, #843FE8);
-  --gradient-blue: linear-gradient(135deg, #5D5FEF, #843FE8);
-  --gradient-pink: linear-gradient(135deg, #E849B6, #843FE8);
-  --gradient-purple: linear-gradient(135deg, #5D5FEF, #843FE8);
+  /* Legacy gradient support (using new color system) */
+  --gradient-primary: linear-gradient(135deg, var(--accent-purple-main), var(--accent-blue-main));
+  --gradient-blue: linear-gradient(135deg, var(--accent-blue-main), var(--accent-purple-main));
+  --gradient-pink: linear-gradient(135deg, var(--accent-pink-main), var(--accent-purple-main));
+  --gradient-purple: linear-gradient(135deg, var(--accent-purple-main), var(--accent-blue-main));
+
+  /* Glass effects */
   --glass-bg: rgba(20, 20, 25, 0.6);
   --dashboard-bg: linear-gradient(145deg, #0F0F12, #1A1A1F);
+
+  /* Border radius */
   --radius: 0.625rem;
   --background: oklch(1 0 0);
   --foreground: oklch(0.145 0 0);
@@ -355,38 +359,111 @@
 }
 
 @theme inline {
+  /* Typography */
+  --font-sans: var(--font-inter);
+
+  /* Legacy Shadcn/UI Colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-inter);
-  --color-sidebar-ring: var(--sidebar-ring);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar: var(--sidebar);
-  --color-chart-5: var(--chart-5);
-  --color-chart-4: var(--chart-4);
-  --color-chart-3: var(--chart-3);
-  --color-chart-2: var(--chart-2);
-  --color-chart-1: var(--chart-1);
-  --color-ring: var(--ring);
-  --color-input: var(--input);
-  --color-border: var(--border);
-  --color-destructive: var(--destructive);
-  --color-accent-foreground: var(--accent-foreground);
-  --color-accent: var(--accent);
-  --color-muted-foreground: var(--muted-foreground);
-  --color-muted: var(--muted);
-  --color-secondary-foreground: var(--secondary-foreground);
-  --color-secondary: var(--secondary);
-  --color-primary-foreground: var(--primary-foreground);
-  --color-primary: var(--primary);
-  --color-popover-foreground: var(--popover-foreground);
-  --color-popover: var(--popover);
-  --color-card-foreground: var(--card-foreground);
   --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  /* Design System Colors - Accent Colors */
+  --color-accent-purple-main: var(--accent-purple-main);
+  --color-accent-purple-light: var(--accent-purple-light);
+  --color-accent-purple-lighter: var(--accent-purple-lighter);
+  --color-accent-blue-main: var(--accent-blue-main);
+  --color-accent-blue-light: var(--accent-blue-light);
+  --color-accent-blue-lighter: var(--accent-blue-lighter);
+  --color-accent-orange-main: var(--accent-orange-main);
+  --color-accent-orange-light: var(--accent-orange-light);
+  --color-accent-yellow-main: var(--accent-yellow-main);
+  --color-accent-yellow-light: var(--accent-yellow-light);
+  --color-accent-pink-main: var(--accent-pink-main);
+  --color-accent-pink-darker: var(--accent-pink-darker);
+  --color-accent-red-main: var(--accent-red-main);
+  --color-accent-red-light: var(--accent-red-light);
+  --color-accent-red-darker: var(--accent-red-darker);
+  --color-accent-green-main: var(--accent-green-main);
+  --color-accent-green-darker: var(--accent-green-darker);
+
+  /* Design System Colors - Brand Colors */
+  --color-brand-blue: var(--brand-blue);
+  --color-brand-purple: var(--brand-purple);
+
+  /* Design System Colors - Background Colors */
+  --color-bg-primary: var(--background-primary);
+  --color-bg-secondary: var(--background-secondary);
+  --color-bg-tertiary: var(--background-tertiary);
+  --color-bg-inverted: var(--background-inverted);
+
+  /* Design System Colors - Label/Text Colors */
+  --color-label-primary: var(--label-primary);
+  --color-label-secondary: var(--label-secondary);
+  --color-label-tertiary: var(--label-tertiary);
+  --color-label-inverted: var(--label-inverted);
+  --color-label-inverted-secondary: var(--label-inverted-secondary);
+
+  /* Design System Colors - Fill Colors */
+  --color-fills-primary: var(--fills-primary);
+  --color-fills-secondary: var(--fills-secondary);
+  --color-fills-tertiary: var(--fills-tertiary);
+  --color-fills-quaternary: var(--fills-quaternary);
+  --color-fills-solid: var(--fills-solid);
+
+  /* Design System Colors - Stroke/Border Colors */
+  --color-strokes-primary: var(--strokes-primary);
+  --color-strokes-secondary: var(--strokes-secondary);
+
+  /* Design System Colors - System Colors */
+  --color-system-grey100: var(--system-grey100);
+  --color-system-grey200: var(--system-grey200);
+  --color-system-grey700: var(--system-grey700);
+  --color-system-grey800: var(--system-grey800);
+  --color-system-grey900: var(--system-grey900);
+  --color-system-overlay: var(--system-overlay);
+
+  /* Design System Colors - Semantic Tokens */
+  --color-text-primary: var(--color-text-primary);
+  --color-text-secondary: var(--color-text-secondary);
+  --color-text-tertiary: var(--color-text-tertiary);
+  --color-text-inverted: var(--color-text-inverted);
+  --color-interactive-primary: var(--color-interactive-primary);
+  --color-interactive-secondary: var(--color-interactive-secondary);
+  --color-interactive-hover: var(--color-interactive-hover);
+  --color-success: var(--color-success);
+  --color-warning: var(--color-warning);
+  --color-error: var(--color-error);
+  --color-info: var(--color-info);
+
+  /* Border Radius */
   --radius-sm: calc(var(--radius) - 4px);
   --radius-md: calc(var(--radius) - 2px);
   --radius-lg: var(--radius);
@@ -410,8 +487,8 @@ body {
 
 .gradient-button {
   font-family: var(--font-inter);
-  background: linear-gradient(135deg, #5D5FEF, #843FE8);
-  color: white;
+  background: var(--gradient-primary);
+  color: var(--label-inverted);
   padding: 12px 28px;
   border-radius: 50px;
   font-weight: 600;
@@ -421,13 +498,13 @@ body {
   text-decoration: none;
   border: none;
   cursor: pointer;
-  box-shadow: 0 4px 20px rgba(93, 95, 239, 0.3);
+  box-shadow: 0 4px 20px color-mix(in srgb, var(--accent-purple-main) 30%, transparent);
 }
 
 .gradient-button:hover {
   transform: translateY(-2px);
-  box-shadow: 0 6px 30px rgba(93, 95, 239, 0.4);
-  background: linear-gradient(135deg, #6B6DEF, #9045E8);
+  box-shadow: 0 6px 30px color-mix(in srgb, var(--accent-purple-main) 40%, transparent);
+  background: linear-gradient(135deg, var(--accent-purple-light), var(--accent-blue-light));
 }
 
 .glass-card {
@@ -439,7 +516,7 @@ body {
 }
 
 .orb-blue {
-  background: radial-gradient(circle at 30% 30%, #5D5FEF, #843FE8);
+  background: radial-gradient(circle at 30% 30%, var(--accent-blue-main), var(--accent-purple-main));
   filter: blur(100px);
   opacity: 0.5;
   position: absolute;
@@ -450,7 +527,7 @@ body {
 }
 
 .orb-pink {
-  background: radial-gradient(circle at 70% 30%, #E849B6, #843FE8);
+  background: radial-gradient(circle at 70% 30%, var(--accent-pink-main), var(--accent-purple-main));
   filter: blur(100px);
   opacity: 0.5;
   position: absolute;
@@ -461,7 +538,7 @@ body {
 }
 
 .text-muted {
-  color: var(--text-muted);
+  color: var(--label-secondary);
 }
 
 .dashboard-mockup {
@@ -492,8 +569,8 @@ body {
 }
 
 .stat-card {
-  background: rgba(93, 95, 239, 0.08);
-  border: 1px solid rgba(93, 95, 239, 0.2);
+  background: color-mix(in srgb, var(--accent-purple-main) 8%, transparent);
+  border: 1px solid color-mix(in srgb, var(--accent-purple-main) 20%, transparent);
   border-radius: 16px;
   padding: 20px;
   text-align: center;
@@ -502,7 +579,7 @@ body {
 }
 
 .stat-card:hover {
-  background: rgba(93, 95, 239, 0.12);
+  background: color-mix(in srgb, var(--accent-purple-main) 12%, transparent);
   transform: translateY(-2px);
 }
 

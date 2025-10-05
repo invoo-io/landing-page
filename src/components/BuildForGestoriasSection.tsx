@@ -33,11 +33,11 @@ export default function BuildForGestoriasSection({
 }: BuildForGestoriasSectionProps) {
   const textContent = (
     <div className="max-w-full" style={{ width: '500px' }}>
-      <h2 className="text-large-title-emphasized text-white mb-6" style={{ fontSize: '48px' }}>
+      <h2 className="text-large-title-emphasized text-label-inverted mb-6" style={{ fontSize: '48px' }}>
         {title}
       </h2>
 
-      <p className="text-callout mb-8" style={{ color: '#9F9F9FB2' }}>
+      <p className="text-callout text-label-tertiary mb-8">
         {paragraph}
       </p>
 
@@ -45,8 +45,8 @@ export default function BuildForGestoriasSection({
       <div className="flex flex-col gap-4">
         {features.map((feature, index) => (
           <div key={index} className="flex items-center gap-3">
-            <Check size={20} className="text-green-500" />
-            <span className="text-callout text-white">
+            <Check size={20} className="text-accent-green-main" />
+            <span className="text-callout text-label-inverted">
               {feature}
             </span>
           </div>
@@ -87,10 +87,10 @@ export default function BuildForGestoriasSection({
   ) : null;
 
   return (
-    <section style={{ 
+    <section style={{
       position: 'relative',
       // height: '634px',
-      backgroundColor: 'black',
+      backgroundColor: 'var(--background-inverted)',
       overflow: 'hidden',
       display: 'flex',
       alignItems: 'center',

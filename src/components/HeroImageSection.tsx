@@ -29,9 +29,9 @@ export default function HeroImageSection({
       <div
         className="relative max-w-6xl mx-auto z-10"
         style={{
-          backgroundColor: "rgba(18, 18, 18, 0.0)", // TODO: remove backgorund colour
+          backgroundColor: "transparent",
           borderRadius: "24px",
-          boxShadow: "0 25px 50px -12px rgba(0, 0, 0, 0.5)",
+          boxShadow: "0 25px 50px -12px var(--system-overlay)",
         }}
       >
         {/* Dashboard Image */}

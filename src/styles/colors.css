@@ -1,0 +1,314 @@
+/**
+ * Design System Colors
+ *
+ * This file contains all color variables from the Figma design system.
+ * Colors are defined for both Light and Dark modes.
+ *
+ * Source: lazy-variables.json (Mobile collection)
+ *
+ * Usage:
+ * - Colors automatically switch based on .dark class
+ * - Use semantic tokens (e.g., var(--accent-purple-main))
+ * - Available in Tailwind as utilities (e.g., bg-accent-purple-main)
+ */
+
+:root {
+  /* ========================================
+     ACCENT COLORS
+     ======================================== */
+
+  /* Purple Accent */
+  --accent-purple-main-light: rgba(121, 51, 255, 1);
+  --accent-purple-main-dark: rgba(128, 62, 255, 1);
+  --accent-purple-main: var(--accent-purple-main-light);
+
+  --accent-purple-light-light: rgba(146, 90, 255, 1);
+  --accent-purple-light-dark: rgba(151, 98, 255, 1);
+  --accent-purple-light: var(--accent-purple-light-light);
+
+  --accent-purple-lighter-light: rgba(176, 142, 255, 1);
+  --accent-purple-lighter-dark: rgba(184, 153, 255, 1);
+  --accent-purple-lighter: var(--accent-purple-lighter-light);
+
+  /* Blue Accent */
+  --accent-blue-main-light: rgba(37, 125, 254, 1);
+  --accent-blue-main-dark: rgba(55, 136, 255, 1);
+  --accent-blue-main: var(--accent-blue-main-light);
+
+  --accent-blue-light-light: rgba(101, 167, 255, 1);
+  --accent-blue-light-dark: rgba(101, 167, 255, 1);
+  --accent-blue-light: var(--accent-blue-light-light);
+
+  --accent-blue-lighter-light: rgba(156, 198, 255, 1);
+  --accent-blue-lighter-dark: rgba(156, 198, 255, 1);
+  --accent-blue-lighter: var(--accent-blue-lighter-light);
+
+  /* Orange Accent */
+  --accent-orange-main-light: rgba(255, 147, 30, 1);
+  --accent-orange-main-dark: rgba(255, 156, 49, 1);
+  --accent-orange-main: var(--accent-orange-main-light);
+
+  --accent-orange-light-light: rgba(255, 170, 79, 1);
+  --accent-orange-light-dark: rgba(255, 170, 79, 1);
+  --accent-orange-light: var(--accent-orange-light-light);
+
+  /* Yellow Accent */
+  --accent-yellow-main-light: rgba(252, 206, 13, 1);
+  --accent-yellow-main-dark: rgba(255, 236, 60, 1);
+  --accent-yellow-main: var(--accent-yellow-main-light);
+
+  --accent-yellow-light-light: rgba(255, 236, 60, 1);
+  --accent-yellow-light-dark: rgba(255, 236, 60, 1);
+  --accent-yellow-light: var(--accent-yellow-light-light);
+
+  /* Pink Accent */
+  --accent-pink-main-light: rgba(255, 128, 180, 1);
+  --accent-pink-main-dark: rgba(255, 128, 180, 1);
+  --accent-pink-main: var(--accent-pink-main-light);
+
+  --accent-pink-darker-light: rgba(220, 77, 139, 1);
+  --accent-pink-darker-dark: rgba(220, 77, 139, 1);
+  --accent-pink-darker: var(--accent-pink-darker-light);
+
+  /* Red Accent */
+  --accent-red-main-light: rgba(221, 52, 0, 1);
+  --accent-red-main-dark: rgba(221, 52, 0, 1);
+  --accent-red-main: var(--accent-red-main-light);
+
+  --accent-red-light-light: rgba(255, 103, 82, 1);
+  --accent-red-light-dark: rgba(255, 103, 82, 1);
+  --accent-red-light: var(--accent-red-light-light);
+
+  --accent-red-darker-light: rgba(190, 39, 5, 1);
+  --accent-red-darker-dark: rgba(190, 39, 5, 1);
+  --accent-red-darker: var(--accent-red-darker-light);
+
+  /* Green Accent */
+  --accent-green-main-light: rgba(0, 199, 78, 1);
+  --accent-green-main-dark: rgba(0, 199, 78, 1);
+  --accent-green-main: var(--accent-green-main-light);
+
+  --accent-green-darker-light: rgba(0, 128, 49, 1);
+  --accent-green-darker-dark: rgba(0, 151, 58, 1);
+  --accent-green-darker: var(--accent-green-darker-light);
+
+  /* ========================================
+     BRAND COLORS
+     ======================================== */
+
+  --brand-blue-light: rgba(37, 125, 254, 1);
+  --brand-blue-dark: rgba(37, 125, 255, 1);
+  --brand-blue: var(--brand-blue-light);
+
+  --brand-purple-light: rgba(146, 90, 255, 1);
+  --brand-purple-dark: rgba(146, 90, 255, 1);
+  --brand-purple: var(--brand-purple-light);
+
+  /* ========================================
+     BACKGROUND COLORS
+     ======================================== */
+
+  --background-primary-light: rgba(250, 250, 253, 1);
+  --background-primary-dark: rgba(18, 18, 18, 1);
+  --background-primary: var(--background-primary-light);
+
+  --background-secondary-light: rgba(255, 255, 255, 1);
+  --background-secondary-dark: rgba(22, 22, 22, 1);
+  --background-secondary: var(--background-secondary-light);
+
+  --background-tertiary-light: rgba(247, 247, 247, 1);
+  --background-tertiary-dark: rgba(28, 28, 28, 1);
+  --background-tertiary: var(--background-tertiary-light);
+
+  --background-inverted-light: rgba(14, 14, 14, 1);
+  --background-inverted-dark: rgba(255, 255, 255, 1);
+  --background-inverted: var(--background-inverted-light);
+
+  /* ========================================
+     LABEL/TEXT COLORS
+     ======================================== */
+
+  --label-primary-light: rgba(18, 18, 18, 1);
+  --label-primary-dark: rgba(239, 239, 245, 1);
+  --label-primary: var(--label-primary-light);
+
+  --label-secondary-light: rgba(51, 58, 69, 0.65);
+  --label-secondary-dark: rgba(159, 159, 159, 0.7);
+  --label-secondary: var(--label-secondary-light);
+
+  --label-tertiary-light: rgba(51, 58, 69, 0.3);
+  --label-tertiary-dark: rgba(159, 159, 159, 0.3);
+  --label-tertiary: var(--label-tertiary-light);
+
+  --label-inverted-light: rgba(239, 239, 245, 1);
+  --label-inverted-dark: rgba(18, 18, 18, 1);
+  --label-inverted: var(--label-inverted-light);
+
+  --label-inverted-secondary-light: rgba(159, 159, 159, 0.7);
+  --label-inverted-secondary-dark: rgba(51, 58, 69, 0.65);
+  --label-inverted-secondary: var(--label-inverted-secondary-light);
+
+  /* ========================================
+     FILL COLORS
+     ======================================== */
+
+  --fills-primary-light: rgba(228, 228, 248, 0.42);
+  --fills-primary-dark: rgba(221, 221, 221, 0.2);
+  --fills-primary: var(--fills-primary-light);
+
+  --fills-secondary-light: rgba(228, 228, 248, 0.38);
+  --fills-secondary-dark: rgba(221, 221, 221, 0.14);
+  --fills-secondary: var(--fills-secondary-light);
+
+  --fills-tertiary-light: rgba(228, 228, 248, 0.34);
+  --fills-tertiary-dark: rgba(221, 221, 221, 0.08);
+  --fills-tertiary: var(--fills-tertiary-light);
+
+  --fills-quaternary-light: rgba(228, 228, 249, 0.3);
+  --fills-quaternary-dark: rgba(221, 221, 221, 0.06);
+  --fills-quaternary: var(--fills-quaternary-light);
+
+  --fills-solid-light: rgba(236, 236, 242, 1);
+  --fills-solid-dark: rgba(19, 19, 19, 1);
+  --fills-solid: var(--fills-solid-light);
+
+  /* ========================================
+     STROKE/BORDER COLORS
+     ======================================== */
+
+  --strokes-primary-light: rgba(237, 237, 237, 1);
+  --strokes-primary-dark: rgba(33, 33, 33, 1);
+  --strokes-primary: var(--strokes-primary-light);
+
+  --strokes-secondary-light: rgba(223, 223, 223, 1);
+  --strokes-secondary-dark: rgba(43, 43, 43, 1);
+  --strokes-secondary: var(--strokes-secondary-light);
+
+  /* ========================================
+     SYSTEM COLORS
+     ======================================== */
+
+  --system-grey100-light: rgba(255, 255, 255, 1);
+  --system-grey100-dark: rgba(255, 255, 255, 1);
+  --system-grey100: var(--system-grey100-light);
+
+  --system-grey200-light: rgba(239, 239, 245, 1);
+  --system-grey200-dark: rgba(239, 239, 245, 1);
+  --system-grey200: var(--system-grey200-light);
+
+  --system-grey700-light: rgba(41, 41, 41, 1);
+  --system-grey700-dark: rgba(41, 41, 41, 1);
+  --system-grey700: var(--system-grey700-light);
+
+  --system-grey800-light: rgba(28, 28, 28, 1);
+  --system-grey800-dark: rgba(28, 28, 28, 1);
+  --system-grey800: var(--system-grey800-light);
+
+  --system-grey900-light: rgba(14, 14, 14, 1);
+  --system-grey900-dark: rgba(14, 14, 14, 1);
+  --system-grey900: var(--system-grey900-light);
+
+  --system-overlay-light: rgba(29, 29, 29, 0.7);
+  --system-overlay-dark: rgba(29, 29, 29, 0.9);
+  --system-overlay: var(--system-overlay-light);
+}
+
+/* ========================================
+   DARK MODE OVERRIDES
+   ======================================== */
+
+.dark {
+  /* Accent Colors */
+  --accent-purple-main: var(--accent-purple-main-dark);
+  --accent-purple-light: var(--accent-purple-light-dark);
+  --accent-purple-lighter: var(--accent-purple-lighter-dark);
+
+  --accent-blue-main: var(--accent-blue-main-dark);
+  --accent-blue-light: var(--accent-blue-light-dark);
+  --accent-blue-lighter: var(--accent-blue-lighter-dark);
+
+  --accent-orange-main: var(--accent-orange-main-dark);
+  --accent-orange-light: var(--accent-orange-light-dark);
+
+  --accent-yellow-main: var(--accent-yellow-main-dark);
+  --accent-yellow-light: var(--accent-yellow-light-dark);
+
+  --accent-pink-main: var(--accent-pink-main-dark);
+  --accent-pink-darker: var(--accent-pink-darker-dark);
+
+  --accent-red-main: var(--accent-red-main-dark);
+  --accent-red-light: var(--accent-red-light-dark);
+  --accent-red-darker: var(--accent-red-darker-dark);
+
+  --accent-green-main: var(--accent-green-main-dark);
+  --accent-green-darker: var(--accent-green-darker-dark);
+
+  /* Brand Colors */
+  --brand-blue: var(--brand-blue-dark);
+  --brand-purple: var(--brand-purple-dark);
+
+  /* Background Colors */
+  --background-primary: var(--background-primary-dark);
+  --background-secondary: var(--background-secondary-dark);
+  --background-tertiary: var(--background-tertiary-dark);
+  --background-inverted: var(--background-inverted-dark);
+
+  /* Label Colors */
+  --label-primary: var(--label-primary-dark);
+  --label-secondary: var(--label-secondary-dark);
+  --label-tertiary: var(--label-tertiary-dark);
+  --label-inverted: var(--label-inverted-dark);
+  --label-inverted-secondary: var(--label-inverted-secondary-dark);
+
+  /* Fill Colors */
+  --fills-primary: var(--fills-primary-dark);
+  --fills-secondary: var(--fills-secondary-dark);
+  --fills-tertiary: var(--fills-tertiary-dark);
+  --fills-quaternary: var(--fills-quaternary-dark);
+  --fills-solid: var(--fills-solid-dark);
+
+  /* Stroke Colors */
+  --strokes-primary: var(--strokes-primary-dark);
+  --strokes-secondary: var(--strokes-secondary-dark);
+
+  /* System Colors */
+  --system-grey100: var(--system-grey100-dark);
+  --system-grey200: var(--system-grey200-dark);
+  --system-grey700: var(--system-grey700-dark);
+  --system-grey800: var(--system-grey800-dark);
+  --system-grey900: var(--system-grey900-dark);
+  --system-overlay: var(--system-overlay-dark);
+}
+
+/* ========================================
+   SEMANTIC COLOR TOKENS
+   ======================================== */
+
+:root {
+  /* Text Semantic Tokens */
+  --color-text-primary: var(--label-primary);
+  --color-text-secondary: var(--label-secondary);
+  --color-text-tertiary: var(--label-tertiary);
+  --color-text-inverted: var(--label-inverted);
+
+  /* Background Semantic Tokens */
+  --color-bg-primary: var(--background-primary);
+  --color-bg-secondary: var(--background-secondary);
+  --color-bg-tertiary: var(--background-tertiary);
+  --color-bg-inverted: var(--background-inverted);
+
+  /* Border Semantic Tokens */
+  --color-border-primary: var(--strokes-primary);
+  --color-border-secondary: var(--strokes-secondary);
+
+  /* Interactive Semantic Tokens */
+  --color-interactive-primary: var(--accent-blue-main);
+  --color-interactive-secondary: var(--accent-purple-main);
+  --color-interactive-hover: var(--accent-blue-light);
+
+  /* Status Colors */
+  --color-success: var(--accent-green-main);
+  --color-warning: var(--accent-yellow-main);
+  --color-error: var(--accent-red-main);
+  --color-info: var(--accent-blue-main);
+}

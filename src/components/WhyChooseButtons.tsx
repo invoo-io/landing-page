@@ -12,7 +12,7 @@ export default function WhyChooseButtons() {
     }}>
       {/* Gestoría button with gradient border */}
       <div style={{
-        background: 'linear-gradient(94.28deg, #257DFF 3.12%, #925AFF 95.84%)',
+        background: 'linear-gradient(94.28deg, var(--accent-blue-main) 3.12%, var(--accent-purple-main) 95.84%)',
         borderRadius: '12px',
         padding: '1px',
         display: 'inline-flex'
@@ -24,8 +24,8 @@ export default function WhyChooseButtons() {
             height: '45px',
             maxHeight: '47px',
             borderRadius: '11px',
-            backgroundColor: 'black',
-            color: 'white',
+            backgroundColor: 'var(--background-inverted)',
+            color: 'var(--label-inverted)',
             fontWeight: 600,
             fontSize: '16px',
             display: 'flex',
@@ -36,17 +36,17 @@ export default function WhyChooseButtons() {
             transition: 'all 0.3s'
           }}
           onMouseEnter={(e) => {
-            e.currentTarget.style.backgroundColor = 'rgba(0, 0, 0, 0.85)';
+            e.currentTarget.style.backgroundColor = 'color-mix(in srgb, var(--background-inverted) 85%, transparent)';
           }}
           onMouseLeave={(e) => {
-            e.currentTarget.style.backgroundColor = 'black';
+            e.currentTarget.style.backgroundColor = 'var(--background-inverted)';
           }}
         >
           Gestoría
           <ArrowRight size={18} />
         </button>
       </div>
-      
+
       {/* Freelancer button with solid gradient background */}
       <button
         style={{
@@ -55,9 +55,9 @@ export default function WhyChooseButtons() {
           height: '47px',
           maxHeight: '47px',
           borderRadius: '12px',
-          background: 'linear-gradient(94.28deg, #257DFF 3.12%, #925AFF 95.84%)',
+          background: 'linear-gradient(94.28deg, var(--accent-blue-main) 3.12%, var(--accent-purple-main) 95.84%)',
           border: 'none',
-          color: 'white',
+          color: 'var(--label-inverted)',
           fontWeight: 600,
           fontSize: '16px',
           display: 'flex',

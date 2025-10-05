@@ -20,27 +20,27 @@ export default function PricingSection() {
       <div className="text-center mb-16 max-w-3xl">
         <h1 className="text-large-title-emphasized mb-6" style={{ fontSize: '64px' }}>
           <GradientText>Simple pricing</GradientText>
-          <span className="text-white">. No surprises</span>
+          <span className="text-label-inverted">. No surprises</span>
         </h1>
-        <p className="text-headline text-white/60">
+        <p className="text-headline text-label-inverted-secondary">
           Choose the plan that fits your needs. Switch anytime. Cancel anytime
         </p>
       </div>
 
       {/* Tab Switcher */}
-      <div className="flex gap-10 mb-16 border-b border-white/10 relative">
+      <div className="flex gap-10 mb-16 border-b border-strokes-primary relative">
         <button
           onClick={() => setActiveTab("freelancer")}
           className="text-callout-emphasized px-1 py-3 cursor-pointer relative transition-colors"
           style={{
             background: 'none',
             border: 'none',
-            color: activeTab === "freelancer" ? 'white' : 'rgba(255, 255, 255, 0.5)'
+            color: activeTab === "freelancer" ? 'var(--label-inverted)' : 'var(--label-tertiary)'
           }}
         >
           Freelancer
           {activeTab === "freelancer" && (
-            <div className="absolute -bottom-px left-0 right-0 h-0.5 rounded-sm" style={{ background: '#257DFF' }} />
+            <div className="absolute -bottom-px left-0 right-0 h-0.5 rounded-sm" style={{ background: 'var(--accent-blue-main)' }} />
           )}
         </button>
         <button
@@ -49,12 +49,12 @@ export default function PricingSection() {
           style={{
             background: 'none',
             border: 'none',
-            color: activeTab === "gestoria" ? 'white' : 'rgba(255, 255, 255, 0.5)'
+            color: activeTab === "gestoria" ? 'var(--label-inverted)' : 'var(--label-tertiary)'
           }}
         >
           Gestoria
           {activeTab === "gestoria" && (
-            <div className="absolute -bottom-px left-0 right-0 h-0.5 rounded-sm" style={{ background: '#257DFF' }} />
+            <div className="absolute -bottom-px left-0 right-0 h-0.5 rounded-sm" style={{ background: 'var(--accent-blue-main)' }} />
           )}
         </button>
       </div>
@@ -114,7 +114,7 @@ export default function PricingSection() {
                       left: 0,
                       right: 0,
                       bottom: 0,
-                      backgroundColor: isAnnual ? '#22C55E' : 'rgba(255, 255, 255, 0.2)',
+                      backgroundColor: isAnnual ? 'var(--accent-green-main)' : 'var(--fills-tertiary)',
                       transition: '0.4s',
                       borderRadius: '24px'
                     }}>
@@ -125,14 +125,14 @@ export default function PricingSection() {
                         width: '18px',
                         left: isAnnual ? '23px' : '3px',
                         bottom: '3px',
-                        backgroundColor: 'white',
+                        backgroundColor: 'var(--label-inverted)',
                         transition: '0.4s',
                         borderRadius: '50%'
                       }} />
                     </span>
                   </label>
-                  <span className="text-footnote text-white/60">
-                    Annual {isAnnual && <span className="text-green-500">Save 2 months!</span>}
+                  <span className="text-footnote text-label-inverted-secondary">
+                    Annual {isAnnual && <span className="text-accent-green-main">Save 2 months!</span>}
                   </span>
                 </div>
               }

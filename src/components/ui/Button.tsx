@@ -37,10 +37,10 @@ export interface ButtonProps {
  */
 
 const buttonVariants = {
-  primary: "bg-blue-500 hover:bg-blue-600 text-white border border-blue-500 hover:border-blue-600 hover:shadow-lg hover:shadow-blue-500/25",
-  secondary: "bg-white/10 hover:bg-white/20 text-white border border-white/20 hover:border-white/30",
-  outline: "bg-transparent hover:bg-blue-50 text-blue-500 border border-blue-500 hover:border-blue-600 hover:text-blue-600",
-  gradient: "text-white hover:shadow-lg" // Special handling for gradient in component
+  primary: "bg-accent-blue-main hover:bg-accent-blue-light text-label-inverted border border-accent-blue-main hover:border-accent-blue-light hover:shadow-lg",
+  secondary: "bg-fills-secondary hover:bg-fills-primary text-label-inverted border border-strokes-primary hover:border-strokes-secondary",
+  outline: "bg-transparent hover:bg-fills-tertiary text-accent-blue-main border border-accent-blue-main hover:border-accent-blue-light",
+  gradient: "text-label-inverted hover:shadow-lg" // Special handling for gradient in component
 };
 
 const buttonSizes = {
@@ -64,7 +64,7 @@ export default function Button({
   if (variant === 'gradient') {
     const gradientStyle = {
       fontFamily: 'var(--font-inter)',
-      background: 'linear-gradient(94.28deg, #257DFF 3.12%, #925AFF 95.84%)',
+      background: 'linear-gradient(94.28deg, var(--accent-blue-main) 3.12%, var(--accent-purple-main) 95.84%)',
       width: '193px',
       height: '47px',
       borderRadius: '12px',
@@ -135,4 +135,4 @@ export default function Button({
 }
 
 // Export utility classes for manual use when needed
-export const primaryButtonClasses = "flex items-center gap-2 bg-blue-500 hover:bg-blue-600 text-white px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 hover:shadow-lg hover:shadow-blue-500/25 border border-blue-500 hover:border-blue-600";
+export const primaryButtonClasses = "flex items-center gap-2 bg-accent-blue-main hover:bg-accent-blue-light text-label-inverted px-6 py-2.5 rounded-full text-sm font-semibold transition-all duration-200 hover:shadow-lg border border-accent-blue-main hover:border-accent-blue-light";
