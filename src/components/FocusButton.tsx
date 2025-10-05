@@ -6,8 +6,6 @@ export default function FocusButton() {
   return (
     <DrawerComponent
       triggerText="Join the waiting list"
-      title=""
-      description=""
     />
   );
 }

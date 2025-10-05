@@ -10,8 +10,6 @@ export default function InvoicingButton() {
     }}>
       <DrawerComponent
         triggerText="Learn More"
-        title=""
-        description=""
       />
     </div>
   );

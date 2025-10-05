@@ -11,8 +11,6 @@ export default function MoreThanInvoiceButton() {
     }}>
       <DrawerComponent
         triggerText="Learn More"
-        title=""
-        description=""
       />
     </div>
   );

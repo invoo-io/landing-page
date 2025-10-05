@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { ChevronDown, Globe, Menu, X } from "lucide-react";
+import { ChevronDown, Languages, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import NavigationDrawerButton from "./NavigationDrawerButton";
 import { getImagePath, getBasePath } from "@/lib/utils";
@@ -215,7 +215,7 @@ export default function Navigation({ locale }: NavigationProps) {
                 onMouseLeave={handleMouseLeave}
               >
                 <button className="flex items-center gap-1.5 text-label-inverted hover:text-label-inverted-secondary transition-colors text-callout">
-                  <Globe className="w-5 h-5" />
+                  <Languages className="w-5 h-5" />
                   <ChevronDown className="w-4 h-4" />
                 </button>
 
@@ -549,7 +549,7 @@ export default function Navigation({ locale }: NavigationProps) {
                       onClick={() => setMobileActiveDropdown(mobileActiveDropdown === "language" ? null : "language")}
                       className="relative w-full text-label-inverted hover:bg-fills-tertiary rounded-lg transition-colors px-6 py-4 flex items-center justify-center"
                     >
-                      <Globe className="w-5 h-5 mr-2" style={{ color: 'var(--label-secondary-dark)' }} />
+                      <Languages className="w-5 h-5 mr-2" style={{ color: 'var(--label-secondary-dark)' }} />
                       <span className="text-callout-emphasized">Language</span>
                       <motion.div
                         style={{

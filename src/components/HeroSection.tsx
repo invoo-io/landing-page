@@ -35,8 +35,6 @@ export default function HeroSection({
             {(buttonText === "Join the waiting list" || buttonText === "Get Started") ? (
               <DrawerComponent
                 triggerText={buttonText}
-                title=""
-                description=""
               />
             ) : (
               <Button
