@@ -101,7 +101,7 @@ export default function MoreThanInvoiceSection() {
                 alt={feature.title}
                 width={100}
                 height={100}
-                style={{ objectFit: "contain", margin: "0 auto" }}
+                style={{ objectFit: "contain", margin: "0 auto", padding: "0 0 24px 0" }}
               />
               <h3 className="text-title3-emphasized text-label-primary mb-3" style={{ fontSize: "20px" }}>
                 {feature.title}
