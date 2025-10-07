@@ -6,13 +6,13 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getImagePath(path: string): string {
-  // In production, images might be served from a CDN or different path
-  // For now, we'll just return the path as-is
-  return path;
+  // In production (GitHub Pages), prepend the repository base path
+  const basePath = process.env.NODE_ENV === 'production' ? '/landing-page' : '';
+  return `${basePath}${path}`;
 }
 
 export function getBasePath(path: string): string {
-  // This function can be used to handle base paths for different environments
-  // For now, we'll just return the path as-is
-  return path;
+  // In production (GitHub Pages), prepend the repository base path for navigation
+  const basePath = process.env.NODE_ENV === 'production' ? '/landing-page' : '';
+  return `${basePath}${path}`;
 }

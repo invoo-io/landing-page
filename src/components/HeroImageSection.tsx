@@ -15,7 +15,7 @@ export default function HeroImageSection({
   return (
     <section className="relative w-full min-h-[100vh] max-lg:min-h-[80vh] max-md:min-h-[60vh] flex items-center justify-center overflow-hidden">
       {/* Background Image as absolute element */}
-      <div className="absolute inset-0 w-full h-full">
+      <div className="absolute inset-0 w-full h-full max-w-[1500px] left-1/2 -translate-x-1/2">
         <Image
           src={getImagePath(backgroundImage)}
           alt="Background"
@@ -25,15 +25,8 @@ export default function HeroImageSection({
         />
       </div>
 
-      {/* Container with semi-transparent background */}
-      <div
-        className="relative max-w-6xl mx-auto z-10 px-6 max-md:px-4"
-        style={{
-          backgroundColor: "transparent",
-          borderRadius: "24px",
-          boxShadow: "0 25px 50px -12px var(--system-overlay)",
-        }}
-      >
+      {/* Container */}
+      <div className="relative max-w-6xl mx-auto z-10 px-6 max-md:px-4">
         {/* Dashboard Image */}
         <div className="relative w-full">
           <Image
