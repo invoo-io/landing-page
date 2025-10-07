@@ -28,9 +28,9 @@ export default function PricingSection() {
     }}>
       {/* Header */}
       <div className="text-center mb-16 max-w-3xl">
-        <h1 className="text-large-title-emphasized mb-6" style={{ fontSize: '64px' }}>
-          <GradientText>{titleParts[0]}</GradientText>
-          <span className="text-label-inverted">. {titleParts[1]}</span>
+        <h1 className="text-large-title-emphasized mb-6 max-md:!text-[48px]" style={{ fontSize: '64px' }}>
+          <GradientText>{titleParts[0]}.</GradientText>
+          <span className="text-label-inverted"> {titleParts[1]}</span>
         </h1>
         <p className="text-headline text-label-inverted-secondary">
           {t("header.description")}
