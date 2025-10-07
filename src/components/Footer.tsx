@@ -17,7 +17,7 @@ export default function Footer({ locale }: FooterProps) {
     <footer className="bg-system-grey800 text-label-inverted px-6 pt-20 pb-10">
       <div className="max-w-6xl mx-auto">
         {/* Main footer content */}
-        <div className="grid grid-cols-4 gap-16 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-16 mb-20">
           {/* Logo and description column */}
           <div>
             <div className="mb-6">
