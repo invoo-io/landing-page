@@ -37,7 +37,7 @@ export default function BuildForGestoriasSection({
   maxImageWidth
 }: BuildForGestoriasSectionProps) {
   const textContent = (
-    <div className="max-w-full" style={{ width: '500px' }}>
+    <div className="max-w-full max-md:text-center" style={{ width: '500px' }}>
       <h2 className="text-large-title-emphasized text-label-primary mb-6" style={{ fontSize: '48px' }}>
         {title}
       </h2>
@@ -47,7 +47,7 @@ export default function BuildForGestoriasSection({
       </p>
 
       {/* Features List */}
-      <div className="flex flex-col gap-4 mb-8">
+      <div className="flex flex-col gap-4 mb-8 max-md:mx-auto max-md:w-fit">
         {features.map((feature, index) => (
           <div key={index} className="flex items-center gap-3">
             <Check size={20} className="text-accent-green-main" />
@@ -59,15 +59,17 @@ export default function BuildForGestoriasSection({
       </div>
 
       {/* Button */}
-      {(buttonText === "Learn More" || buttonText === "Join the waiting list") ? (
-        <DrawerComponent
-          triggerText={buttonText}
-        />
-      ) : (
-        <Button variant="gradient" showArrow onClick={buttonOnClick}>
-          {buttonText}
-        </Button>
-      )}
+      <div className="max-md:flex max-md:justify-center">
+        {(buttonText === "Learn More" || buttonText === "Join the waiting list") ? (
+          <DrawerComponent
+            triggerText={buttonText}
+          />
+        ) : (
+          <Button variant="gradient" showArrow onClick={buttonOnClick}>
+            {buttonText}
+          </Button>
+        )}
+      </div>
     </div>
   );
 

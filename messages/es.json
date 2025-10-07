@@ -8,6 +8,12 @@
     "resources": "Recursos",
     "pricing": "Precios",
     "about": "Nosotros",
+    "contact": "Contacto",
+    "language": "Idioma",
+    "freelancers": "Autónomos",
+    "gestorias": "Gestorías",
+    "faq": "Preguntas Frecuentes",
+    "blog": "Blog",
     "login": "Iniciar sesión",
     "getStarted": "Empezar"
   },
@@ -589,8 +595,8 @@
       "pro": {
         "title": "Pro",
         "description": "Todo lo que necesitas para cumplir normativas y conectar con tu gestoría",
-        "priceMonthly": "9,90€",
-        "priceAnnual": "9,92€",
+        "priceMonthly": "10,90€",
+        "priceAnnual": "9,08€",
         "period": "al mes",
         "badgeMonthly": "7 días - Prueba gratis",
         "badgeAnnual": "¡Ahorra 2 meses!",

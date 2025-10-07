@@ -1,6 +1,7 @@
 import React from 'react';
 import Link from 'next/link';
 import { ArrowRight } from 'lucide-react';
+import { motion } from 'framer-motion';
 
 export interface ButtonProps {
   children: React.ReactNode;
@@ -11,6 +12,7 @@ export interface ButtonProps {
   disabled?: boolean;
   className?: string;
   type?: 'button' | 'submit' | 'reset';
+  disableHoverScale?: boolean;
 }
 
 /**
@@ -21,7 +23,7 @@ export interface ButtonProps {
  * - Padding: 12px 16px (top-bottom, left-right)
  * - Border: 2px solid
  * - Border Radius: 12px
- * - Hover: Scale(1.05) effect on all variants
+ * - Hover: Scale(1.05) spring animation using Framer Motion
  *
  * Variants:
  * - PRIMARY: Solid button with system-grey100 text
@@ -45,7 +47,8 @@ export default function Button({
   showArrow = false,
   disabled = false,
   className = "",
-  type = 'button'
+  type = 'button',
+  disableHoverScale = false
 }: ButtonProps) {
   // Determine text color based on variant
   const textColorClass = variant === 'primary'
@@ -71,31 +74,39 @@ export default function Button({
       </>
     );
 
-    const gradientClasses = `flex items-center justify-center gap-2 text-callout-emphasized ${textColorClass} transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed ${className}`.trim();
+    const gradientClasses = `flex items-center justify-center gap-2 text-callout-emphasized ${textColorClass} disabled:opacity-50 disabled:cursor-not-allowed ${className}`.trim();
+
+    const motionProps = disableHoverScale
+      ? {}
+      : {
+          whileHover: { scale: 1.05 },
+          transition: { type: "spring", stiffness: 400, damping: 17 }
+        };
 
     if (href && !disabled) {
       return (
-        <Link href={href} className={gradientClasses} style={gradientStyle}>
+        <motion.a href={href} className={gradientClasses} style={gradientStyle} {...motionProps}>
           {content}
-        </Link>
+        </motion.a>
       );
     }
 
     return (
-      <button
+      <motion.button
         type={type}
         onClick={onClick}
         disabled={disabled}
         className={gradientClasses}
         style={gradientStyle}
+        {...motionProps}
       >
         {content}
-      </button>
+      </motion.button>
     );
   }
 
   // Standard button variants
-  const baseClasses = "flex items-center justify-center gap-2 rounded-[12px] text-callout-emphasized border-2 transition-all duration-200 hover:scale-105 disabled:opacity-50 disabled:cursor-not-allowed";
+  const baseClasses = "flex items-center justify-center gap-2 rounded-[12px] text-callout-emphasized border-2 transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed";
   const variantClasses = buttonVariants[variant];
   const paddingClasses = "px-4 py-3"; // 16px left-right, 12px top-bottom
 
@@ -108,22 +119,30 @@ export default function Button({
     </>
   );
 
+  const motionProps = disableHoverScale
+    ? {}
+    : {
+        whileHover: { scale: 1.05 },
+        transition: { type: "spring", stiffness: 400, damping: 17 }
+      };
+
   if (href && !disabled) {
     return (
-      <Link href={href} className={allClasses}>
+      <motion.a href={href} className={allClasses} {...motionProps}>
         {content}
-      </Link>
+      </motion.a>
     );
   }
 
   return (
-    <button
+    <motion.button
       type={type}
       onClick={onClick}
       disabled={disabled}
       className={allClasses}
+      {...motionProps}
     >
       {content}
-    </button>
+    </motion.button>
   );
 }

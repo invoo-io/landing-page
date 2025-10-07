@@ -8,6 +8,12 @@
     "resources": "Resources",
     "pricing": "Pricing",
     "about": "About Us",
+    "contact": "Contact",
+    "language": "Language",
+    "freelancers": "Freelancers",
+    "gestorias": "Accountants",
+    "faq": "FAQ",
+    "blog": "Blog",
     "login": "Login",
     "getStarted": "Get Started"
   },
@@ -574,7 +580,7 @@
     },
     "tabs": {
       "freelancer": "Freelancer and SMBs",
-      "gestoria": "Gestoría"
+      "gestoria": "Accountants"
     },
     "freelancer": {
       "free": {
@@ -588,11 +594,11 @@
       },
       "pro": {
         "title": "Pro",
-        "description": "Everything you need to stay compliant and connected with your gestoría",
-        "priceMonthly": "€9.90",
-        "priceAnnual": "€9.92",
-        "period": "per month",
-        "badgeMonthly": "7 days - Free to try",
+        "description": "Everything you need to stay compliant and connected with your accountant",
+        "priceMonthly": "€10.90",
+        "priceAnnual": "€9.08",
+        "period": "monthly",
+        "badgeMonthly": "7 day trial",
         "badgeAnnual": "Save 2 months!",
         "toggle": "Annual",
         "toggleSave": "Save 2 months!",
@@ -640,7 +646,7 @@
         "title": "Gestoría-friendly",
         "description": "Share invoices and expenses directly with your gestoría. No more retyping"
       },
-      "cta1": "Gestoría",
+      "cta1": "Accountant",
       "cta2": "Freelancers and SMBs"
     },
     "invoicing": {
