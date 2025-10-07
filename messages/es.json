@@ -615,7 +615,7 @@
         "description": "Construyamos juntos. Flujos de trabajo y paneles personalizados para tu gestoría",
         "price": "Facturación Flexible",
         "badge": "Planes Personalizados",
-        "cta": "Contáctanos →",
+        "cta": "Contáctanos",
         "features": ["Todo lo del plan Gratis incluido", "Funciones e integraciones personalizadas", "Cobertura completa del flujo de trabajo", "Soporte prioritario", "Integraciones API/ERP"]
       }
     }
@@ -640,8 +640,8 @@
         "title": "Gestoría-friendly",
         "description": "Comparte facturas y gastos directamente con tu gestoría. Sin más reescribir"
       },
-      "cta1": "Gestoría →",
-      "cta2": "Autónomos y PYMES →"
+      "cta1": "Gestoría",
+      "cta2": "Autónomos y PYMES"
     },
     "invoicing": {
       "title": "Facturación simplificada",
@@ -657,7 +657,7 @@
         "title": "Listo",
         "description": "Todas las facturas guardadas y resumidas. Tú solo cobras, sin papeleo extra"
       },
-      "cta": "Únete a la lista de espera →"
+      "cta": "Únete a la lista de espera"
     },
     "moreThanInvoicing": {
       "title": "Más que facturación",
