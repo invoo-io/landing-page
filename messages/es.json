@@ -63,7 +63,7 @@
     "header": {
       "title": "Facturación sin estrés",
       "description": "Facturas profesionales, cumplimiento Verifactu automático y envío instantáneo a Hacienda, tu cliente y tu gestoría",
-      "cta": "Únete a la lista de espera →"
+      "cta": "Únete a la lista de espera"
     },
     "block1": {
       "title": "Crea facturas profesionales en segundos",
@@ -73,7 +73,7 @@
         "Plantillas PDF profesionales",
         "Numeración automática"
       ],
-      "cta": "Únete a la lista de espera →"
+      "cta": "Únete a la lista de espera"
     },
     "block2": {
       "title": "Cumplimiento gestionado por ti",
@@ -83,7 +83,7 @@
         "Envío seguro a Hacienda",
         "Trazabilidad completa con verificación de estado"
       ],
-      "cta": "Únete a la lista de espera →"
+      "cta": "Únete a la lista de espera"
     },
     "block3": {
       "title": "Tus finanzas en una vista simple",
@@ -93,7 +93,7 @@
         "Resúmenes mensuales automáticos",
         "Modelo 130/303 pre-calculado"
       ],
-      "cta": "Únete a la lista de espera →"
+      "cta": "Únete a la lista de espera"
     },
     "block4": {
       "title": "Comparte sin esfuerzo con tu gestoría",
@@ -103,14 +103,14 @@
         "Sin cadenas de emails ni reescribir",
         "Gratis para gestorías"
       ],
-      "cta": "Únete a la lista de espera →"
+      "cta": "Únete a la lista de espera"
     }
   },
   "gestoriasPage": {
     "header": {
       "title": "Menos papeleo, más asesoramiento",
       "description": "Invoo da a las gestorías acceso en tiempo real a facturas y gastos de clientes, siempre conforme con Verifactu, siempre gratis",
-      "cta": "Únete a la lista de espera →"
+      "cta": "Únete a la lista de espera"
     },
     "block1": {
       "title": "Siempre actualizado",
@@ -120,7 +120,7 @@
         "QR Verifactu incluido automáticamente",
         "Alertas cuando aparece nueva actividad"
       ],
-      "cta": "Únete a la lista de espera →"
+      "cta": "Únete a la lista de espera"
     },
     "block2": {
       "title": "Datos que puedes usar",
@@ -130,7 +130,7 @@
         "Descargas masivas trimestrales o mensuales",
         "Exportaciones XML alineadas con estándares AEAT"
       ],
-      "cta": "Únete a la lista de espera →"
+      "cta": "Únete a la lista de espera"
     },
     "block3": {
       "title": "Periodos impositivos en segundos",
@@ -140,7 +140,7 @@
         "Desgloses claros de bases e IVA",
         "Fácil de revisar y validar"
       ],
-      "cta": "Únete a la lista de espera →"
+      "cta": "Únete a la lista de espera"
     },
     "block4": {
       "title": "Cero coste, cero riesgo",
@@ -150,7 +150,7 @@
         "Clientes ilimitados",
         "Diseñado para colaboración, no reemplazo"
       ],
-      "cta": "Únete a la lista de espera →"
+      "cta": "Únete a la lista de espera"
     }
   },
   "gestorias": {
@@ -615,7 +615,7 @@
         "description": "Construyamos juntos. Flujos de trabajo y paneles personalizados para tu gestoría",
         "price": "Facturación Flexible",
         "badge": "Planes Personalizados",
-        "cta": "Contáctanos →",
+        "cta": "Contáctanos",
         "features": ["Todo lo del plan Gratis incluido", "Funciones e integraciones personalizadas", "Cobertura completa del flujo de trabajo", "Soporte prioritario", "Integraciones API/ERP"]
       }
     }
@@ -640,8 +640,8 @@
         "title": "Gestoría-friendly",
         "description": "Comparte facturas y gastos directamente con tu gestoría. Sin más reescribir"
       },
-      "cta1": "Gestoría →",
-      "cta2": "Autónomos y PYMES →"
+      "cta1": "Gestoría",
+      "cta2": "Autónomos y PYMES"
     },
     "invoicing": {
       "title": "Facturación simplificada",
@@ -657,7 +657,7 @@
         "title": "Listo",
         "description": "Todas las facturas guardadas y resumidas. Tú solo cobras, sin papeleo extra"
       },
-      "cta": "Únete a la lista de espera →"
+      "cta": "Únete a la lista de espera"
     },
     "moreThanInvoicing": {
       "title": "Más que facturación",
@@ -677,7 +677,7 @@
         "title": "Exportación en un clic",
         "description": "Descarga facturas y gastos en formato CSV limpio, listo para cualquier software contable"
       },
-      "cta": "Únete a la lista de espera →"
+      "cta": "Únete a la lista de espera"
     },
     "gestoriasBlock": {
       "title": "Diseñado para gestorías",
@@ -687,12 +687,12 @@
         "Exportación CSV masiva",
         "Resúmenes fiscales trimestrales"
       ],
-      "cta": "Descubre más →"
+      "cta": "Descubre más"
     },
     "focus": {
       "title": "Céntrate en tu trabajo. Nosotros nos encargamos del papeleo",
       "description": "Únete a otros autónomos preparándose para Verifactu con una herramienta diseñada para España",
-      "cta": "Únete a la lista de espera →"
+      "cta": "Únete a la lista de espera"
     },
     "footer": {
       "description": "La plataforma de facturación amigable con gestorías que conecta autónomos, clientes y cumplimiento fiscal en un solo flujo",

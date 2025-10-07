@@ -37,7 +37,7 @@ export default function WhyChooseSection() {
       </h2>
 
       {/* Features Grid */}
-      <div className="grid gap-16 max-w-5xl mx-auto mb-16" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
+      <div className="grid gap-6 max-w-5xl mx-auto mb-16" style={{ gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))' }}>
         {features.map((feature, index) => (
           <div key={index} className="flex flex-col items-center text-center bg-bg-secondary rounded-3xl p-8">
             {/* Image */}

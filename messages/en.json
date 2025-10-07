@@ -63,7 +63,7 @@
     "header": {
       "title": "Invoicing without stress",
       "description": "Professional invoices, automatic Verifactu compliance, and instant delivery to AEAT, your client, and your gestoría",
-      "cta": "Join the waiting list →"
+      "cta": "Join the waiting list"
     },
     "block1": {
       "title": "Create professional invoices in seconds",
@@ -73,7 +73,7 @@
         "Professional PDF templates",
         "Automatic numbering"
       ],
-      "cta": "Join the waiting list →"
+      "cta": "Join the waiting list"
     },
     "block2": {
       "title": "Compliance handled for you",
@@ -83,7 +83,7 @@
         "Secure AEAT submission",
         "Full audit trail with status checks"
       ],
-      "cta": "Join the waiting list →"
+      "cta": "Join the waiting list"
     },
     "block3": {
       "title": "Your finances in one simple view",
@@ -93,7 +93,7 @@
         "Automatic monthly summaries",
         "Pre-calculated Modelo 130/303"
       ],
-      "cta": "Join the waiting list →"
+      "cta": "Join the waiting list"
     },
     "block4": {
       "title": "Share effortlessly with your gestoría",
@@ -103,14 +103,14 @@
         "No email chains or retyping",
         "Free for gestorías"
       ],
-      "cta": "Join the waiting list →"
+      "cta": "Join the waiting list"
     }
   },
   "gestoriasPage": {
     "header": {
       "title": "Less paperwork, more advising",
       "description": "Invoo gives gestorías real-time access to client invoices and expenses, always Verifactu compliant, always free",
-      "cta": "Join the waiting list →"
+      "cta": "Join the waiting list"
     },
     "block1": {
       "title": "Always up to date",
@@ -120,7 +120,7 @@
         "Verifactu QR included automatically",
         "Alerts when new activity appears"
       ],
-      "cta": "Join the waiting list →"
+      "cta": "Join the waiting list"
     },
     "block2": {
       "title": "Data you can actually use",
@@ -130,7 +130,7 @@
         "Quarterly or monthly batch downloads",
         "XML exports aligned with AEAT standards"
       ],
-      "cta": "Join the waiting list →"
+      "cta": "Join the waiting list"
     },
     "block3": {
       "title": "Tax periods in seconds",
@@ -140,7 +140,7 @@
         "Clear breakdowns of bases and IVA",
         "Easy to review and validate"
       ],
-      "cta": "Join the waiting list →"
+      "cta": "Join the waiting list"
     },
     "block4": {
       "title": "Zero cost, zero risk",
@@ -150,7 +150,7 @@
         "Unlimited clients",
         "Built for collaboration, not replacement"
       ],
-      "cta": "Join the waiting list →"
+      "cta": "Join the waiting list"
     }
   },
   "gestorias": {
@@ -583,7 +583,7 @@
         "price": "€0",
         "period": "per month",
         "badge": "Free Forever",
-        "cta": "Join the waiting list →",
+        "cta": "Join the waiting list",
         "features": ["Unlimited invoices", "50 MB Expense uploads"]
       },
       "pro": {
@@ -596,7 +596,7 @@
         "badgeAnnual": "Save 2 months!",
         "toggle": "Annual",
         "toggleSave": "Save 2 months!",
-        "cta": "Join the waiting list →",
+        "cta": "Join the waiting list",
         "features": ["Unlimited invoices", "Expense tracking (unlimited receipts)", "Verifactu QR + AEAT submission", "Pre-calculated Modelo 130 & 303", "One-click CSV export", "Gestoría dashboard access"]
       }
     },
@@ -607,7 +607,7 @@
         "price": "€0",
         "period": "per month",
         "badge": "Free Forever",
-        "cta": "Contact Us →",
+        "cta": "Contact Us",
         "features": ["Unlimited clients", "Invoice/expense sync", "CSV export", "Quarterly summaries", "Notifications for new data"]
       },
       "enterprise": {
@@ -615,7 +615,7 @@
         "description": "Let's build together. Custom workflows and dashboards tailored to your gestoría",
         "price": "Flexible Billing",
         "badge": "Custom Plans",
-        "cta": "Contact Us →",
+        "cta": "Contact Us",
         "features": ["Everything in Free included", "Custom features & integrations", "Complete workflow coverage", "Priority support", "API/ERP integrations"]
       }
     }
@@ -624,7 +624,7 @@
     "hero": {
       "title": "Create compliant invoices in 30 seconds",
       "description": "Invoo helps freelancers, SMBs and gestorías work faster together: Verifactu-ready, professional PDFs, instant sharing, and automatic tax summaries.",
-      "cta": "Join the waiting list →"
+      "cta": "Join the waiting list"
     },
     "whyChoose": {
       "title": "Why freelancers, SMBs and gestorías choose Invoo",
@@ -640,8 +640,8 @@
         "title": "Gestoría-friendly",
         "description": "Share invoices and expenses directly with your gestoría. No more retyping"
       },
-      "cta1": "Gestoría →",
-      "cta2": "Freelancers and SMBs →"
+      "cta1": "Gestoría",
+      "cta2": "Freelancers and SMBs"
     },
     "invoicing": {
       "title": "Invoicing made simple",
@@ -657,7 +657,7 @@
         "title": "Done",
         "description": "All invoices stored and summarized. You just get paid, no extra paperwork"
       },
-      "cta": "Join the waiting list →"
+      "cta": "Join the waiting list"
     },
     "moreThanInvoicing": {
       "title": "More than invoicing",
@@ -677,7 +677,7 @@
         "title": "One-click exports",
         "description": "Download invoices and expenses in clean CSV format, ready for any accounting software"
       },
-      "cta": "Join the waiting list →"
+      "cta": "Join the waiting list"
     },
     "gestoriasBlock": {
       "title": "Built for gestorías",
@@ -687,12 +687,12 @@
         "Bulk CSV export",
         "Quarterly tax summaries"
       ],
-      "cta": "Learn More →"
+      "cta": "Learn More"
     },
     "focus": {
       "title": "Focus on your work. We'll handle the paperwork",
       "description": "Join other freelancers getting ready for Verifactu with a tool designed for Spain's autónomos",
-      "cta": "Join the waiting list →"
+      "cta": "Join the waiting list"
     },
     "footer": {
       "description": "The gestoria-friendly invoicing platform that connects freelancers, clients, and tax compliance in one seamless flow",
