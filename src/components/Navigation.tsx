@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useTranslations } from "next-intl";
 import { ChevronDown, Languages, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import NavigationDrawerButton from "./NavigationDrawerButton";
@@ -17,6 +18,7 @@ interface NavigationProps {
 }
 
 export default function Navigation({ locale }: NavigationProps) {
+  const t = useTranslations('nav');
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileActiveDropdown, setMobileActiveDropdown] = useState<
@@ -26,13 +28,13 @@ export default function Navigation({ locale }: NavigationProps) {
   const pathname = usePathname();
 
   const services = [
-    { name: "Freelancers", href: getBasePath(`/${locale}/freelancers`) },
-    { name: "Gestorías", href: getBasePath(`/${locale}/gestorias`) },
+    { name: t('freelancers'), href: getBasePath(`/${locale}/freelancers`) },
+    { name: t('gestorias'), href: getBasePath(`/${locale}/gestorias`) },
   ];
 
   const resources = [
-    { name: "FAQ", href: getBasePath(`/${locale}/faq`), external: false },
-    { name: "Blog", href: "https://invoo.substack.com/", external: true },
+    { name: t('faq'), href: getBasePath(`/${locale}/faq`), external: false },
+    { name: t('blog'), href: "https://invoo.substack.com/", external: true },
   ];
 
   const languages = [
@@ -99,7 +101,7 @@ export default function Navigation({ locale }: NavigationProps) {
               {/* Services Dropdown */}
               <NavDropdown
                 id="services"
-                label="Services"
+                label={t('services')}
                 items={services}
                 isOpen={activeDropdown === "services"}
                 onMouseEnter={() => handleMouseEnter("services")}
@@ -109,7 +111,7 @@ export default function Navigation({ locale }: NavigationProps) {
               {/* Resources Dropdown */}
               <NavDropdown
                 id="resources"
-                label="Resources"
+                label={t('resources')}
                 items={resources}
                 isOpen={activeDropdown === "resources"}
                 onMouseEnter={() => handleMouseEnter("resources")}
@@ -121,21 +123,21 @@ export default function Navigation({ locale }: NavigationProps) {
                 href={getBasePath(`/${locale}/pricing`)}
                 className="text-label-inverted hover:text-label-inverted-secondary transition-colors text-callout"
               >
-                Pricing
+                {t('pricing')}
               </Link>
 
               <Link
                 href={getBasePath(`/${locale}/about`)}
                 className="text-label-inverted hover:text-label-inverted-secondary transition-colors text-callout"
               >
-                About Us
+                {t('about')}
               </Link>
 
               <Link
                 href={getBasePath(`/${locale}/contact`)}
                 className="text-label-inverted hover:text-label-inverted-secondary transition-colors text-callout"
               >
-                Contact
+                {t('contact')}
               </Link>
             </div>
 
@@ -273,7 +275,7 @@ export default function Navigation({ locale }: NavigationProps) {
                     <MobileNavButton
                       onClick={() => setMobileActiveDropdown(mobileActiveDropdown === "services" ? null : "services")}
                     >
-                      <span className="text-callout-emphasized">Services</span>
+                      <span className="text-callout-emphasized">{t('services')}</span>
                       <motion.div
                         style={{
                           position: "absolute",
@@ -335,7 +337,7 @@ export default function Navigation({ locale }: NavigationProps) {
                     <MobileNavButton
                       onClick={() => setMobileActiveDropdown(mobileActiveDropdown === "resources" ? null : "resources")}
                     >
-                      <span className="text-callout-emphasized">Resources</span>
+                      <span className="text-callout-emphasized">{t('resources')}</span>
                       <motion.div
                         style={{
                           position: "absolute",
@@ -401,7 +403,7 @@ export default function Navigation({ locale }: NavigationProps) {
                       onClick={() => setMobileMenuOpen(false)}
                       className="w-full px-6 py-4 text-callout-emphasized"
                     >
-                      Pricing
+                      {t('pricing')}
                     </MobileNavLink>
                   </motion.div>
 
@@ -417,7 +419,7 @@ export default function Navigation({ locale }: NavigationProps) {
                       onClick={() => setMobileMenuOpen(false)}
                       className="w-full px-6 py-4 text-callout-emphasized"
                     >
-                      About Us
+                      {t('about')}
                     </MobileNavLink>
                   </motion.div>
 
@@ -433,7 +435,7 @@ export default function Navigation({ locale }: NavigationProps) {
                       onClick={() => setMobileMenuOpen(false)}
                       className="w-full px-6 py-4 text-callout-emphasized"
                     >
-                      Contact
+                      {t('contact')}
                     </MobileNavLink>
                   </motion.div>
 
@@ -452,7 +454,7 @@ export default function Navigation({ locale }: NavigationProps) {
                       onClick={() => setMobileActiveDropdown(mobileActiveDropdown === "language" ? null : "language")}
                     >
                       <Languages className="w-5 h-5 mr-2" style={{ color: 'var(--label-secondary-dark)' }} />
-                      <span className="text-callout-emphasized">Language</span>
+                      <span className="text-callout-emphasized">{t('language')}</span>
                       <motion.div
                         style={{
                           position: "absolute",
