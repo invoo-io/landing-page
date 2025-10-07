@@ -12,7 +12,7 @@ export function getImagePath(path: string): string {
 }
 
 export function getBasePath(path: string): string {
-  // In production (GitHub Pages), prepend the repository base path for navigation
-  const basePath = process.env.NODE_ENV === 'production' ? '/landing-page' : '';
-  return `${basePath}${path}`;
+  // Next.js basePath config handles the prefix automatically for Link components
+  // Just return the path as-is
+  return path;
 }
