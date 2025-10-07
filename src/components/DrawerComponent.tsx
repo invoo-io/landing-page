@@ -13,12 +13,20 @@ import Button from "@/components/ui/Button";
 
 interface DrawerComponentProps {
   triggerText: string;
+  externalOpen?: boolean;
+  onExternalOpenChange?: (open: boolean) => void;
 }
 
 export function DrawerComponent({
-  triggerText
+  triggerText,
+  externalOpen,
+  onExternalOpenChange
 }: DrawerComponentProps) {
-  const [open, setOpen] = React.useState(false);
+  const [internalOpen, setInternalOpen] = React.useState(false);
+
+  // Use external state if provided, otherwise use internal state
+  const open = externalOpen !== undefined ? externalOpen : internalOpen;
+  const setOpen = onExternalOpenChange || setInternalOpen;
   const [formData, setFormData] = React.useState({
     name: "",
     email: "",
@@ -67,11 +75,13 @@ export function DrawerComponent({
 
   return (
     <Drawer open={open} onOpenChange={setOpen}>
-      <DrawerTrigger asChild>
-        <Button variant="gradient" showArrow>
-          {triggerText}
-        </Button>
-      </DrawerTrigger>
+      {triggerText && (
+        <DrawerTrigger asChild>
+          <Button variant="gradient" showArrow>
+            {triggerText}
+          </Button>
+        </DrawerTrigger>
+      )}
       <DrawerContent className="bg-bg-inverted text-label-inverted border-strokes-primary/50 flex items-center justify-center">
         <div
           style={{

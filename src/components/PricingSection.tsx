@@ -2,13 +2,19 @@
 
 import { useState } from "react";
 import { useTranslations } from "next-intl";
+import { useParams } from "next/navigation";
 import PricingCard from "./PricingCard";
 import GradientText from "./ui/GradientText";
+import { DrawerComponent } from "./DrawerComponent";
+import { getBasePath } from "@/lib/utils";
 
 export default function PricingSection() {
   const t = useTranslations("pricing");
+  const params = useParams();
+  const locale = params.locale as string;
   const [activeTab, setActiveTab] = useState<"freelancer" | "gestoria">("freelancer");
   const [isAnnual, setIsAnnual] = useState(false);
+  const [drawerOpen, setDrawerOpen] = useState(false);
 
   // Split title at the period to apply gradient
   const titleParts = t("header.title").split(". ");
@@ -82,7 +88,7 @@ export default function PricingSection() {
               subtitle={t("freelancer.free.badge")}
               buttonText={t("freelancer.free.cta")}
               buttonVariant="gradient"
-              buttonHref="#waitlist"
+              buttonOnClick={() => setDrawerOpen(true)}
               features={t.raw("freelancer.free.features")}
             />
 
@@ -92,7 +98,7 @@ export default function PricingSection() {
               description={t("freelancer.pro.description")}
               price={isAnnual ? t("freelancer.pro.priceAnnual") : t("freelancer.pro.priceMonthly")}
               period={t("freelancer.pro.period")}
-              badge={isAnnual ? t("freelancer.pro.badgeAnnual") : t("freelancer.pro.badgeMonthly")}
+              badge={t("freelancer.pro.badgeMonthly")}
               badgeColor="#22C55E"
               subtitle={
                 <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
@@ -139,7 +145,7 @@ export default function PricingSection() {
               }
               buttonText={t("freelancer.pro.cta")}
               buttonVariant="gradient"
-              buttonHref="#waitlist"
+              buttonOnClick={() => setDrawerOpen(true)}
               features={t.raw("freelancer.pro.features")}
               isHighlighted={true}
             />
@@ -155,7 +161,7 @@ export default function PricingSection() {
               subtitle={t("gestoria.free.badge")}
               buttonText={t("gestoria.free.cta")}
               buttonVariant="gradient"
-              buttonHref="#contact"
+              buttonHref={getBasePath(`/${locale}/contact`)}
               features={t.raw("gestoria.free.features")}
             />
 
@@ -167,13 +173,20 @@ export default function PricingSection() {
               subtitle={t("gestoria.enterprise.badge")}
               buttonText={t("gestoria.enterprise.cta")}
               buttonVariant="gradient"
-              buttonHref="#contact"
+              buttonHref={getBasePath(`/${locale}/contact`)}
               features={t.raw("gestoria.enterprise.features")}
               isHighlighted={true}
             />
           </>
         )}
       </div>
+
+      {/* Drawer for waiting list */}
+      <DrawerComponent
+        triggerText=""
+        externalOpen={drawerOpen}
+        onExternalOpenChange={setDrawerOpen}
+      />
     </section>
   );
 }
