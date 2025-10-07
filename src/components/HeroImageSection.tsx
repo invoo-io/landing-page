@@ -13,21 +13,21 @@ export default function HeroImageSection({
   dashboardAlt = "Invoo Dashboard",
 }: HeroImageSectionProps) {
   return (
-    <section className="relative w-full min-h-[125vh] flex items-center justify-center overflow-hidden">
+    <section className="relative w-full min-h-[100vh] max-lg:min-h-[80vh] max-md:min-h-[60vh] flex items-center justify-center overflow-hidden">
       {/* Background Image as absolute element */}
       <div className="absolute inset-0 w-full h-full">
         <Image
           src={getImagePath(backgroundImage)}
           alt="Background"
           fill
-          className="object-contain"
+          className="object-cover"
           priority
         />
       </div>
 
       {/* Container with semi-transparent background */}
       <div
-        className="relative max-w-6xl mx-auto z-10"
+        className="relative max-w-6xl mx-auto z-10 px-6 max-md:px-4"
         style={{
           backgroundColor: "transparent",
           borderRadius: "24px",
