@@ -7,6 +7,9 @@ import { usePathname } from "next/navigation";
 import { ChevronDown, Languages, Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import NavigationDrawerButton from "./NavigationDrawerButton";
+import NavDropdown from "./NavDropdown";
+import MobileNavButton from "./MobileNavButton";
+import MobileNavLink from "./MobileNavLink";
 import { getImagePath, getBasePath } from "@/lib/utils";
 
 interface NavigationProps {
@@ -94,94 +97,24 @@ export default function Navigation({ locale }: NavigationProps) {
             {/* Center Navigation - Desktop */}
             <div className="hidden lg:flex items-center gap-12">
               {/* Services Dropdown */}
-              <div
-                className="relative"
+              <NavDropdown
+                id="services"
+                label="Services"
+                items={services}
+                isOpen={activeDropdown === "services"}
                 onMouseEnter={() => handleMouseEnter("services")}
                 onMouseLeave={handleMouseLeave}
-              >
-                <button className="flex items-center gap-1.5 text-label-inverted hover:text-label-inverted-secondary transition-colors text-callout">
-                  <span>Services</span>
-                  <ChevronDown className="w-4 h-4" />
-                </button>
-
-                {activeDropdown === "services" && (
-                  <div
-                    className="absolute top-full left-0 mt-2 min-w-[200px] before:absolute before:inset-x-0 before:-top-2 before:h-2 py-2 rounded-xl"
-                    style={{
-                      backgroundColor: 'var(--background-secondary-dark)',
-                      backdropFilter: 'blur(20px)',
-                      boxShadow: '0 4px 20px rgba(255, 255, 255, 0.1), 0 1px 4px rgba(255, 255, 255, 0.05)',
-                      animation: 'slideDown 0.2s ease-out'
-                    }}
-                  >
-                    {services.map((service) => (
-                      <Link
-                        key={service.name}
-                        href={service.href}
-                        className="relative block px-6 py-3 text-footnote-emphasized text-label-inverted hover:text-label-inverted hover:bg-fills-secondary transition-all no-underline"
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor =
-                            "var(--fills-secondary)";
-                          e.currentTarget.style.color = "var(--label-inverted)";
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = "transparent";
-                          e.currentTarget.style.color =
-                            "var(--label-inverted)";
-                        }}
-                      >
-                        {service.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+              />
 
               {/* Resources Dropdown */}
-              <div
-                className="relative"
+              <NavDropdown
+                id="resources"
+                label="Resources"
+                items={resources}
+                isOpen={activeDropdown === "resources"}
                 onMouseEnter={() => handleMouseEnter("resources")}
                 onMouseLeave={handleMouseLeave}
-              >
-                <button className="flex items-center gap-1.5 text-label-inverted hover:text-label-inverted-secondary transition-colors text-callout">
-                  <span>Resources</span>
-                  <ChevronDown className="w-4 h-4" />
-                </button>
-
-                {activeDropdown === "resources" && (
-                  <div
-                    className="absolute top-full left-0 mt-2 min-w-[200px] before:absolute before:inset-x-0 before:-top-2 before:h-2 py-2 rounded-xl"
-                    style={{
-                      backgroundColor: 'var(--background-secondary-dark)',
-                      backdropFilter: 'blur(20px)',
-                      boxShadow: '0 4px 20px rgba(255, 255, 255, 0.1), 0 1px 4px rgba(255, 255, 255, 0.05)',
-                      animation: 'slideDown 0.2s ease-out'
-                    }}
-                  >
-                    {resources.map((resource) => (
-                      <Link
-                        key={resource.name}
-                        href={resource.href}
-                        target={resource.external ? "_blank" : undefined}
-                        rel={resource.external ? "noopener noreferrer" : undefined}
-                        className="relative block px-6 py-3 text-footnote-emphasized text-label-inverted hover:text-label-inverted hover:bg-fills-secondary transition-all no-underline"
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor =
-                            "var(--fills-secondary)";
-                          e.currentTarget.style.color = "var(--label-inverted)";
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = "transparent";
-                          e.currentTarget.style.color =
-                            "var(--label-inverted)";
-                        }}
-                      >
-                        {resource.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+              />
 
               {/* Direct Links */}
               <Link
@@ -209,48 +142,20 @@ export default function Navigation({ locale }: NavigationProps) {
             {/* Right Side Actions - Desktop */}
             <div className="hidden lg:flex items-center gap-8">
               {/* Language Selector */}
-              <div
-                className="relative"
+              <NavDropdown
+                id="language"
+                label=""
+                items={languages.map(lang => ({
+                  name: lang.name,
+                  href: getLanguageSwitchUrl(lang.code)
+                }))}
+                isOpen={activeDropdown === "language"}
                 onMouseEnter={() => handleMouseEnter("language")}
                 onMouseLeave={handleMouseLeave}
-              >
-                <button className="flex items-center gap-1.5 text-label-inverted hover:text-label-inverted-secondary transition-colors text-callout">
-                  <Languages className="w-5 h-5" />
-                  <ChevronDown className="w-4 h-4" />
-                </button>
-
-                {activeDropdown === "language" && (
-                  <div
-                    className="absolute top-full right-0 mt-2 min-w-[160px] before:absolute before:inset-x-0 before:-top-2 before:h-2 py-2 rounded-xl"
-                    style={{
-                      backgroundColor: 'var(--background-secondary-dark)',
-                      backdropFilter: 'blur(20px)',
-                      boxShadow: '0 4px 20px rgba(255, 255, 255, 0.1), 0 1px 4px rgba(255, 255, 255, 0.05)',
-                      animation: 'slideDown 0.2s ease-out'
-                    }}
-                  >
-                    {languages.map((lang) => (
-                      <Link
-                        key={lang.code}
-                        href={getLanguageSwitchUrl(lang.code)}
-                        className="relative block px-6 py-3 text-footnote-emphasized text-label-inverted hover:text-label-inverted hover:bg-fills-secondary transition-all no-underline"
-                        onMouseEnter={(e) => {
-                          e.currentTarget.style.backgroundColor =
-                            "var(--fills-secondary)";
-                          e.currentTarget.style.color = "var(--label-inverted)";
-                        }}
-                        onMouseLeave={(e) => {
-                          e.currentTarget.style.backgroundColor = "transparent";
-                          e.currentTarget.style.color =
-                            "var(--label-inverted)";
-                        }}
-                      >
-                        {lang.name}
-                      </Link>
-                    ))}
-                  </div>
-                )}
-              </div>
+                align="right"
+                minWidth="160px"
+                icon={<Languages className="w-5 h-5" />}
+              />
 
               {/* CTA Button */}
               <NavigationDrawerButton />
@@ -316,7 +221,8 @@ export default function Navigation({ locale }: NavigationProps) {
                 damping: 30,
                 stiffness: 300,
               }}
-              className="fixed right-0 top-0 h-full w-[85%] max-w-[400px] bg-bg-inverted z-50 lg:hidden overflow-y-auto"
+              className="fixed right-0 top-0 h-full w-[85%] max-w-[400px] z-50 lg:hidden overflow-y-auto"
+              style={{ backgroundColor: 'var(--background-secondary)' }}
             >
               {/* Drawer Header */}
               <div className="relative border-b border-strokes-primary/20 p-6">
@@ -364,9 +270,8 @@ export default function Navigation({ locale }: NavigationProps) {
                     }}
                     transition={{ duration: 0.3 }}
                   >
-                    <button
+                    <MobileNavButton
                       onClick={() => setMobileActiveDropdown(mobileActiveDropdown === "services" ? null : "services")}
-                      className="relative w-full text-label-inverted hover:bg-fills-tertiary rounded-lg transition-colors px-6 py-4 flex items-center justify-center"
                     >
                       <span className="text-callout-emphasized">Services</span>
                       <motion.div
@@ -381,7 +286,7 @@ export default function Navigation({ locale }: NavigationProps) {
                       >
                         <ChevronDown className="w-4 h-4" style={{ color: 'var(--label-secondary-dark)' }} />
                       </motion.div>
-                    </button>
+                    </MobileNavButton>
 
                     <AnimatePresence>
                       {mobileActiveDropdown === "services" && (
@@ -404,13 +309,13 @@ export default function Navigation({ locale }: NavigationProps) {
                                     index < services.length - 1 ? "8px" : "0",
                                 }}
                               >
-                                <Link
+                                <MobileNavLink
                                   href={service.href}
                                   onClick={() => setMobileMenuOpen(false)}
-                                  className="block text-label-inverted-secondary hover:text-label-inverted hover:bg-fills-tertiary rounded-lg transition-all text-subheadline text-center px-5 py-3 mx-4"
+                                  className="mx-4"
                                 >
                                   {service.name}
-                                </Link>
+                                </MobileNavLink>
                               </motion.div>
                             ))}
                           </div>
@@ -427,9 +332,8 @@ export default function Navigation({ locale }: NavigationProps) {
                     }}
                     transition={{ duration: 0.3 }}
                   >
-                    <button
+                    <MobileNavButton
                       onClick={() => setMobileActiveDropdown(mobileActiveDropdown === "resources" ? null : "resources")}
-                      className="relative w-full text-label-inverted hover:bg-fills-tertiary rounded-lg transition-colors px-6 py-4 flex items-center justify-center"
                     >
                       <span className="text-callout-emphasized">Resources</span>
                       <motion.div
@@ -445,7 +349,7 @@ export default function Navigation({ locale }: NavigationProps) {
                       >
                         <ChevronDown className="w-4 h-4" style={{ color: 'var(--label-secondary-dark)' }} />
                       </motion.div>
-                    </button>
+                    </MobileNavButton>
 
                     <AnimatePresence>
                       {mobileActiveDropdown === "resources" && (
@@ -468,15 +372,14 @@ export default function Navigation({ locale }: NavigationProps) {
                                     index < resources.length - 1 ? "8px" : "0",
                                 }}
                               >
-                                <Link
+                                <MobileNavLink
                                   href={resource.href}
-                                  target={resource.external ? "_blank" : undefined}
-                                  rel={resource.external ? "noopener noreferrer" : undefined}
+                                  external={resource.external}
                                   onClick={() => setMobileMenuOpen(false)}
-                                  className="block text-label-inverted-secondary hover:text-label-inverted hover:bg-fills-tertiary rounded-lg transition-all text-subheadline text-center px-5 py-3 mx-4"
+                                  className="mx-4"
                                 >
                                   {resource.name}
-                                </Link>
+                                </MobileNavLink>
                               </motion.div>
                             ))}
                           </div>
@@ -493,13 +396,13 @@ export default function Navigation({ locale }: NavigationProps) {
                     }}
                     transition={{ duration: 0.3 }}
                   >
-                    <Link
+                    <MobileNavLink
                       href={getBasePath(`/${locale}/pricing`)}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="w-full text-label-inverted hover:bg-fills-tertiary rounded-lg transition-colors block px-6 py-4 text-center text-callout-emphasized"
+                      className="w-full px-6 py-4 text-callout-emphasized"
                     >
                       Pricing
-                    </Link>
+                    </MobileNavLink>
                   </motion.div>
 
                   <motion.div
@@ -509,13 +412,13 @@ export default function Navigation({ locale }: NavigationProps) {
                     }}
                     transition={{ duration: 0.3 }}
                   >
-                    <Link
+                    <MobileNavLink
                       href={getBasePath(`/${locale}/about`)}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="w-full text-label-inverted hover:bg-fills-tertiary rounded-lg transition-colors block px-6 py-4 text-center text-callout-emphasized"
+                      className="w-full px-6 py-4 text-callout-emphasized"
                     >
                       About Us
-                    </Link>
+                    </MobileNavLink>
                   </motion.div>
 
                   <motion.div
@@ -525,13 +428,13 @@ export default function Navigation({ locale }: NavigationProps) {
                     }}
                     transition={{ duration: 0.3 }}
                   >
-                    <Link
+                    <MobileNavLink
                       href={getBasePath(`/${locale}/contact`)}
                       onClick={() => setMobileMenuOpen(false)}
-                      className="w-full text-label-inverted hover:bg-fills-tertiary rounded-lg transition-colors block px-6 py-4 text-center text-callout-emphasized"
+                      className="w-full px-6 py-4 text-callout-emphasized"
                     >
                       Contact
-                    </Link>
+                    </MobileNavLink>
                   </motion.div>
 
                   {/* Divider */}
@@ -545,9 +448,8 @@ export default function Navigation({ locale }: NavigationProps) {
                     }}
                     transition={{ duration: 0.3 }}
                   >
-                    <button
+                    <MobileNavButton
                       onClick={() => setMobileActiveDropdown(mobileActiveDropdown === "language" ? null : "language")}
-                      className="relative w-full text-label-inverted hover:bg-fills-tertiary rounded-lg transition-colors px-6 py-4 flex items-center justify-center"
                     >
                       <Languages className="w-5 h-5 mr-2" style={{ color: 'var(--label-secondary-dark)' }} />
                       <span className="text-callout-emphasized">Language</span>
@@ -563,7 +465,7 @@ export default function Navigation({ locale }: NavigationProps) {
                       >
                         <ChevronDown className="w-4 h-4" style={{ color: 'var(--label-secondary-dark)' }} />
                       </motion.div>
-                    </button>
+                    </MobileNavButton>
 
                     <AnimatePresence>
                       {mobileActiveDropdown === "language" && (
@@ -586,13 +488,13 @@ export default function Navigation({ locale }: NavigationProps) {
                                     index < languages.length - 1 ? "8px" : "0",
                                 }}
                               >
-                                <Link
+                                <MobileNavLink
                                   href={getLanguageSwitchUrl(lang.code)}
                                   onClick={() => setMobileMenuOpen(false)}
-                                  className="block text-label-inverted-secondary hover:text-label-inverted hover:bg-fills-tertiary rounded-lg transition-all text-subheadline text-center px-5 py-3 mx-4"
+                                  className="mx-4"
                                 >
                                   {lang.name}
-                                </Link>
+                                </MobileNavLink>
                               </motion.div>
                             ))}
                           </div>
