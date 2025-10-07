@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useTranslations } from "next-intl";
 import { useParams } from "next/navigation";
+import { motion } from "framer-motion";
 import Button from "./ui/Button";
 import { getImagePath, getBasePath } from "@/lib/utils";
 
@@ -72,16 +73,20 @@ export default function WhyChooseSection() {
         flexWrap: 'wrap'
       }}>
         {/* Gestoría button with gradient border */}
-        <div style={{
-          background: 'linear-gradient(94.28deg, var(--accent-blue-main) 3.12%, var(--accent-purple-main) 95.84%)',
-          borderRadius: '12px',
-          padding: '2px',
-          display: 'inline-flex'
-        }}>
-          <Button variant="outline" showArrow className="!bg-bg-inverted !border-0 !text-label-inverted" href={getBasePath(`/${locale}/gestorias`)}>
+        <motion.div
+          style={{
+            background: 'linear-gradient(94.28deg, var(--accent-blue-main) 3.12%, var(--accent-purple-main) 95.84%)',
+            borderRadius: '12px',
+            padding: '2px',
+            display: 'inline-flex'
+          }}
+          whileHover={{ scale: 1.05 }}
+          transition={{ type: "spring", stiffness: 400, damping: 17 }}
+        >
+          <Button variant="outline" showArrow className="!bg-bg-inverted !border-0 !text-label-inverted" href={getBasePath(`/${locale}/gestorias`)} disableHoverScale>
             {t("cta1")}
           </Button>
-        </div>
+        </motion.div>
 
         {/* Freelancer button with solid gradient background */}
         <Button variant="gradient" showArrow href={getBasePath(`/${locale}/freelancers`)}>
