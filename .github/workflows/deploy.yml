@@ -39,4 +39,4 @@ jobs:
           security: loose
           timeout: 60000
           local-dir: ./out/
-          server-dir: /public_html/
+          server-dir: ./
