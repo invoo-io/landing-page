@@ -43,20 +43,24 @@ export function DrawerComponent({
     setSuccess(false);
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
+          "Accept": "application/json",
         },
         body: JSON.stringify({
-          topic: "waiting-list",
+          access_key: "35f97ce5-54ad-4ba5-a88d-8f29ea546366",
+          subject: "🎯 Waiting List - " + formData.name,
           name: formData.name,
           email: formData.email,
           message: `Profile: ${formData.profile}. User joined the waiting list.`,
         }),
       });
 
-      if (response.ok) {
+      const result = await response.json();
+
+      if (result.success) {
         setSuccess(true);
         setFormData({ name: "", email: "", profile: "" });
         setTimeout(() => {
