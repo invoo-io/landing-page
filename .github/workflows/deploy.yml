@@ -37,6 +37,9 @@ jobs:
           protocol: ftps
           port: 21
           security: loose
-          timeout: 60000
+          timeout: 300000
           local-dir: ./out/
           server-dir: ./
+          exclude: |
+            **/.git*
+            **/.nojekyll
