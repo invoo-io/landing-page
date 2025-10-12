@@ -22,17 +22,24 @@ export default function ContactForm() {
     setSubmitStatus({ type: null, message: '' });
 
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json',
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          access_key: "35f97ce5-54ad-4ba5-a88d-8f29ea546366",
+          subject: `📧 Contact Form - ${formData.topic || 'General'} - ${formData.name}`,
+          name: formData.name,
+          email: formData.email,
+          message: `Topic: ${formData.topic || 'Not specified'}\n\n${formData.message}`,
+        }),
       });
 
-      const data = await response.json();
+      const result = await response.json();
 
-      if (response.ok) {
+      if (result.success) {
         setSubmitStatus({
           type: 'success',
           message: 'Thank you for your message! We\'ll get back to you soon.'
@@ -47,7 +54,7 @@ export default function ContactForm() {
       } else {
         setSubmitStatus({
           type: 'error',
-          message: data.error || 'Something went wrong. Please try again.'
+          message: result.message || 'Something went wrong. Please try again.'
         });
       }
     } catch {
@@ -208,6 +215,7 @@ export default function ContactForm() {
 
           <div className="flex justify-start">
             <Button
+              type="submit"
               variant="gradient"
               showArrow={true}
               disabled={isLoading}
