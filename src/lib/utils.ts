@@ -6,9 +6,8 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function getImagePath(path: string): string {
-  // In production (GitHub Pages), prepend the repository base path
-  const basePath = process.env.NODE_ENV === 'production' ? '/landing-page' : '';
-  return `${basePath}${path}`;
+  // Deploying to root domain, no base path needed
+  return path;
 }
 
 export function getBasePath(path: string): string {
