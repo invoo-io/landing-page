@@ -9,8 +9,6 @@ const nextConfig: NextConfig = {
   images: {
     unoptimized: true,
   },
-  basePath: process.env.NODE_ENV === 'production' ? '/landing-page' : '',
-  assetPrefix: process.env.NODE_ENV === 'production' ? '/landing-page' : '',
 };
 
 export default withNextIntl(nextConfig);
