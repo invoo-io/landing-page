@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { NextIntlClientProvider } from "next-intl";
 import { getMessages, getTranslations, setRequestLocale } from "next-intl/server";
 import { notFound } from "next/navigation";
+import { Suspense } from "react";
 import { locales } from "@/i18n";
 import GoogleAnalytics from "@/components/GoogleAnalytics";
 import "../globals.css";
@@ -53,7 +54,9 @@ export default async function RootLayout({
       <body
         className={`${inter.variable} antialiased`}
       >
-        <GoogleAnalytics />
+        <Suspense fallback={null}>
+          <GoogleAnalytics />
+        </Suspense>
         <NextIntlClientProvider messages={messages}>
           {children}
         </NextIntlClientProvider>
