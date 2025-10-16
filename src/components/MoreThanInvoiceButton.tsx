@@ -1,8 +1,11 @@
 "use client";
 
+import { useTranslations } from "next-intl";
 import { DrawerComponent } from "./DrawerComponent";
 
 export default function MoreThanInvoiceButton() {
+  const t = useTranslations("home.moreThanInvoicing");
+
   return (
     <div style={{
       display: 'flex',
@@ -10,7 +13,7 @@ export default function MoreThanInvoiceButton() {
       marginTop: '48px'
     }}>
       <DrawerComponent
-        triggerText="Learn More"
+        triggerText={t("cta")}
       />
     </div>
   );
