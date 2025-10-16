@@ -37,7 +37,7 @@ export default async function GestoriasPage({
       />
       <HeroImageSection dashboardImage="/Gestoria.png" />
       <BuildForGestoriasSection
-        imageSrc="/calendar.png"
+        imageSrc="/Calendar.png"
         imageWidth={350}
         imageHeight={350}
         offsetImage={false}
@@ -46,6 +46,7 @@ export default async function GestoriasPage({
         paragraph={t("block1.description")}
         features={t.raw("block1.features")}
         buttonText={t("block1.cta")}
+        buttonHref="#waitlist"
       />
       <BuildForGestoriasSection
         imageSrc="/Down.png"
@@ -57,6 +58,7 @@ export default async function GestoriasPage({
         paragraph={t("block2.description")}
         features={t.raw("block2.features")}
         buttonText={t("block2.cta")}
+        buttonHref="#waitlist"
         imagePosition="left"
         showImagePlaceholder={true}
       />
@@ -70,6 +72,7 @@ export default async function GestoriasPage({
         paragraph={t("block3.description")}
         features={t.raw("block3.features")}
         buttonText={t("block3.cta")}
+        buttonHref="#waitlist"
         imagePosition="right"
         showImagePlaceholder={true}
       />
@@ -83,6 +86,7 @@ export default async function GestoriasPage({
         paragraph={t("block4.description")}
         features={t.raw("block4.features")}
         buttonText={t("block4.cta")}
+        buttonHref="#waitlist"
         imagePosition="left"
         showImagePlaceholder={true}
       />

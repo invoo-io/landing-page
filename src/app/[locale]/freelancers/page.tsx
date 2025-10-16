@@ -48,6 +48,7 @@ export default async function FreelancersPage({
         paragraph={t("block1.description")}
         features={t.raw("block1.features")}
         buttonText={t("block1.cta")}
+        buttonHref="#waitlist"
       />
       <BuildForGestoriasSection
         imageSrc="/Doc.png"
@@ -59,6 +60,7 @@ export default async function FreelancersPage({
         paragraph={t("block2.description")}
         features={t.raw("block2.features")}
         buttonText={t("block2.cta")}
+        buttonHref="#waitlist"
         imagePosition="left"
         showImagePlaceholder={true}
       />
@@ -72,6 +74,7 @@ export default async function FreelancersPage({
         paragraph={t("block3.description")}
         features={t.raw("block3.features")}
         buttonText={t("block3.cta")}
+        buttonHref="#waitlist"
         imagePosition="right"
         showImagePlaceholder={true}
       />
@@ -85,6 +88,7 @@ export default async function FreelancersPage({
         paragraph={t("block4.description")}
         features={t.raw("block4.features")}
         buttonText={t("block4.cta")}
+        buttonHref="#waitlist"
         imagePosition="left"
         showImagePlaceholder={true}
       />
