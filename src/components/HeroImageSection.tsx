@@ -15,12 +15,12 @@ export default function HeroImageSection({
   return (
     <section className="relative w-full min-h-[100vh] max-lg:min-h-[80vh] max-md:min-h-[60vh] flex items-center justify-center overflow-hidden">
       {/* Background Image as absolute element */}
-      <div className="absolute inset-0 w-full h-full max-w-[1500px] left-1/2 -translate-x-1/2">
+      <div className="absolute inset-0 w-full h-full left-1/2 -translate-x-1/2">
         <Image
           src={getImagePath(backgroundImage)}
           alt="Background"
           fill
-          className="object-cover"
+          className="object-contain"
           priority
         />
       </div>
