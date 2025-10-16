@@ -35,7 +35,7 @@ export default async function FreelancersPage({
         }
         paragraph={t("header.description")}
         buttonText={t("header.cta")}
-        buttonHref="#contact"
+        buttonHref="#waitlist"
       />
       <HeroImageSection dashboardImage="/FreelanceHeroImageSection.png" />
       <BuildForGestoriasSection

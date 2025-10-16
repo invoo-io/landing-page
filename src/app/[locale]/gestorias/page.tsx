@@ -33,7 +33,7 @@ export default async function GestoriasPage({
         }
         paragraph={t("header.description")}
         buttonText={t("header.cta")}
-        buttonHref="#contact"
+        buttonHref="#waitlist"
       />
       <HeroImageSection dashboardImage="/Gestoria.png" />
       <BuildForGestoriasSection
