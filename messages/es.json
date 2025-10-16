@@ -716,5 +716,26 @@
       "blog": "Blog",
       "copyright": "© 2025 Invoo.es. Todos los derechos reservados. Hecho con ♥ para autónomos españoles"
     }
+  },
+  "waitlist": {
+    "title": "Únete a la lista de espera",
+    "description": "¡Regístrate para recibir notificaciones de nuestro lanzamiento! Los primeros 50 usuarios disfrutarán de 3 meses gratis.",
+    "form": {
+      "name": "Nombre",
+      "email": "Email",
+      "profile": "Tu Perfil",
+      "profileOptions": {
+        "autonomo": "Autónomo",
+        "pyme": "Pyme",
+        "gestoria": "Gestoría"
+      },
+      "submit": "Unirse",
+      "sending": "Enviando..."
+    },
+    "success": "¡Te has unido a la lista de espera exitosamente!",
+    "errors": {
+      "general": "Algo salió mal. Por favor, inténtalo de nuevo.",
+      "failed": "Error al unirse a la lista de espera. Por favor, inténtalo más tarde."
+    }
   }
 }

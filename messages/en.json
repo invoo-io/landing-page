@@ -716,5 +716,26 @@
       "blog": "Blog",
       "copyright": "© 2025 Invoo.es. All rights reserved. Made with ♥ for Spanish freelancers"
     }
+  },
+  "waitlist": {
+    "title": "Join the waiting list",
+    "description": "Sign up to receive notifications for our launch! The first 50 users will enjoy 3 months free.",
+    "form": {
+      "name": "Name",
+      "email": "Email",
+      "profile": "Your Profile",
+      "profileOptions": {
+        "autonomo": "Autónomo",
+        "pyme": "Pyme",
+        "gestoria": "Gestoría"
+      },
+      "submit": "Join",
+      "sending": "Sending..."
+    },
+    "success": "Successfully joined the waiting list!",
+    "errors": {
+      "general": "Something went wrong. Please try again.",
+      "failed": "Failed to join waiting list. Please try again later."
+    }
   }
 }

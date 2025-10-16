@@ -1,6 +1,7 @@
 "use client";
 
 import * as React from "react";
+import { useTranslations } from "next-intl";
 import {
   Drawer,
   DrawerContent,
@@ -22,6 +23,7 @@ export function DrawerComponent({
   externalOpen,
   onExternalOpenChange
 }: DrawerComponentProps) {
+  const t = useTranslations("waitlist");
   const [internalOpen, setInternalOpen] = React.useState(false);
 
   // Use external state if provided, otherwise use internal state
@@ -68,10 +70,10 @@ export function DrawerComponent({
           setSuccess(false);
         }, 2000);
       } else {
-        setError("Something went wrong. Please try again.");
+        setError(t("errors.general"));
       }
     } catch {
-      setError("Failed to join waiting list. Please try again later.");
+      setError(t("errors.failed"));
     } finally {
       setIsLoading(false);
     }
@@ -101,16 +103,16 @@ export function DrawerComponent({
         >
           <DrawerHeader className="text-center">
             <DrawerTitle className="text-title1-emphasized text-label-inverted" style={{ fontSize: '30px' }}>
-              Join the waiting list
+              {t("title")}
             </DrawerTitle>
             <DrawerDescription className="text-callout text-label-inverted mt-2">
-              Sign up to receive notifications for our launch! The first 50 users will enjoy 3 months free.
+              {t("description")}
             </DrawerDescription>
           </DrawerHeader>
 
           <form onSubmit={handleSubmit} className="px-8 flex flex-col gap-6">
           <div>
-            <label className="text-footnote mb-2 block text-label-inverted">Name</label>
+            <label className="text-footnote mb-2 block text-label-inverted">{t("form.name")}</label>
             <input
               type="text"
               value={formData.name}
@@ -132,7 +134,7 @@ export function DrawerComponent({
           </div>
 
           <div>
-            <label className="text-footnote mb-2 block text-label-inverted">Email</label>
+            <label className="text-footnote mb-2 block text-label-inverted">{t("form.email")}</label>
             <input
               type="email"
               value={formData.email}
@@ -154,7 +156,7 @@ export function DrawerComponent({
           </div>
 
           <div>
-            <label className="text-footnote mb-2 block text-label-inverted">Your Profile</label>
+            <label className="text-footnote mb-2 block text-label-inverted">{t("form.profile")}</label>
             <div className="flex gap-4 flex-wrap">
               <label className="flex items-center gap-2 cursor-pointer">
                 <input
@@ -170,7 +172,7 @@ export function DrawerComponent({
                     cursor: "pointer",
                   }}
                 />
-                <span className="text-footnote text-label-inverted">Autónomo</span>
+                <span className="text-footnote text-label-inverted">{t("form.profileOptions.autonomo")}</span>
               </label>
               <label className="flex items-center gap-2 cursor-pointer">
                 <input
@@ -186,7 +188,7 @@ export function DrawerComponent({
                     cursor: "pointer",
                   }}
                 />
-                <span className="text-footnote text-label-inverted">Pyme</span>
+                <span className="text-footnote text-label-inverted">{t("form.profileOptions.pyme")}</span>
               </label>
               <label className="flex items-center gap-2 cursor-pointer">
                 <input
@@ -202,7 +204,7 @@ export function DrawerComponent({
                     cursor: "pointer",
                   }}
                 />
-                <span className="text-footnote text-label-inverted">Gestoría</span>
+                <span className="text-footnote text-label-inverted">{t("form.profileOptions.gestoria")}</span>
               </label>
             </div>
           </div>
@@ -214,14 +216,14 @@ export function DrawerComponent({
             className="w-full"
             showArrow
           >
-            {isLoading ? 'Sending...' : 'Join'}
+            {isLoading ? t("form.sending") : t("form.submit")}
           </Button>
 
           {error && (
             <p className="text-accent-red-main text-footnote text-center">{error}</p>
           )}
           {success && (
-            <p className="text-accent-green-main text-footnote text-center">Successfully joined the waiting list!</p>
+            <p className="text-accent-green-main text-footnote text-center">{t("success")}</p>
           )}
         </form>
         </div>
