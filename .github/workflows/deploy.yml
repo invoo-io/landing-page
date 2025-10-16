@@ -26,6 +26,8 @@ jobs:
         run: npm ci
 
       - name: Build project
+        env:
+          NEXT_PUBLIC_GA_MEASUREMENT_ID: ${{ secrets.GA_MEASUREMENT_ID }}
         run: npm run build
 
       - name: Deploy to GoDaddy via FTP
