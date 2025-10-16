@@ -10,7 +10,7 @@ import PricingSection from "@/components/PricingSection";
 import FocusSection from "@/components/FocusSection";
 import Footer from "@/components/Footer";
 import GradientText from "@/components/ui/GradientText";
-import { getImagePath } from "@/lib/utils";
+import { getImagePath, getBasePath } from "@/lib/utils";
 
 export default async function Home({
   params,
@@ -53,6 +53,7 @@ export default async function Home({
         paragraph={t("gestoriasBlock.description")}
         features={t.raw("gestoriasBlock.features")}
         buttonText={t("gestoriasBlock.cta")}
+        buttonHref={getBasePath(`/${locale}/gestorias`)}
         imageSrc={getImagePath("/Gestoria.png")}
         imageAlt="Gestorías Dashboard"
         imagePosition="right"

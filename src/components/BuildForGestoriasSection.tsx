@@ -10,6 +10,7 @@ interface BuildForGestoriasSectionProps {
   paragraph: string;
   features: string[];
   buttonText: string;
+  buttonHref?: string;
   buttonOnClick?: () => void;
   imageSrc?: string;
   imageAlt?: string;
@@ -26,6 +27,7 @@ export default function BuildForGestoriasSection({
   paragraph,
   features,
   buttonText,
+  buttonHref,
   buttonOnClick,
   imageSrc,
   imageAlt,
@@ -60,12 +62,17 @@ export default function BuildForGestoriasSection({
 
       {/* Button */}
       <div className="max-md:flex max-md:justify-center">
-        {(buttonText === "Learn More" || buttonText === "Join the waiting list") ? (
+        {buttonHref === "#waitlist" ? (
           <DrawerComponent
             triggerText={buttonText}
           />
         ) : (
-          <Button variant="gradient" showArrow onClick={buttonOnClick}>
+          <Button
+            variant="gradient"
+            showArrow
+            href={buttonHref}
+            onClick={buttonOnClick}
+          >
             {buttonText}
           </Button>
         )}
