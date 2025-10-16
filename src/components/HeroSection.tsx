@@ -32,7 +32,7 @@ export default function HeroSection({
 
         {buttonText && (buttonHref || buttonOnClick) && (
           <div className="flex justify-center">
-            {(buttonText === "Join the waiting list" || buttonText === "Get Started") ? (
+            {buttonHref === "#waitlist" ? (
               <DrawerComponent
                 triggerText={buttonText}
               />

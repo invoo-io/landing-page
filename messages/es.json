@@ -589,7 +589,7 @@
         "price": "0€",
         "period": "al mes",
         "badge": "Gratis Para Siempre",
-        "cta": "Únete a la lista de espera →",
+        "cta": "Únete a la lista de espera",
         "features": ["Facturas ilimitadas", "50 MB almacenamiento de gastos"]
       },
       "pro": {
@@ -602,7 +602,7 @@
         "badgeAnnual": "¡Ahorra 2 meses!",
         "toggle": "Anual",
         "toggleSave": "¡Ahorra 2 meses!",
-        "cta": "Únete a la lista de espera →",
+        "cta": "Únete a la lista de espera",
         "features": ["Facturas ilimitadas", "Registro de gastos (tickets ilimitados)", "QR Verifactu + envío a Hacienda", "Modelo 130 y 303 pre-calculados", "Exportación CSV en un clic", "Acceso panel para tu gestoría"]
       }
     },
@@ -613,7 +613,7 @@
         "price": "0€",
         "period": "al mes",
         "badge": "Gratis Para Siempre",
-        "cta": "Contáctanos →",
+        "cta": "Contáctanos",
         "features": ["Clientes ilimitados", "Sincronización facturas/gastos", "Exportación CSV", "Resúmenes trimestrales", "Notificaciones de nuevos datos"]
       },
       "enterprise": {
@@ -630,7 +630,7 @@
     "hero": {
       "title": "Crea facturas conformes en 30 segundos",
       "description": "Invoo ayuda a autónomos, PYMES y gestorías a trabajar más rápido juntos: listo para Verifactu, PDFs profesionales, compartir instantáneo y resúmenes fiscales automáticos",
-      "cta": "Únete a la lista de espera →"
+      "cta": "Únete a la lista de espera"
     },
     "whyChoose": {
       "title": "Por qué autónomos, PYMES y gestorías eligen Invoo",
